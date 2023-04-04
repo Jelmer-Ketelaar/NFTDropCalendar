@@ -316,7 +316,7 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    Banner, Thumnail or other promotion? Check our <a href="prices.php"
+                                    Banner, Thumnail or other promotion? Check our <a href="prices"
                                                                                      target="_blank">Our Prices</a>
                                     (new
                                     tab)
