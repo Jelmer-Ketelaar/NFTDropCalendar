@@ -30,21 +30,20 @@
         </div>
         <button class="collapsible">What is the difference between a project and a drop?</button>
         <div class="faq-content">
-          <p><strong>Drop: </strong>If your project is yet to come, it's a drop</a>
+          <p><strong>Drop: </strong>If your project is yet to come, it's a drop
           <!--<br>-->
-          <p><strong>Project: </strong>If your project has already been released, it is a project</a>
+          </p><p><strong>Project: </strong>If your project has already been released, it is a project
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <div class="section-padding"></div>
 <div class="section-padding"></div>
 <div class="section-padding"></div>
 
 
-<script src="./js/faq.js"></script>
+<script src="js/faq.js"></script>
 <?php include 'include/footer.php'?>
 

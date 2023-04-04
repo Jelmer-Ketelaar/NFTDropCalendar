@@ -27,6 +27,9 @@ $getAllProjects = $conn->prepare("SELECT * FROM projectsExist WHERE verified = '
 
 ?>
 <link href="css/banner.css" rel="stylesheet">
+<style>
+ 
+</style>
 
 <div class="intro1 section-padding">
     <div class="container">
@@ -59,7 +62,7 @@ $getAllProjects = $conn->prepare("SELECT * FROM projectsExist WHERE verified = '
                                 <!--<img alt="" src="img/items/Nftdropcalendar.png">-->
                                 <img alt="" src="<?php echo ($banner['thumbnail']) ?>">
                                 <div>
-                                    <h5>Preview of Name. Get your project here for 0.1ETH</h5>
+                                    <!--<h5>Preview of Name. Get your project here for 0.1ETH</h5>-->
                                     <!--<h5>Frenchie Frens</h5>--> 
                                     <h5><?php echo $banner['name'] ?></h5>
                                     <!--<p>This is a preview of a description. You can get your project here for 0.1ETH</p>-->
@@ -306,19 +309,18 @@ $getAllProjects = $conn->prepare("SELECT * FROM projectsExist WHERE verified = '
         <div class="row">
             <div class="col-xl-12">
                 <div class="section-title text-center">
-                    <h2>Reasons why you should choose us</h2>
-                    <p>A few reasons why you should choose NFTDropCalendar</p>
+                    <h2>Why Choose NFTDropCalendar</h2>
+                    <p>Discover the benefits of using NFTDropCalendar</p>
                 </div>
             </div>
         </div>
         <div class="row align-items-center">
             <div class="col-xl-6 col-lg-6 col-md-6">
                 <div class="create-sell-content">
-                    <div class="create-sell-content-icon"><i class="fa-duotone fa-shield-check"></i></div>
+                    <div class="create-sell-content-icon"><i class="fas fa-shield-check"></i></div>
                     <div>
-                        <h4>Projects/Drops </h4>
-                        <p>Every project/drop that is listed on <strong>NFTDropCalender</strong> is verified and a
-                            legit project, we check everything before we list the project.</p>
+                        <h4>Verified Projects</h4>
+                        <p>All projects and drops on NFTDropCalendar are verified and legitimate, ensuring a safe and reliable experience for users.</p>
                     </div>
                 </div>
             </div>
@@ -326,37 +328,33 @@ $getAllProjects = $conn->prepare("SELECT * FROM projectsExist WHERE verified = '
                 <div class="create-sell-content">
                     <div class="create-sell-content-icon"><i class="fas fa-info-circle"></i></div>
                     <div>
-                        <h4>Information</h4>
-                        <p>On <strong>NFTDropCalender</strong> you can find all the information that you need to
-                            know
-                            about a project, best snipe tool for NFT projects/drops!</p>
+                        <h4>Comprehensive Information</h4>
+                        <p>NFTDropCalendar provides all the necessary information and tools for users to stay informed and make informed decisions.</p>
                     </div>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6">
                 <div class="create-sell-content">
-                    <div class="create-sell-content-icon"><i class="bi bi-circle-half"></i></div>
+                    <div class="create-sell-content-icon"><i class="fas fa-bullhorn"></i></div>
                     <div>
-                        <h4>Own project/drop</h4>
-                        <p>If you list your own NFT project/drop, we will email all our newspaper
-                            users, that we listed an amazing drop!</p>
+                        <h4>Promote Your Project</h4>
+                                               <p>Listing your own NFT project or drop on NFTDropCalendar will give it extra visibility and reach through our newsletter and social media channels.</p>
                     </div>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6">
                 <div class="create-sell-content">
-                    <div class="create-sell-content-icon"><i class="bi bi-circle-half"></i></div>
+                    <div class="create-sell-content-icon"><i class="fas fa-dollar-sign"></i></div>
                     <div>
-                        <h4>Free to use</h4>
-                        <p><strong>NFTDropCalender</strong> is completely free for the users of this platform, there
-                            is no
-                            catch at all. <br> You only have to pay for listing your project/drop to our page </p>
+                        <h4>Free to Use</h4>
+                        <p>NFTDropCalendar is completely free to use for users, with a small fee for listing projects or drops.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 </div>
 <?php require 'include/footer.php'; ?>
 <script src="./js/scripts.js"></script>

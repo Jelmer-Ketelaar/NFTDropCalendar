@@ -34,8 +34,7 @@ require 'include/header.php'; ?>
                 <h4 class="card-title mb-3">NFT Drop</h4>
                 <div class="card">
                     <div class="card-body">
-                        <form action="listingProces.php" method="POST" enctype="multipart/form-data"
-                              id="listingForm">
+                        <form action="listingProces.php" method="POST" enctype="multipart/form-data" id="listingForm">
                             <div class="row">
                                 <div class="col-12 mb-3">
                                     <label class="form-label" for="projectNameInput">Project Name</label>

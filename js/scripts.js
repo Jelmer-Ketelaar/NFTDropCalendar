@@ -1,33 +1,70 @@
-/*!
- * Countdown JS
- */
-!function (n) {
-    function o(n) {
-        return n < 10 ? "0" + n : n
-
+(function($) {
+    function formatNumber(num) {
+        return num < 10 ? "0" + num : num;
     }
 
-    n.fn.showclock = function () {
-        var s = new Date, t = n(this).data("date").split("-"), a = [0, 0];
-        null != n(this).data("time") && (a = n(this).data("time").split(":"));
-        var c = new Date(t[0], t[1] - 1, t[2], a[0], a[1]).getTime() / 1e3 - s.getTime() / 1e3;
-        if (c <= 0 || isNaN(c)) return this.hide(), this;
-        var e = Math.floor(c / 86400);
-        c %= 86400;
-        var i = Math.floor(c / 3600);
-        c %= 3600;
-        var u = Math.floor(c / 60);
-        c = Math.floor(c % 60);
-        var d = "";
-        0 != e && (d += "<div class='countdown-container days'>", d += "<span class='countdown-heading days-top'></span>", d += "<span class='countdown-value days-bottom'>" + o(e) + "</span>", d += "</div>"), d += "<div class='countdown-container hours'>", d += "<span class='countdown-heading hours-top'> - </span>", d += "<span class='countdown-value hours-bottom'>" + o(i) + "</span>", d += "</div>", d += "<div class='countdown-container minutes'>", d += "<span class='countdown-heading minutes-top'><p> - </span>", d += "<span class='countdown-value minutes-bottom'>" + o(u) + "</span>", d += "</div>", d += "<div class='countdown-container seconds'>", d += "<span class='countdown-heading seconds-top'> - </span>", d += "<span class='countdown-value seconds-bottom'>" + o(c) + "</span>", d += "</div>", this.html(d)
-    }, n.fn.countdown = function () {
-        var o = n(this);
-        o.showclock(), setInterval(function () {
-            o.showclock()
-        }, 1e3)
+    $.fn.showClock = function() {
+        var currentDate = new Date();
+        var endDate = $(this).data("date").split("-");
+        var endTime = [0, 0];
+
+        if ($(this).data("time")) {
+            endTime = $(this).data("time").split(":");
+        }
+
+        var remainingTime = (new Date(endDate[0], endDate[1] - 1, endDate[2], endTime[0], endTime[1]).getTime() / 1000) - (currentDate.getTime() / 1000);
+
+        if (remainingTime <= 0 || isNaN(remainingTime)) {
+            return this.hide();
+        }
+
+        var days = Math.floor(remainingTime / 86400);
+        remainingTime = remainingTime % 86400;
+        var hours = Math.floor(remainingTime / 3600);
+        remainingTime = remainingTime % 3600;
+        var minutes = Math.floor(remainingTime / 60);
+        remainingTime = Math.floor(remainingTime % 60);
+
+        var output = "";
+        if (days !== 0) {
+            output += "<div class='countdown-container days'>";
+            output += "<span class='countdown-heading days-top'></span>";
+            output += "<span class='countdown-value days-bottom'>" + formatNumber(days) + "</span>";
+            output += "</div>";
+        }
+
+        output += "<div class='countdown-container hours'>";
+        output += "<span class='countdown-heading hours-top'> - </span>";
+        output += "<span class='countdown-value hours-bottom'>" + formatNumber(hours) + "</span>";
+        output += "</div>";
+
+        output += "<div class='countdown-container minutes'>";
+        output += "<span class='countdown-heading minutes-top'><p> - </span>";
+        output += "<span class='countdown-value minutes-bottom'>" + formatNumber(minutes) + "</span>";
+        output += "</div>";
+
+        output += "<div class='countdown-container seconds'>";
+        output += "<span class='countdown-heading seconds-top'> - </span>";
+        output += "<span class='countdown-value seconds-bottom'>" + formatNumber(remainingTime) + "</span>";
+        output += "</div>";
+
+        $(this).html(output);
     }
-}(jQuery), jQuery(document).ready(function () {
-    jQuery(".countdown").length > 0 && jQuery(".countdown").each(function () {
-        jQuery(this).countdown()
-    })
+
+    $.fn.countdown = function() {
+        var element = $(this);
+        element.showClock();
+        setInterval(function() {
+            element.showClock();
+        }, 1000);
+    }
+
+})(jQuery);
+
+$(document).ready(function() {
+    if ($(".countdown").length > 0) {
+        $(".countdown").each(function() {
+            $(this).countdown();
+        });
+    }
 });

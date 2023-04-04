@@ -23,47 +23,7 @@
                     <p>All the drops on this page are verified and checked by NFTDropCalendar, they also have a solid roadmap with bright future plans.</p>
                 </div>
             </div>
- <!--           <div class="section-padding">-->
- <!--<center>-->
- <!--    <a href="#" target="_blank">-->
- <!--    <img alt="banner" style="" class="CoverPhoto"-->
- <!--         src="img/banner.png">-->
- <!--       </a>-->
- <!--</center>-->
- <!--</div>-->
         </div>
-        <!--<div class="row justify-content-center text-center">-->
-        <!--        <div class="col-12">-->
-                    <!-- Explore Menu -->
-        <!--            <div class="explore-menu btn-group btn-group-toggle flex-wrap justify-content-center text-center mb-4" data-toggle="buttons">-->
-        <!--                <label class="btn d-table text-uppercase p-2 active">-->
-        <!--                    <input type="radio" value="all" checked="" class="explore-btn-1">-->
-        <!--                    <span>All</span>-->
-        <!--                </label>-->
-        <!--                <label class="btn d-table text-uppercase p-2">-->
-        <!--                    <input type="radio" value="ethereum" class="explore-btn-1">-->
-        <!--                    <span><img src="img/extern_logo/crypto/ethereum.png" style="width:18px;"> Ethereum</span>-->
-        <!--                </label>-->
-        <!--                <label class="btn d-table text-uppercase p-2">-->
-        <!--                    <input type="radio" value="solana" class="explore-btn-1">-->
-        <!--                    <span><img src="img/extern_logo/crypto/solana.png" style="width:18px;"> Solana</span>-->
-        <!--                </label>-->
-        <!--                <label class="btn d-table text-uppercase p-2">-->
-        <!--                    <input type="radio" value="polygon" class="explore-btn-1">-->
-        <!--                    <span><img src="img/extern_logo/crypto/polygon.png" style="width:18px;"> Polygon</span>-->
-        <!--                </label>-->
-        <!--                <label class="btn d-table text-uppercase p-2">-->
-        <!--                    <input type="radio" value="cardano" class="explore-btn-1">-->
-        <!--                    <span><img src="img/extern_logo/crypto/cardano.png" style="width:18px;"> Cardano</span>-->
-        <!--                </label>-->
-        <!--                <label class="btn d-table text-uppercase p-2">-->
-        <!--                    <input type="radio" value="avalanche" class="explore-btn-1">-->
-        <!--                    <span><img src="img/extern_logo/crypto/avalanche.png" style="width:18px;"> Avalanche</span>-->
-        <!--                </label>-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <!--    </div>-->
-
             <div class="row items explore-items">
 
                 <?php foreach ($projects as $project) {

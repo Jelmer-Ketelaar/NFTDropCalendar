@@ -42,9 +42,9 @@ error_reporting(E_ALL);
 //     window.location.href='http://nftdropcalendar.info'; </script>");
 // }
 
-if($blockchain !== 'ethereum' && $blockchain !== 'solana' && $blockchain !== 'polygon' && $blockchain !== 'cardano' ) {
-        header('Location: index.php');
-}
+    if($blockchain !== 'ethereum' && $blockchain !== 'solana' && $blockchain !== 'polygon' && $blockchain !== 'cardano' ) {
+            header('Location: index.php');
+    }
     if (!str_contains($discordLink, 'http')) { 
         $discordLink = 'https://'.$discordLink;
     }
@@ -57,6 +57,7 @@ if($blockchain !== 'ethereum' && $blockchain !== 'solana' && $blockchain !== 'po
         $twitterName = explode("@",$twitterName);
         $twitterName = $twitterName[1];
     }
+    
     
     $data = file_get_contents('https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names='.$twitterName); 
     $parsed =  json_decode($data,true);

@@ -222,100 +222,30 @@ async function formaticW() {
 
 
 function checkFilled() {
-    if (document.getElementById('projectNameInput').value != '') {
-        if (document.getElementById('projectShortDesInput').value != '') {
-            if (document.getElementById('selectBlockchain').value != '') {
-                if (document.getElementById('inputGroupFile01').value != '') {
-                    if (document.getElementById('traits').value != '') {
-                        if (document.getElementById('roadmap').value != '') {
-                        //     if (document.getElementById('volumeTxt').value != '') {
-                                if (document.getElementById('royality').value != '') {
-                                    if (document.getElementById('supply').value != '') {
-                                        if (document.getElementById('teamAmount').value != '') {
-                                            if (document.getElementById('twitterNameInput').value != '') {
-                                                if (document.getElementById('discordNameInput').value != '') {
-                                                    if (document.getElementById('websiteLinkInput').value != '') {
-                                                        if (document.getElementById('emailContact').value != '') {
-                                                            if (document.getElementById('birthdaytime').value != '') {
-                                                            return true;
-                                                        
-                                                        } else {
-                                                            document.getElementById('emptyAlert').style.display = 'flex';
-                                                            document.getElementById('emptyAlert').textContent = 'Please give a drop date and a specific time when the NFTs will be minted';
-                                                            return false;
-                                                        }
-
-                                                        }
-                                                     else {
-                                                        document.getElementById('emptyAlert').style.display = 'flex';
-                                                        document.getElementById('emptyAlert').textContent = 'A contact email is required, please fill it in';
-                                                        return false;
-                                                    }
-                                                } else {
-                                                    document.getElementById('emptyAlert').style.display = 'flex';
-                                                    document.getElementById('emptyAlert').textContent = 'Website link is required, please fill it in';
-                                                    return false;
-                                                }
-                                            } else {
-                                                document.getElementById('emptyAlert').style.display = 'flex';
-                                                document.getElementById('emptyAlert').textContent = 'Discord server is required, please fill it in';
-                                                return false;
-                                            }
-                                        } else {
-                                            document.getElementById('emptyAlert').style.display = 'flex';
-                                            document.getElementById('emptyAlert').textContent = 'Twitter is required, please fill it in';
-                                            return false;
-                                        }
-                                    } else {
-                                        document.getElementById('emptyAlert').style.display = 'flex';
-                                        document.getElementById('emptyAlert').textContent = 'The amount of the team is required, please fill it in';
-                                        return false;
-                                    }
-                                } else {
-                                    document.getElementById('emptyAlert').style.display = 'flex';
-                                    document.getElementById('emptyAlert').textContent = 'Supply is required, please fill it in';
-                                    return false;
-                                }
-                            } else {
-                                document.getElementById('emptyAlert').style.display = 'flex';
-                                document.getElementById('emptyAlert').textContent = 'Royality is required, please fill it in';
-                                return false;
-                            }
-                         //else {
-                        //     document.getElementById('emptyAlert').style.display = 'flex';
-                        //     document.getElementById('emptyAlert').textContent = 'Volume is required, please fill it in';
-                        //     return false;
-                        // }
-                    } else {
-                        document.getElementById('emptyAlert').style.display = 'flex';
-                        document.getElementById('emptyAlert').textContent = 'Roadmap is required, please fill it in';
-                        return false;
-                    }
-                } else {
-                    document.getElementById('emptyAlert').style.display = 'flex';
-                    document.getElementById('emptyAlert').textContent = 'Traits is required, please fill in the amount of diffrent traits';
-                    return false;
-                }
-            } else {
-                document.getElementById('emptyAlert').style.display = 'flex';
-                document.getElementById('emptyAlert').textContent = 'Image of your project is required, please upload a image';
-                return false;
-            }
-        } else {
-            document.getElementById('emptyAlert').style.display = 'flex';
-            document.getElementById('emptyAlert').textContent = 'Blockchain need to be choosin, please fill it in';
-            return false;
-        }
-    } else {
-        document.getElementById('emptyAlert').style.display = 'flex';
-        document.getElementById('emptyAlert').textContent = 'Short description is required, please fill it in';
-        return false;
+  const requiredFields = [
+    'projectNameInput', 
+    'projectShortDesInput', 
+    'selectBlockchain', 
+    'inputGroupFile01', 
+    'traits', 
+    'roadmap', 
+    'royality', 
+    'supply', 
+    'teamAmount', 
+    'twitterNameInput', 
+    'discordNameInput', 
+    'websiteLinkInput', 
+    'emailContact', 
+    'birthdaytime'
+  ];
+  
+  for (const field of requiredFields) {
+    if (!document.getElementById(field).value) {
+      document.getElementById('emptyAlert').style.display = 'flex';
+      document.getElementById('emptyAlert').textContent = `The ${field} field is required. Please fill it in.`;
+      return false;
     }
-} else {
-        document.getElementById('emptyAlert').style.display = 'flex';
-        document.getElementById('emptyAlert').textContent = 'Project name is required, please fill it in';
-        return false;
-    }
-
-// function end
+  }
+  
+  return true;
 }

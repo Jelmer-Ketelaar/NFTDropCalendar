@@ -37,8 +37,7 @@ require 'include/header.php';
                 <h4 class="card-title mb-3">NFT Drop</h4>
                 <div class="card">
                     <div class="card-body">
-                        <form action="listingProces.php" method="POST" enctype="multipart/form-data"
-                              id="listingForm">
+                        <form action="listingProces.php" method="POST" enctype="multipart/form-data" id="listingForm">
                             <div class="row">
                                 <div class="col-12 mb-3">
                                     <label class="form-label" for="projectNameInput">Project Name</label>
@@ -225,26 +224,21 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                                                                                          required="required"
                                                                                                          maxlength="70">
                                     </div>
-                                    <div class="form-group mt-3" style="border:3px solid #008AFF; border-radius:10px ;padding:10px;">
+                                    <!-- --> begin countdown -->
+                                  <div class="form-group mt-3" style="border:3px solid #008AFF; border-radius:10px ;padding:10px;">
                                         <h5 style="margin:4px !important; text-align:center;">Hype up/boost your Project
                                             +90.000 views!</h5>
                                         <p style="margin-bottom:4px;margin-top:4px; text-align:center; margin-left: 50px">
                                             Only
-                                            <strong><span
-                                                        style="color:#008AFF; ">4</span></strong>/8 Promotion Place
-                                            open! <strong><strike id="normalPromoPrice">0.6ETH</strike><span
-                                                        id="promotePrice" style="margin-left: 10px">0.04ETH / 1.2 SOL</span></strong>
-                                            <span id="countdownDiscount"
-                                                  style="color:#008AFF; font-size: 17px;"> 3:16:40</span>
+                                            <strong><span style="color:#008AFF; ">4</span></strong>/8 Promotion Place
+                                            open! <strong><strike id="normalPromoPrice">0.6ETH</strike><span id="promotePrice" style="margin-left: 10px">0.04ETH / 1.2 SOL</span></strong>
+                                            <span id="countdownDiscount" style="color:#008AFF; font-size: 17px;"> 3:3:24</span>
                                         </p>
                                             <label></label>
-                                        <div class="form-check form-check-inline"
-                                             style="margin-bottom:4px !important; margin-left: 2vw;">
-                                            <input class="form-check-input" type="radio" name="promotionBox"
-                                                   id="promotionBox1" value="promote" style="">
+                                        <div class="form-check form-check-inline" style="margin-bottom:4px !important; margin-left: 2vw;">
+                                            <input class="form-check-input" type="radio" name="promotionBox" id="promotionBox1" value="promote" style="">
 
-                                            <label class="form-check-label" for="promotionBox1"><p
-                                                        style="text-align:center;">Homepage
+                                            <label class="form-check-label" for="promotionBox1"><p style="text-align:center;">Homepage
                                                     promo, Listpage promo, Twitter Page Pin,<br>1 Week Full Promo,
                                                     <strong>340%</strong> more hype on your project</p></label>
 
@@ -254,13 +248,13 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                     </div>
                                     <div class="form-group mt-3">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="promotionBox"
-                                                   id="promotionBox2" value="promote2" checked="">
+                                            <input class="form-check-input" type="radio" name="promotionBox" id="promotionBox2" value="promote2" checked="">
                                             <label class="form-check-label" for="promotionBox2">Listing on
                                                 NFTDropCalendar
                                                 <strong id="listingPrice">0.002ETH</strong></label>
                                         </div>
                                     </div>
+
                                  </div>
                                 </div>
                             </div>
@@ -313,16 +307,14 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                 </div>
                             </div>
                             <div class="col-12">
-                                    Banner, Thumnail or other promotion? Check our <a href="prices.php"
+                                    Banner, Thumnail or other promotion? Check our <a href="prices"
                                                                                      target="_blank">Our Prices</a>
                                     (new
                                     tab)
                                 </div>
                             
                             <div class="mt-3">
-                                <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="button" id="btn-connect">List
-                                    project
-                                </button>
+                                <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="button" id="btn-connect">List Drop</button>
                    <!--     <script>} else {</script>-->
                    <!--     <div class="mt-3">-->
                    <!--             <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="submit" id="btn-connect">List-->
@@ -443,6 +435,7 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
         </div>
     </div>
 </div>
+
 <?php include "include/footer.php"; ?>
 <script src="js/data.js"></script>
 

@@ -4,9 +4,7 @@ $seoDescription = 'Update your own NFT';
 $page = '';
 require 'include/header.php';
 require 'connection.php';
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 
 if(!isset($_GET['drop']) && !isset($_GET['project'])){
     $getDrops = $conn->prepare("SELECT * FROM projects WHERE verified = 'true' ORDER BY dropDate");
@@ -66,7 +64,7 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
                             <!-- Card Body -->
                             <div class="card-body mt-4">
                                 <h5 class="mb-3" id='projectName'><?php echo $nft['name']; ?></h5>
-                                <p class="my-3" id='projectShortDes'>Project Description</p>
+                                <p class="my-3" id='projectShortDes'><?php echo $nft['description']?></p>
                                 <hr>
                                 <div class="social-icons justify-content-center my-3" style='display:none;'
                                      id='socialBtn'>
@@ -100,12 +98,14 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group mt-3">
+                                    <label>Name:</label>
                                     <input type="text" class="form-control" id='projectNameInput' name="projectName"
                                            placeholder="Project name" required="required" value="<?php echo $nft['name']; ?>" maxlength="25">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group mt-3">
+                                    <label>Description:</label>
                                     <textarea class="form-control" id='projectShortDesInput' name="projectDescription"
                                               placeholder="Description about the project" maxlength='750' cols="30"
                                               required="required" rows="3"><?php echo $nft['description']; ?></textarea>
@@ -113,6 +113,7 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
                             </div>
                             <div class="col-12">
                                 <div class="form-group mt-3">
+                                    <label>Blockchain:</label>
                                     <select name="blockchain" id="selectBlockchain">
                                         <option value="ethereum" <?php if($nft['blockchain'] == 'ethereum'){ ?> selected<?php } ?>>Ethereum</option>
                                         <option value="solana" <?php if($nft['blockchain'] == 'solana'){ ?> selected<?php } ?>>Solana</option>
@@ -124,6 +125,8 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
                             </div>
                             <div class="col-12">
                                 <div class="form-group mt-3">
+                                    <hr>
+                                    <label>Category:</label>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                                id="inlineRadio1" value="Fun" <?php if($nft['category'] == 'Fun'){ ?> checked<?php } ?>>
@@ -143,6 +146,7 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
                             </div>
 
                             <div class="col-12">
+                                <hr>
                                 <div class="form-group mt-3">
                                     <label>NFT public mint date:</label>
                                     <input type="datetime-local" style="'color:white;'" id="birthdaytime"
@@ -150,6 +154,7 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
                                 </div>
                             </div>
                             <div class="col-12">
+                                <hr>
                                 <div class="form-group">
                                     <label>Roadmap:</label>
                                     <textarea class="form-control" id='roadmap' name="roadmap" placeholder="2022 Q1: Creating NFTGenie coin to make things easier
@@ -162,24 +167,30 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
+                                <hr>
+                                <label>Mint Price:</label>
                                 <div class="form-group">
                                     <input type="number" class="form-control" id='mintPrice' name="mintPrice"
                                            placeholder="Mint Price (ETH)" step=".0001" value="<?php echo $nft['mintPrice']; ?>">
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
+                                <hr>
+                                <label>Royalty:</label>
                                 <div class="form-group">
                                     <input type="float" class="form-control" id='royality' name="royality"
                                            placeholder="Royalty fee (%)" value="<?php echo $nft['royality']; ?>" required="required">
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
+                                <label>Supply:</label>
                                 <div class="form-group">
                                     <input type="number" class="form-control" id='supply' name='supply'
                                            placeholder="NFT Supply (example 3333)" value="<?php echo $nft['supply']; ?>" required="required">
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
+                                <label>Team Size:</label>
                                 <div class="form-group">
                                     <input type="number" class="form-control" id='teamAmount' name="teamAmount"
                                            placeholder="Team size " value="<?php echo $nft['teamAmount']; ?>" required="required">
@@ -188,6 +199,7 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
 
                             <div class="col-12 col-md-6">
                                 <hr>
+                                <label>Twitter Name:</label>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id='twitterNameInput' name="twitterName"
                                            placeholder="Twitter username" value="<?php echo $nft['twitterName']; ?>" required="required">
@@ -195,12 +207,15 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
                             </div>
                             <div class="col-12 col-md-6">
                                 <hr>
+                                <label>Discord Invite Link:</label>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id='discordNameInput' name="discordLink"
                                            placeholder="Discord invite link" value="<?php echo $nft['discordLink']; ?>" required="required">
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
+                                <br>
+                                <label>Website Link:</label>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id='websiteLinkInput' name="websiteLink"
                                            placeholder="Website link" value="<?php echo $nft['websiteLink']; ?>" required="required">
@@ -209,6 +224,7 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
                             <input type="hidden" id='signature' name='signature' value=''>
                             <div class="col-12">
                                 <hr>
+                                <label>Email:</label>
                                 <div class="form-group mt-3">
                                     <input type="email" class="form-control" id='emailContact' name="emailContact"
                                            placeholder="Email (only for contact, nobody can see)" required="required" value="<?php echo $nft['emailContact']; ?>"
@@ -219,22 +235,23 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
                                             <input class="form-check-input" type="radio" name="promotionBox"
                                                    id="promotionBox2" value="promote2" checked>
                                             <label class="form-check-label" for="promotionBox2">Update drop + Hypednumber, followers, discord members check.
-                                                <strong id='listingPrice'> 0.0016ETH (4$)</strong></label>
+                                                <strong id='listingPrice'> 0.0016ETH </strong></label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-12">
-                                Make sure you pay with the SAME wallet so we can verify that it is you.
-                                <button class="btn w-100 mt-3 mt-sm-4" type="button" id="btn-connect">Update drop</button>
+                                <hr>
+                                <b>Make sure you pay with the SAME wallet so we can verify that it is you.</b>
+                                <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="button" id="btn-connect">Update Drop</button>
                             </div>
                             <div class="col-12">
                                 <br>
                                 <div class="alert alert-primary" role="alert" id='walletRequiredMessage'
                                      style='display:none;'>
                                     DM us on twitter and we will give you a ETH address to send the crypto's to :) click
-                                    <a href='https://twitter.com/NFTGenie' target="_blank">@NFTGenie </a>for our twitter
+                                    <a href='https://twitter.com/NFTGenie' target="_blank">@DropCalendarNFT </a>for our twitter
                                 </div>
                                 <div class="alert alert-danger" role="alert" id='declinedAlert' style='display:none;'>
                                     You rejected the transaction, why? you want to explode, right? We are here for you!

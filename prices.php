@@ -74,123 +74,6 @@ z-index: 999999;
   }
 }
 
-.img-fluid{
-        height:250px;
-    } 
-
-    .samples {
-	 display: flex;
-	 flex-wrap: wrap;
-	 max-width: 480px;
-}
-
- .ribbon {
-	 position: absolute;
-	 right: var(--right, 10px);
-	 top: var(--top, -3px);
-	 filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.5));
-}
- .ribbon > .content {
-	 color: white;
-	 font-size: 1.25rem;
-	 text-align: center;
-	 font-weight: 400;
-	 background: var(--color, #008AFF) linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.25) 100%);
-	 padding: 8px 2px 4px;
-	 clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%);
-	 width: var(--width, 32px);
-	 min-height: var(--height, 36px);
-	 transition: clip-path 1s, padding 1s, background 1s;
-}
- .ribbon.slant-up > .content {
-	 clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), 50% calc(100% - 6px), 0 100%);
-}
- .ribbon.slant-down > .content {
-	 clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 6px), 0 calc(100% - 12px));
-}
- .ribbon.down > .content {
-	 clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), 50% 100%, 0 calc(100% - 8px));
-}
- .ribbon.up > .content {
-	 clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 8px), 0 100%);
-}
- .ribbon.check > .content {
-	 clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), 40% 100%, 0 calc(100% - 12px));
-}
-
-                        /*SALE*/
-
- .ribbon-wrapper {
-	position: relative;
-	z-index:998;
-}
-  .ribbon-front {
-	background-color: #008AFF;	height: 50px;
-	width: 240px;
-	position: relative;
-	left:-10px;
-	z-index: 2; 
-	font:20px/50px bold nunito-sans, sans-serif; color:#f8f8f8; text-align:center;text-shadow: 0px 1px 2px #cc6666;
-}
-
-  .ribbon-front,
-  .ribbon-back-left,
-  .ribbon-back-right
-{
-	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
-	-khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
-	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
-	-o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
-}
-
-  .ribbon-edge-topleft,
-  .ribbon-edge-topright,
-  .ribbon-edge-bottomleft,
-  .ribbon-edge-bottomright {
-	position: absolute;
-	z-index: 1;
-	border-style:solid;
-	height:0px;
-	width:0px;
-}
-
-  .ribbon-edge-topleft,
-  .ribbon-edge-topright {
-}
-
-  .ribbon-edge-bottomleft,
-  .ribbon-edge-bottomright {
-	top: 50px;
-}
-
-  .ribbon-edge-topleft,
-  .ribbon-edge-bottomleft {
-	left: -10px;
-	border-color: transparent #008AFF transparent transparent;
-}
-
-  .ribbon-edge-topleft {
-	top: -5px;
-	border-width: 5px 10px 0 0;
-}
-  .ribbon-edge-bottomleft {
-	border-width: 0 10px 0px 0;
-}
-
-  .ribbon-edge-topright,
-  .ribbon-edge-bottomright {
-	left: 220px;
-	border-color: transparent transparent transparent #008AFF;
-}
-
-  .ribbon-edge-topright {
-	top: 0px;
-	border-width: 0px 0 0 10px;
-}
-  .ribbon-edge-bottomright {
-	border-width: 0 0 5px 10px;
-}
-
 
 @-webkit-keyframes flow {
 	0% { left:-20px;opacity: 0;}
@@ -258,23 +141,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
         </div>
     </div>
 <main>
-    <div class="my-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h2>Services</h2>
-        <div class="mt-4 md:flex text-base text-gray-light">
-            <div class="mr-8 mb-2 flex items-center">
-                <span class="mr-3">
-                    <img alt="Full support" src="https://nftsniper.net/images/support.svg">
-                </span>
-                Full support within 24 hours
-            </div>
-            <div class="flex mb-2 items-center">
-                <span class="mr-3">
-                    <img alt="Updates" src="https://nftsniper.net/images/refresh.svg">
-                </span>
-                Unlimited updates to your collection
-            </div>
+    <div class="services my-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2>Services</h2>
+    <div class="mt-4 md:flex text-base text-gray-light">
+        <div class="service mr-8 mb-2 flex items-center">
+            <span class="service-icon mr-3">
+                <img alt="Full support" src="https://nftsniper.net/images/support.svg">
+            </span>
+            <span class="service-description">Full support within 24 hours</span>
         </div>
-                    </div>
+        <div class="service flex mb-2 items-center">
+            <span class="service-icon mr-3">
+                <img alt="Updates" src="https://nftsniper.net/images/refresh.svg">
+            </span>
+            <span class="service-description">Unlimited updates to your collection</span>
+        </div>
+    </div>
+</div>
+
     <div class="pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center sm:text-left bg-gray rounded-md mb-16 py-8 sm:py-10 px-8 lg:px-16 flex flex-col sm:flex-row">
             <h3 class="sm:hidden text-center font-bold text-lg mb-5">List your collection</h3>
