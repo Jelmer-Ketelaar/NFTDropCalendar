@@ -9,8 +9,8 @@ $titleOg = $project['name'];
 $beschrijving = $project['description'];
 $img = 'http://localhost/NFT-Calander/package/documents/' . $project['thumbnail'];
 ?> <title><?php echo $project['name'] ?> | NFTDropCalendar</title> <?php
-require 'include/header.php';
-?>
+$paginanaam = 'Project';
+require 'include/header.php';?>
 
 <style>
    .img-fluid {

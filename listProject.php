@@ -2,6 +2,7 @@
 $seoTitle = 'NFTDropCalendar: List your own NFT Drop!';
 $seoDescription = 'List your own NFT Drop on our NFTDropCalendar! ✓ Free ✓ Best tool 2022 ✓ 235% Hype';
 $page = 'create';
+$paginanaam = 'List Project';
 require 'include/header.php'; ?>
 
 <style>
@@ -63,6 +64,10 @@ require 'include/header.php'; ?>
                                             <option value="solana">Solana</option>
                                             <option value="polygon">Polygon</option>
                                             <option value="cardano">Cardano</option>
+                                            <option value="avalanche">Avalanche</option>
+                                            <option value="binance">Binance</option>
+                                            <option value="elrond">Elrond</option>
+                                            <option value="arbitrum">Arbitrum</option>
                                         </select>
                                     </div>
                                 </div>

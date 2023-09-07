@@ -9,6 +9,7 @@ $titleOg = $project['name'];
 $beschrijving = $project['description'];
 $img = 'http://localhost/NFT-Calander/package/documents/' . $project['thumbnail'];
 ?> <title><?php echo $project['name'] ?> | NFTDropCalendar</title> <?php
+$paginanaam = 'NFT';
 require 'include/header.php';
 $dropTijd = strtotime(explode("T", $project['dropDate'])[0].' '.explode("T", $project['dropDate'])[1]);
 $nuTijd = strtotime(date('Y-m-d h:m:s'));
@@ -163,17 +164,17 @@ $nuTijd = strtotime(date('Y-m-d h:m:s'));
                                 <a class="d-block btn btn-bordered-white mt-4" target="_blank"
                                    href="https://twitter.com/<?php echo $project['twitterName']; ?>" data-dnt="true"
                                    data-show-count="false" style="color: gray">
-                                    <img src='img/extern_logo/twitter_logo.png' style='width:25px;'>
+                                    <img src='img/extern_logo/twitter_logo.png' alt="twitter_logo" style='width:25px;'>
                                     Follow <?php echo $project['twitterName']; ?></a>
                                 <a class="d-block btn btn-bordered mt-4" target="_blank"
                                    href="<?php echo $project['discordLink']; ?>" data-dnt="true"
                                    data-show-count="false" style="color: gray">
-                                    <img src='img/extern_logo/discord_logo.png' style='width:25px;'> Discord
+                                    <img src='img/extern_logo/discord_logo.png' alt="discord_logo" style='width:25px;'> Discord
                                     server</a>
                                  <a class="d-block btn btn-bordered mt-4" target="_blank"
                                    href="<?php echo $project['websiteLink']; ?>" data-dnt="true"
                                    data-show-count="false" style="color: gray">
-                                    <img src='img/extern_logo/link_icon.jpg' style='width:25px;'> Website
+                                    <img src='img/extern_logo/link_icon.jpg' alt="website_link" style='width:25px;'> Website
                                     Link</a>
                             </div>
                         </div>

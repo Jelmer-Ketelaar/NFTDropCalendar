@@ -2,6 +2,7 @@
 $seoTitle = 'NFTDropCalendar: Update your NFT';
 $seoDescription = 'Update your own NFT';
 $page = '';
+$paginanaam = 'Update';
 require 'include/header.php';
 require 'connection.php';
 
@@ -63,8 +64,8 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
                         <div class="card-caption col-12 p-0">
                             <!-- Card Body -->
                             <div class="card-body mt-4">
-                                <h5 class="mb-3" id='projectName'><?php echo $nft['name']; ?></h5>
-                                <p class="my-3" id='projectShortDes'><?php echo $nft['description']?></p>
+                                <h5 class="mb-3" id='projectNameInput'><?php echo $nft['name']; ?></h5>
+                                <p class="my-3" id='projectShortDesInput'><?php echo $nft['description']?></p>
                                 <hr>
                                 <div class="social-icons justify-content-center my-3" style='display:none;'
                                      id='socialBtn'>
@@ -235,7 +236,7 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
                                             <input class="form-check-input" type="radio" name="promotionBox"
                                                    id="promotionBox2" value="promote2" checked>
                                             <label class="form-check-label" for="promotionBox2">Update drop + Hypednumber, followers, discord members check.
-                                                <strong id='listingPrice'> 0.0016ETH </strong></label>
+                                                <strong id='listingPrice'> FREE </strong></label>
                                         </div>
                                     </div>
                                 </div>
@@ -244,7 +245,7 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
                             <div class="col-12">
                                 <hr>
                                 <b>Make sure you pay with the SAME wallet so we can verify that it is you.</b>
-                                <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="button" id="btn-connect">Update Drop</button>
+                                <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="submit" id="btn-connect">Update Drop</button>
                             </div>
                             <div class="col-12">
                                 <br>
@@ -384,7 +385,7 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
                                                 <input class="form-check-input" type="radio" name="promotionBox"
                                                        id="promotionBox2" value="promote2" checked>
                                                 <label class="form-check-label" for="promotionBox2">Update project + Hypednumber, followers, discord members check.
-                                                    <strong id='listingPrice'> 0.0016ETH (4$)</strong></label>
+                                                    <strong id='listingPrice'> FREE</strong></label>
                                             </div>
                                         </div>
                                     </div>
@@ -392,7 +393,7 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
 
                                 <div class="col-12">
                                     Make sure you pay with the SAME wallet so we can verify that it is you.
-                                    <button class="btn w-100 mt-3 mt-sm-4" type="button" id="btn-connectProj">Update project</button>
+                                    <button class="btn w-100 mt-3 mt-sm-4" type="submit" id="btn-connectProj">Update project</button>
                                 </div>
                                 <div class="col-12">
                                     <br>
@@ -501,6 +502,18 @@ if(!isset($_GET['drop']) && !isset($_GET['project'])){
 <?php if(!isset($_GET['drop']) && !isset($_GET['project'])){ ?>
 <script src='assets/js/updateWalletProj.js'></script>
 <?php } ?>
-<script src='assets/js/create.js'></script>
+<script src='.../js/create.js'></script>
+
+<script src="js/data.js"></script>
+
+
+<script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+
+<script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+<!--<script type="text/javascript" src="https://unpkg.com/evm-chains/lib/index.js"></script>-->
+<script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
+<script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
+<script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+<script src="js/wallet-check.js"></script>
 
 <?php require 'include/footer.php'; ?>

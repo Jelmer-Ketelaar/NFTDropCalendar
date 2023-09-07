@@ -7,7 +7,7 @@
                 <p>The best NFT Calendar tool of 2023! Get all information about a Project/Drop in one view.</p>
             </div>
             <a href="index.php">
-                <img src="logo.png" alt="" class="logo" style="height:40px">
+                <img src="logo.png" alt="logo" class="logo" style="height:40px">
             </a>
         </div>
     </div>

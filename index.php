@@ -1,9 +1,10 @@
 <?php
 require 'connection.php';
-require 'include/header.php';
+ $paginanaam = 'Home';
+        require "include/header.php";
 $seoTitle = 'NFTDropCalender: Explore all NFTs Drops';
 $seoDescription = 'Explore the verified NFT drops on NFTDropCalender, a pro view of that are NFTs about to drop! ✓ A new NFT calendar ';
-$page = 'Home Page';
+
 $max_loop = 0;
 $getProjects = $conn->prepare("SELECT * FROM projects WHERE verified = 'true' ORDER BY rand()");
         $getProjects->execute();
@@ -50,7 +51,7 @@ $getAllProjects = $conn->prepare("SELECT * FROM projectsExist WHERE verified = '
                     <div class="intro-slider">
                         <div class="slider-item">
                             <!--<img alt=""class="image-fluid rounded" id="image-fluid" style="height: 350px;" src="img/items/Nftdropcalendar.png">-->
-                            <img alt=""class="image-fluid rounded" id="image-fluid" style="height: 350px;" src="<?php echo ($banner['thumbnail']) ?>">
+                            <img alt="<?php echo $banner['name'] ?>" class="image-fluid rounded" id="image-fluid" style="height: 350px;" src="<?php echo ($banner['thumbnail']) ?>">
                             <!--<video height="350px" loop autoplay muted>-->
                             <!--  <source src="LetsMakeAChange.mp4" type="video/mp4">-->
                             <!--  Your browser does not support the video tag.-->
@@ -60,7 +61,7 @@ $getAllProjects = $conn->prepare("SELECT * FROM projectsExist WHERE verified = '
                             <!--<a href="nft.php?id=<?php echo base64_encode($banner['id']); ?>" target="_blank">-->
                             <div class="slider-item-avatar">
                                 <!--<img alt="" src="img/items/Nftdropcalendar.png">-->
-                                <img alt="" src="<?php echo ($banner['thumbnail']) ?>">
+                                <img alt="<?php echo $banner['name'] ?>" src="<?php echo ($banner['thumbnail']) ?>">
                                 <div>
                                     <!--<h5>Preview of Name. Get your project here for 0.1ETH</h5>-->
                                     <!--<h5>Frenchie Frens</h5>--> 
@@ -112,7 +113,7 @@ $getAllProjects = $conn->prepare("SELECT * FROM projectsExist WHERE verified = '
               15px 15px rgba(253, 156, 46, 0.3),
               20px 20px rgba(253, 156, 46, 0.2),
               25px 25px rgba(253, 156, 46, 0.1);">
-                            <img alt="" class="img-fluid card-img-top" src="<?php echo $project['thumbnail'] ?>">
+                            <img alt="<?php echo $project['name']?>" class="img-fluid card-img-top" src="<?php echo $project['thumbnail'] ?>">
                             <div class="sample">
                                 <div class="ribbon down" style="--color: #fd9c2e;">
                                     <div class="content">
@@ -150,11 +151,11 @@ $getAllProjects = $conn->prepare("SELECT * FROM projectsExist WHERE verified = '
                                 <p><?php echo mb_strimwidth($project['description'], 0, 80, "..."); ?> </p>
                                 <div class="card-bottom d-flex justify-content-between" >
                                                 <span><img src='img/extern_logo/twitter_logo.png'
-                                                           style='width:40px;'> <?php echo $project['twitterFollowerNumber']; ?></span>
+                                                           style='width:40px;' alt"twitter"> <?php echo $project['twitterFollowerNumber']; ?></span>
                                                 <span><img src='img/extern_logo/crypto/<?php echo $project['blockchain']; ?>.png'
-                                                           style='width:30px;'></span>
+                                                           style='width:30px;' alt"blockchain"></span>
                                                 <span><img src='img/extern_logo/discord_logo.png'
-                                                           style='width:35px;'> <?php echo $project['discordMemberNumber']; ?></span>
+                                                           style='width:35px;' alt"discord"> <?php echo $project['discordMemberNumber']; ?></span>
                                             </div>
                                 <a href="nft.php?id=<?php echo base64_encode($project['id']); ?>">Check this NFT</a>
                             </div>
@@ -186,7 +187,7 @@ $getAllProjects = $conn->prepare("SELECT * FROM projectsExist WHERE verified = '
               10px 10px rgba(253, 156, 46, 0.5),
               15px 15px rgba(253, 156, 46, 0.3),
               20px 20px rgba(253, 156, 46, 0.2),
-              25px 25px rgba(253, 156, 46, 0.1);"><strong style="position:absolute;color:white;margin:5px;text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;"><?php echo $projectExist['floorPrice'] ?></strong><img alt="" class="img-fluid card-img-top" src="<?php echo $projectExist['thumbnail'] ?>">
+              25px 25px rgba(253, 156, 46, 0.1);"><strong style="position:absolute;color:white;margin:5px;text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;"><?php echo $projectExist['floorPrice'] ?></strong><img alt="<?php echo $projectExist['name'] ?>" class="img-fluid card-img-top" src="<?php echo $projectExist['thumbnail'] ?>">
                         <div class="sample">
                             <div class="ribbon down" style="--color: #fd9c2e;">
                               <div class="content">
@@ -205,11 +206,11 @@ $getAllProjects = $conn->prepare("SELECT * FROM projectsExist WHERE verified = '
                                 <p><?php echo mb_strimwidth($projectExist['description'], 0, 80, "..."); ?> </p>
                                 <div class="card-bottom d-flex justify-content-between" >
                                                 <span><img src='img/extern_logo/twitter_logo.png'
-                                                           style='width:40px;'> <?php echo $projectExist['twitterFollowerNumber']; ?></span>
+                                                           style='width:40px;' alt"twitter"> <?php echo $projectExist['twitterFollowerNumber']; ?></span>
                                                 <span><img src='img/extern_logo/crypto/<?php echo $projectExist['blockchain']; ?>.png'
-                                                           style='width:30px;'></span>
+                                                           style='width:30px;' alt"blockchain"></span>
                                                 <span><img src='img/extern_logo/discord_logo.png'
-                                                           style='width:35px;'> <?php echo $projectExist['discordMemberNumber']; ?></span>
+                                                           style='width:35px;' alt"discord"> <?php echo $projectExist['discordMemberNumber']; ?></span>
                                             </div>
                                 <a href="project.php?id=<?php echo base64_encode($projectExist['id']); ?>">Check this NFT</a>
                             </div>
@@ -258,7 +259,7 @@ $getAllProjects = $conn->prepare("SELECT * FROM projectsExist WHERE verified = '
               25px 25px rgba(253, 156, 46, 0.1); ">
                                     <?php } else {?>
                                     <div class="card" style=" max-height: 700px; min-height: 500px; ">
-                                        <?php } ?><img alt="" class="img-fluid card-img-top" style="max-height: 256px; max-width: 256px; min-height: 256px; object-fit: cover;" src="<?php echo $project['thumbnail'] ?>">
+                                        <?php } ?><img alt="<?php echo $project['name'] ?>" class="img-fluid card-img-top" style="max-height: 256px; max-width: 256px; min-height: 256px; object-fit: cover;" src="<?php echo $project['thumbnail'] ?>">
                             <div class="card-body">
                                 <div class="notable-drops-content-img"></div>
                                  <div class="countdown-times mb-3">
@@ -287,11 +288,11 @@ $getAllProjects = $conn->prepare("SELECT * FROM projectsExist WHERE verified = '
                                 <p><?php echo mb_strimwidth($project['description'], 0, 80, "..."); ?> </p>
                                 <div class="card-bottom d-flex justify-content-between" >
                                                 <span><img src='img/extern_logo/twitter_logo.png'
-                                                           style='width:40px;'> <?php echo $project['twitterFollowerNumber']; ?></span>
+                                                           style='width:40px;' alt"twitter"> <?php echo $project['twitterFollowerNumber']; ?></span>
                                                 <span><img src='img/extern_logo/crypto/<?php echo $project['blockchain']; ?>.png'
-                                                           style='width:30px;'></span>
+                                                           style='width:30px;' alt"blockchain"></span>
                                                 <span><img src='img/extern_logo/discord_logo.png'
-                                                           style='width:35px;'> <?php echo $project['discordMemberNumber']; ?></span>
+                                                           style='width:35px;' alt"discord"> <?php echo $project['discordMemberNumber']; ?></span>
                                             </div>
                                 <a href="nft.php?id=<?php echo base64_encode($project['id']); ?>">Check this NFT</a>
                             </div>

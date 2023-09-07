@@ -2,6 +2,7 @@
 $seoTitle = 'NFTDropCalendar is an event calendar for the growing NFT industry!';
 $seoDescription = 'List here your own NFT drop on our NFT Calendar!';
 $page = 'create';
+$paginanaam = 'List Drop';
 require 'include/header.php'; ?>
 
 <style>
@@ -64,6 +65,10 @@ require 'include/header.php'; ?>
                                             <option value="polygon">Polygon</option>
                                             <option value="cardano">Cardano</option>
                                             <option value="avalanche">Avalanche</option>
+                                            <option value="binance">Binance</option>
+                                            <option value="elrond">Elrond</option>
+                                            <option value="arbitrum">Arbitrum</option>
+                                            <option value="venom">Venom Foundation</option>
                                         </select>
                                     </div>
                                 </div>
@@ -273,11 +278,11 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                 </div>
                                 <div class="alert alert-danger" role="alert" id="declinedAlert"
                                      style="display:none;">
-                                    You rejected the transaction, why? you want to explode, right? We are here for
+                                    You rejected the transaction, why? You want to explode, right? We are here for
                                     you!
                                 </div>
                                 <div class="alert alert-danger" role="alert" id="emptyAlert" style="display:none;">
-                                    You rejected the transaction, why? you want to explode, right? We are here for
+                                    You rejected the transaction, why? You want to explode, right? We are here for
                                     you!
                                 </div>
                             </div>

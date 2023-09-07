@@ -2,6 +2,7 @@
 $seoTitle = 'NFTDropCalendar is an event calendar for the growing NFT industry!';
 $seoDescription = 'List here your own NFT drop on our NFT Calendar!';
 $page = 'create'; 
+$paginanaam = 'List Drop';
 require 'include/header.php'; 
 ?>
 
@@ -65,6 +66,9 @@ require 'include/header.php';
                                             <option value="polygon">Polygon</option>
                                             <option value="cardano">Cardano</option>
                                             <option value="avalanche">Avalanche</option>
+                                            <option value="binance">Binance</option>
+                                            <option value="elrond">Elrond</option>
+                                            <option value="arbitrum">Arbitrum</option>
                                         </select>
                                 </div>
                             </div>
@@ -293,7 +297,7 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                      style="display:none;">
                                     DM us on twitter and we will give you a SOL address to send the crypto's to :)
                                     click
-                                    <a href="https://twitter.com/Calendar__NFT" target="_blank">@Calendar__NFT </a>for our
+                                    <a href="https://twitter.com/DropCalendarNFT" target="_blank">@DropCalendarNFT </a>for our
                                     twitter
                                 </div>
                                 <div class="alert alert-danger" role="alert" id="declinedAlert"

@@ -3,7 +3,8 @@
     $seoDescription = 'Explore the verified NFT projects on NFTDropCalender, a view of NFTs that already drop! ✓ All-in-one NFT Tool ✓ Growing NFT Tool 2022';
     $page = 'explore';
     require 'connection.php';
-    require 'include/header.php';
+     $paginanaam = 'Explore Projects';
+        require "include/header.php";
     
     $getProjects = $conn->prepare("SELECT * FROM projectsExist WHERE verified = 'true'");
             $getProjects->execute();

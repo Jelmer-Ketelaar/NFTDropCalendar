@@ -5,7 +5,9 @@
   <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
-  <?php include "include/header.php" ?>
+  <?php $paginanaam = 'Contact';
+        include "include/header.php";
+  ?>
   <div class="cont">
     <h2>Write Us</h2>
     <form method="POST" action="contactMail.php">

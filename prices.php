@@ -3,22 +3,25 @@
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FJPCNBEZWN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJPCNBEZWN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-  gtag('config', 'G-FJPCNBEZWN');
-</script>
+        gtag('config', 'G-FJPCNBEZWN');
+    </script>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>NFTDropCalendar</title>
-    <meta content="Discover extraordinary NFTs">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <?php $paginanaam = 'Prices'; ?>
+    <title>NFTDropCalendar | <?php echo $paginanaam ?></title>
+    <meta name="description" content="Check the latest prices of NFTs on our live NFT drop calendar. Stay updated with the current market prices and trends of NFTs from various platforms.">
 
-<!-- Favicon icon -->
-    <link href"favicon.ico" rel="icon" sizes="16x16" type="image/png">
+    <!-- Favicon icon -->
+    <link href="favicon.ico" rel="icon" sizes="16x16" type="image/png">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/banner.css" rel="stylesheet">
     <link href="preloader.css" rel="stylesheet">
@@ -26,77 +29,6 @@
 </head>
 
 <body class="@@dasboard dark-theme">
-    
-<!--<!--CSS Spinner-->
-<!--<div class="spinner-wrapper">-->
-<!--<div class="spinner"></div>-->
-<!--</div>-->
-
-<style>
-    .spinner-wrapper {
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: #ff6347;
-z-index: 999999;
-}
-
-.spinner {
-  width: 100px;
-  height: 100px;
-  background-color: #ffffff;
-
-    position: absolute;
-    top: 48%;
-    left: 48%;
-  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
-  animation: sk-rotateplane 1.2s infinite ease-in-out;
-}
-
-@-webkit-keyframes sk-rotateplane {
-  0% { -webkit-transform: perspective(120px) }
-  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
-}
-
-@keyframes sk-rotateplane {
-  0% { 
-    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
-  } 50% { 
-    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
-  } 100% { 
-    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-  }
-}
-
-
-@-webkit-keyframes flow {
-	0% { left:-20px;opacity: 0;}
-	50% {left:100px;opacity: 0.3;}
-    100%{ left:180px;opacity: 0;}
-}
-@keyframes flow {
-	0% { left:-20px;opacity: 0;}
-	50% {left:100px;opacity: 0.3;}
-    100%{ left:180px;opacity: 0;}
-}
-
-.glow{ background: rgb(255,255,255); width:40px; height:100%; z-index:999; position:absolute;-webkit-animation: flow 1.5s linear infinite;-moz-animation: flow 1.5s linear infinite;-webkit-transform: skew(20deg);
-	   -moz-transform: skew(20deg);
-	     -o-transform: skew(20deg);background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 1%, rgba(255,255,255,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(1%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 100%); /* IE10+ */
-background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */ border-left:1px solid #fff;}
-</style>
-
 
 <div class="front" id="main-wrapper">
 
@@ -111,85 +43,77 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
                                     <img src="logo.png" alt="" class="logo" style="height:40px">
                                 </a>
                             </div>
-                            <div>   
-                            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" style="position: relative; right: 0;">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
+                            <div>
+                                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" style="position: relative; right: 0;">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
                             </div>
-                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto">
-                                    <!--<li style="display: none;" class="nav-item"><a class="nav-link" style="display: none;" href="listProject.php">List Project</a></li>-->
-                                    <!--<li style="display: none;" class="nav-item"><a class="nav-link" style="display: none;" href="listDrop.php">List Drop</a></li>   -->
                                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="exploreDrops.php">Drops </a></li>
+                                    <li class="nav-item"><a class="nav-link" href="exploreDrops.php">Drops</a></li>
                                     <li class="nav-item"><a class="nav-link" href="exploreProject.php">Projects</a></li>
-                                     <!--<li class="nav-item"><a class="nav-link" style="width: 165px;" href="update.php">Update your project</a></li>-->
                                     <li class="nav-item"><a class="nav-link" style="width: 100px;" href="prices.php">Our Prices</a></li>
                                     <li class="nav-item"><a class="nav-link" href="faq.php">FAQ</a></li>
                                     <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
-                                    <!--<li> <a class="btn btn-primary" id="project" href="listProject.php">List Project</a></li>-->
-                                    <!--<li> <a class="btn btn-primary" id="drop" href="listDrop.php">List Drop</a></li>-->
-                                    </ul>
+                                </ul>
                             </div>
-                            <!--<a class="btn btn-primary" style="margin-right: 10px;" id="project" href="listProject.php">List Project</a>-->
-                            <!--<a class="btn btn-primary" id="drop" href="listDrop.php">List Drop</a>-->
                         </nav>
-                    
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
     </div>
+
 <main>
     <div class="services my-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2>Services</h2>
-    <div class="mt-4 md:flex text-base text-gray-light">
-        <div class="service mr-8 mb-2 flex items-center">
-            <span class="service-icon mr-3">
-                <img alt="Full support" src="https://nftsniper.net/images/support.svg">
-            </span>
-            <span class="service-description">Full support within 24 hours</span>
-        </div>
-        <div class="service flex mb-2 items-center">
-            <span class="service-icon mr-3">
-                <img alt="Updates" src="https://nftsniper.net/images/refresh.svg">
-            </span>
-            <span class="service-description">Unlimited updates to your collection</span>
+        <h2>NFTDropCalendar Advertisement Options</h2>
+        <div class="mt-4 md:flex text-base text-gray-light">
+            <div class="service mr-8 mb-2 flex items-center">
+                <span class="service-icon mr-3">
+                    <img alt="Full support" src="https://nftsniper.net/images/support.svg">
+                </span>
+                <span class="service-description">Get 24/7 Full Support Within 24 Hours</span>
+            </div>
+            <div class="service flex mb-2 items-center">
+                <span class="service-icon mr-3">
+                    <img alt="Updates" src="https://nftsniper.net/images/refresh.svg">
+                </span>
+                <span class="service-description">Enjoy Unlimited Updates for Your Collection</span>
+            </div>
         </div>
     </div>
-</div>
 
     <div class="pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center sm:text-left bg-gray rounded-md mb-16 py-8 sm:py-10 px-8 lg:px-16 flex flex-col sm:flex-row">
-            <h3 class="sm:hidden text-center font-bold text-lg mb-5">List your collection</h3>
+            <h3 class="sm:hidden text-center font-bold text-lg mb-5">List Your NFT Collection</h3>
             <div class="sm:mr-12 mb-5 sm:min-w-[7rem] lg:min-w-[9rem] flex justify-center">
                 <img class="md:w-full" alt="List your collection" src="https://nftsniper.net/images/planet.svg">
             </div>
             <div>
-                <h3 class="hidden sm:block font-bold text-xl mb-5">List your collection</h3>
+                <h3 class="hidden sm:block font-bold text-xl mb-5">List Your NFT Collection</h3>
                 <p class="paragraph">
-                    Get an informative page of your project on NFTDropCalendar. The page includes all the info you've filled in about the
-                    project.
+                    Showcase your project on NFTDropCalendar with all the essential information.
                 </p>
                 <p class="paragraph mb-6">
-                    We approve (or decline) your project within 12 hours after submission.
+                    We review your project within 12 hours of submission.
                 </p>
                 <p class="items-center flex flex-col sm:flex-row">
                     <span class="text-gray-light text-base sm:text-lg mb-4 sm:mb-0">
-                        Price: <span class="text-white font-bold text-2xl uppercase mr-8">0.002 ETH / 0.059 SOL</span>
+                        Price: <span class="text-white font-bold text-2xl uppercase mr-8">FREE</span>
                     </span>
-                    <a href="listDrop.php" class="btn btn-primary">
-                        List drop
+                    <a href="listDropFree" class="btn btn-primary">
+                        List Your Drop
                     </a>
-                    <a href="listProject.php" class="btn btn-primary">
-                        List project
+                    <a href="listProjectFree" class="btn btn-primary">
+                        List Your Project
                     </a>
                 </p>
             </div>
         </div>
 
         <!-- Advertisement Options -->
-        <h3 class="font-bold text-xl mb-5">Advertisement Options</h3>
+        <h3 class="font-bold text-xl mb-5">Explore Our Advertisement Options</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mb-16 gap-5 sm:gap-10">
             <div class="text-center sm:text-left bg-gray rounded-md py-8 sm:py-10 px-8 lg:px-10 flex flex-col">
                 <div class="h-16 mb-6 flex justify-center">
@@ -198,15 +122,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
                 <div class="text-center flex flex-col md:flex-grow">
                     <h3 class="hidden sm:block font-bold text-xl mb-1">Promoted Spot</h3>
                     <p class="paragraph mb-6">
-                        Receive a coloured border and a spot in the promoted section: the first section people will see
-                        when visiting NFTDropCalendar.
+                        Get noticed with a colored border and prime position in the promoted section.
                     </p>
                     <p class="mt-auto">
                         <span class="text-4xl font-bold">
-                            0.04ETH
-                        </span>
-                        <span class="font-bold">
-                            / week
+                            0.1 ETH
                         </span>
                     </p>
                 </div>
@@ -219,14 +139,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
                 <div class="text-center flex flex-col md:flex-grow">
                     <h3 class="hidden sm:block font-bold text-xl mb-1">Banner Ad</h3>
                     <p class="paragraph mb-6">
-                        A banner shown on the homepage of NFTDropCalendar. This will gain 400% more hype for your project
+                        Maximize visibility on the homepage with a banner, skyrocketing your project's hype.
                     </p>
                     <p class="mt-auto">
                         <span class="text-4xl font-bold">
-                            0.08ETH
-                        </span>
-                        <span class="font-bold">
-                            / week
+                            0.5 ETH
                         </span>
                     </p>
                 </div>
@@ -234,26 +151,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
             <div class="text-center sm:text-left bg-gray rounded-md py-8 sm:py-10 px-8 lg:px-10 flex flex-col">
                 <h3 class="sm:hidden text-center font-bold text-lg mb-5">Thumbnail Ad</h3>
                 <div class="h-16 mb-6 flex justify-center">
-                    <img class="h-full" alt="Banner Ad" src="thumbnail-icon.png" style="border-radius: 30%;">
+                    <img class="h-full" alt="Thumbnail Ad" src="thumbnail-icon.png" style="border-radius: 30%;">
                 </div>
                 <div class="text-center flex flex-col md:flex-grow">
                     <h3 class="hidden sm:block font-bold text-xl mb-1">Thumbnail Ad</h3>
                     <p class="paragraph mb-6">
-                        A thumbnail shown on the homepage of NFTDropCalendar. This will gain 450% more hype for your project
+                        Showcase your project's essence with a thumbnail on the homepage.
                     </p>
                     <p class="mt-auto">
                         <span class="text-4xl font-bold">
-                            0.1ETH
-                        </span>
-                        <span class="font-bold">
-                            / week
+                            2 ETH
                         </span>
                     </p>
                 </div>
             </div>
-        <!-- Advertising Plans for Upcoming Collections -->
+        </div>
     </div>
 </main>
+</body>
+</html>
+
 <style>.grecaptcha-badge {
     visibility: hidden !important
 }

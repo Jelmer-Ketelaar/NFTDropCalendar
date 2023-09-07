@@ -1,11 +1,12 @@
-#Rewrite everything to https
+# Rewrite everything to https
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-RewriteEngine On
+# Rewrite URLs to remove .php and .html extensions
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
-# RewriteRule ^(.*)$ $1.php
+# Rewrite /nft/{name of the project} to the appropriate PHP file
+RewriteRule ^nft/([^/]+)$ nft.php?name=$1 [L]

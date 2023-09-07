@@ -14,5 +14,5 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
 } catch (PDOException $e) {
-    echo "Please contact the makers of this website with is error: " . $e->getMessage();
+    echo "Please contact the makers of this website with this error: " . $e->getMessage();
 }
