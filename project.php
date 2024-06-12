@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 require 'projectGetInfo.php';
 
@@ -18,8 +20,29 @@ require 'include/header.php';?>
     max-height: 400px;
     width: auto;
 }
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+
+.alert.warning {
+    background-color: #ff9800;
+    width: 50%;
+}
 </style>
 <div class="item-single section-padding">
+    <?php if($project['verified'] == 'false') { ?>
+<center>
+<div class="alert warning">
+  <strong>Alert!</strong><br> Your project is private for now. We still need investigate everything and manually fill in some data before your project is public. We will do the investigation as soon as possible! (This will not take long)
+</div>
+</center>
+<?php } ?>
     <div class="container">
         <div class="row">
             <div class="col-xxl-12">
@@ -43,8 +66,11 @@ require 'include/header.php';?>
                                                     ><?php echo $project['supply'];?></strong></h4>
                                     </li>
                                     <li class="price d-flex justify-content-between">
-                                        <h4 style="color: #adacad;">Marketplace Link: <strong class="text-primary"
-                                                    ><?php echo $project['marketplaceLink'];?></strong></h4>
+                                        <h4 style="color: #adacad;">Marketplace Link:
+                                            <strong class="text-primary">
+                                                <a href="<?php echo $project['marketplaceLink']; ?>">Visit Marketplace</a>
+                                            </strong>
+                                        </h4>
                                     </li>
                                     <li class="price d-flex justify-content-between">
                                         <h4 style="color: #adacad;">Total Traits: <strong class="text-primary">
@@ -59,11 +85,11 @@ require 'include/header.php';?>
                                 <div class="row items">
                                     <div class="col-12 item px-lg-2">
                                         <h4 class="mt-0 mb-2" style="color: #adacad;">Description:</h4>
-                                        <div class="price d-flex justify-content-between align-items-center"> 
+                                        <div class="price d-flex justify-content-between align-items-center">
                                             <?php echo nl2br($project['description']); ?>
                                         </div>
                                 </div>
-                            
+
                                 <div class='row items'>
                                 <hr>
                                     <div class="col-12 item px-lg-2">
@@ -74,7 +100,7 @@ require 'include/header.php';?>
                                             </div>
                                         </div>
                                     </div>
-                                
+
                                     <div class="row items">
                                     <div class="col-4 item px-lg-2">
                                         <div class="card no-hover">
@@ -101,7 +127,7 @@ require 'include/header.php';?>
                                         </div>
                                     </div>
                                 </div>
-                                
+
 
                                 <a class="d-block btn btn-bordered-white mt-4" target="_blank"
                                    href="https://twitter.com/<?php echo $project['twitterName']; ?>" data-dnt="true"
@@ -119,6 +145,7 @@ require 'include/header.php';?>
                                     <img src='img/extern_logo/link_icon.jpg' style='width:25px;'> Website
                                     Link</a>
                                     <div class="section-padding"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -127,19 +154,12 @@ require 'include/header.php';?>
         </div>
     </div>
 </div>
-</div>
-
 
 <?php include "include/footer.php" ?>
 
-
 <script src="./vendor/jquery/jquery.min.js"></script>
 <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
 <script src="./js/scripts.js"></script>
 
-
 </body>
-
 </html>

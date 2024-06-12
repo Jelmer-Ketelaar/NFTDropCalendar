@@ -137,7 +137,7 @@ $nuTijd = strtotime(date('Y-m-d h:m:s'));
                                 <div class="row items">
                                     <div class="col-4 item px-lg-2">
                                         <div class="card no-hover">
-                                            <h4 class="mt-0 mb-2">Royality:</h4>
+                                            <h4 class="mt-0 mb-2">Royalty:</h4>
                                             <div class="price d-flex justify-content-between align-items-center">
                                                 <?php echo $project['royality']; ?>%
                                             </div>

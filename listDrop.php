@@ -318,38 +318,8 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                 </div>
                             
                             <div class="mt-3">
-                                <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="button" id="btn-connect">List Drop</button>
-                   <!--     <script>} else {</script>-->
-                   <!--     <div class="mt-3">-->
-                   <!--             <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="submit" id="btn-connect">List-->
-                   <!--                 project-->
-                   <!--             </button>-->
-                   <!--             <script>}</script>-->
-                   <!--</div>-->
-                            
-                            
-                            <!--<script>if (document.getElementById('promotionBox2').checked) { </script>-->
-                            
-                            <!--<div class="mt-3">-->
-                            <!--    <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="submit" id="btn-connect">List-->
-                            <!--        project-->
-                            <!--    </button>-->
-                            <!--</div>-->
-                            
-                            <!--<div class="mt-3">-->
-                            <!--    <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="button" id="btn-connect" style="display: none;">List-->
-                            <!--        project-->
-                            <!--    </button>-->
-                            <!--</div>-->
-                            <!--<script>}</script> -->
-                            
-                        
-                            
-
-                            <!--</div>-->
-                            <!--<button type="submit" class="btn btn-primary mr-2 w-100">Submit free</button>-->
-                        </form>
-                    </div>
+                                <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="button" id="btn-connect">List drop</button>
+                            </div>
                 </div>
             </div>
             <div class="col-xxl-4 col-xl-4 col-lg-6">

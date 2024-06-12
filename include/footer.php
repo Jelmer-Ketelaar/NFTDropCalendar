@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-xl-4 col-lg-4 col-md-7 col-sm-8">
             <div class="bottom-logo">
-                <p>The best NFT Calendar tool of 2023! Get all information about a Project/Drop in one view.</p>
+                <p>The best NFT Calendar tool of all time! Get all information about a Project/Drop in one view.</p>
             </div>
             <a href="index.php">
                 <img src="logo.png" alt="logo" class="logo" style="height:40px">
@@ -46,10 +46,11 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="copyright">
-                    <p>&copy; Copyright 2023 NFTDropCalendar. All Rights Reserved.</p>
+                    <p>&copy; Copyright 2024 NFTDropCalendar. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
+        <br>
     </div>
 </div>
 
