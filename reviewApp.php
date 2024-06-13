@@ -1,32 +1,44 @@
 <?php 
 require 'connection.php';
 ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-if(isset($_GET['ww']) && $_GET['ww'] == 'Test'){
-    $getProjects = $conn->prepare("SELECT * FROM projects WHERE verified = 'false'");
-    $getProjects->execute();
-    $projects = $getProjects->fetchAll(\PDO::FETCH_ASSOC);
-
-    $getProjectsLis = $conn->prepare("SELECT * FROM projectsExist WHERE verified = 'false'");
-    $getProjectsLis->execute();
-    $projectsListed = $getProjectsLis->fetchAll(\PDO::FETCH_ASSOC);
-    
-    $getupdate = $conn->prepare("SELECT * FROM projects WHERE updateStatus != ''");
-    $getupdate->execute();
-    $update = $getupdate->fetchAll(\PDO::FETCH_ASSOC);
-    
-    $getupdate2 = $conn->prepare("SELECT * FROM projectsExist WHERE updateStatus != ''");
-    $getupdate2->execute();
-    $update2 = $getupdate2->fetchAll(\PDO::FETCH_ASSOC);
-
-    
-} else {
-    die();
+// Redirect unauthorized access
+if (!isset($_GET['ww']) || $_GET['ww'] !== 'Test') {
+    header('HTTP/1.0 403 Forbidden');
+    die('Access denied');
 }
 
+// Fetching projects
+function fetchProjects($conn, $condition) {
+    $stmt = $conn->prepare("SELECT * FROM projects WHERE $condition");
+    try {
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        error_log($e->getMessage());
+        return [];
+    }
+}
+
+// Fetching projects from projectsExist table
+function fetchProjectsExist($conn, $condition) {
+    $stmt = $conn->prepare("SELECT * FROM projectsExist WHERE $condition");
+    try {
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        error_log($e->getMessage());
+        return [];
+    }
+}
+
+$projects = fetchProjects($conn, "verified = 'false'");
+$projectsListed = fetchProjectsExist($conn, "verified = 'false'");
+$update = fetchProjects($conn, "updateStatus != ''");
+$update2 = fetchProjectsExist($conn, "updateStatus != ''");
 ?>
+
         <html>
         <head>
             <meta name="robots" content="noindex">
@@ -56,7 +68,7 @@ if(isset($_GET['ww']) && $_GET['ww'] == 'Test'){
                 </div>
                 <div class="row items">
                     <div class="col-12 col-md-12 col-lg-12">
-                        <!-- Netstorm Tab -->
+                         <!--Netstorm Tab -->
                         <ul class="netstorm-tab nav nav-tabs" id="nav-tab">
                             <li>
                                 <a class="active" id="nav-home-tab" data-toggle="pill" href="#nav-home">
@@ -218,7 +230,7 @@ if(isset($_GET['ww']) && $_GET['ww'] == 'Test'){
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                         Intro 
+                         <!--Intro -->
                         <div class="intro mb-4">
                             <div class="intro-content">
                                 <span>Update drop/project</span>
@@ -229,7 +241,7 @@ if(isset($_GET['ww']) && $_GET['ww'] == 'Test'){
                 </div>
                 <div class="row items">
                     <div class="col-12 col-md-12 col-lg-12">
-                         Netstorm Tab 
+                         <!--Netstorm Tab -->
                         <ul class="netstorm-tab nav nav-tabs" id="nav-tab">
                             <li>
                                 <a class="active" id="nav-home-tab" data-toggle="pill" href="#nav-home">
@@ -237,7 +249,7 @@ if(isset($_GET['ww']) && $_GET['ww'] == 'Test'){
                                 </a>
                             </li>
                         </ul>
-                         Tab Content 
+                         <!--Tab Content -->
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home">
                                 <ul class="list-unstyled">
@@ -353,6 +365,6 @@ if(isset($_GET['ww']) && $_GET['ww'] == 'Test'){
                 </div>
             </div>
         </section>
-         ***** Activity Area End ***** 
+         <!--***** Activity Area End ***** -->
     </body>
     </html>

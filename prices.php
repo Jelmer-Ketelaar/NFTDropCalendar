@@ -2,174 +2,121 @@
 <html lang="en">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJPCNBEZWN"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-FJPCNBEZWN');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php $paginanaam = 'Prices'; ?>
-    <title>NFTDropCalendar | <?php echo $paginanaam ?></title>
+    <title>NFT Drop Calendar | <?php echo $paginanaam; ?></title>
     <meta name="description" content="Check the latest prices of NFTs on our live NFT drop calendar. Stay updated with the current market prices and trends of NFTs from various platforms.">
-
-    <!-- Favicon icon -->
-    <link href="favicon.ico" rel="icon" sizes="16x16" type="image/png">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/banner.css" rel="stylesheet">
-    <link href="preloader.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    
+    <!-- Including the header file to avoid repetition -->
+    <?php include "include/header.php"; ?>
 </head>
 
-<body class="@@dasboard dark-theme">
-
-<div class="front" id="main-wrapper">
-
-    <div class="header landing" style="z-index: 1000;">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="navigation">
-                        <nav class="navbar navbar-expand-lg navbar-dark">
-                            <div class="brand-logo">
-                                <a href="index.php">
-                                    <img src="logo.png" alt="" class="logo" style="height:40px">
-                                </a>
-                            </div>
-                            <div>
-                                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" style="position: relative; right: 0;">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                            </div>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto">
-                                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="exploreDrops.php">Drops</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="exploreProject.php">Projects</a></li>
-                                    <li class="nav-item"><a class="nav-link" style="width: 100px;" href="prices.php">Our Prices</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="faq.php">FAQ</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
-                                </ul>
-                            </div>
-                        </nav>
+<body class="@@dashboard dark-theme">
+    <div class="front" id="main-wrapper">
+        <main>
+            <div class="services my-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2>NFT Drop Calendar Advertisement Options</h2>
+                <div class="mt-4 md:flex text-base text-gray-light">
+                    <div class="service mr-8 mb-2 flex items-center">
+                        <span class="service-icon mr-3">
+                            <img alt="Full support" src="https://nftsniper.net/images/support.svg">
+                        </span>
+                        <span class="service-description">Get 24/7 Full Support Within 24 Hours</span>
+                    </div>
+                    <div class="service flex mb-2 items-center">
+                        <span class="service-icon mr-3">
+                            <img alt="Updates" src="https://nftsniper.net/images/refresh.svg">
+                        </span>
+                        <span class="service-description">Enjoy Unlimited Updates for Your Collection</span>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center sm:text-left bg-gray rounded-md mb-16 py-8 sm:py-10 px-8 lg:px-16 flex flex-col sm:flex-row">
+                    <h3 class="sm:hidden text-center font-bold text-lg mb-5">List Your NFT Collection</h3>
+                    <div class="sm:mr-12 mb-5 sm:min-w-[7rem] lg:min-w-[9rem] flex justify-center">
+                        <img class="md:w-full" alt="List your collection" src="https://nftsniper.net/images/planet.svg">
+                    </div>
+                    <div>
+                        <h3 class="hidden sm:block font-bold text-xl mb-5">List Your NFT Collection</h3>
+                        <p class="paragraph">
+                            Showcase your project on NFT Drop Calendar with all the essential information.
+                        </p>
+                        <p class="paragraph mb-6">
+                            We review your project within 12 hours of submission.
+                        </p>
+                        <p class="items-center flex flex-col sm:flex-row">
+                            <span class="text-gray-light text-base sm:text-lg mb-4 sm:mb-0">
+                                Price: <span class="text-white font-bold text-2xl uppercase mr-8">FREE</span>
+                            </span>
+                            <a href="listDrop" class="btn btn-primary">
+                                List Your Drop
+                            </a>
+                            <a href="listProject" class="btn btn-primary">
+                                List Your Project
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Advertisement Options -->
+                <h3 class="font-bold text-xl mb-5">Explore Our Advertisement Options</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mb-16 gap-5 sm:gap-10">
+                    <div class="text-center sm:text-left bg-gray rounded-md py-8 sm:py-10 px-8 lg:px-10 flex flex-col">
+                        <div class="h-16 mb-6 flex justify-center">
+                            <img class="h-full" alt="Promoted Spot" src="promo.png">
+                        </div>
+                        <div class="text-center flex flex-col md:flex-grow">
+                            <h3 class="hidden sm:block font-bold text-xl mb-1">Promoted Spot</h3>
+                            <p class="paragraph mb-6">
+                                Get noticed with a colored border and prime position in the promoted section.
+                            </p>
+                            <p class="mt-auto">
+                                <span class="text-4xl font-bold">
+                                    0.04ETH
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-center sm:text-left bg-gray rounded-md py-8 sm:py-10 px-8 lg:px-10 flex flex-col">
+                        <h3 class="sm:hidden text-center font-bold text-lg mb-5">Banner Ad</h3>
+                        <div class="h-16 mb-6 flex justify-center">
+                            <img class="h-full" alt="Banner Ad" src="banner-icon.png" style="border-radius: 30%;">
+                        </div>
+                        <div class="text-center flex flex-col md:flex-grow">
+                            <h3 class="hidden sm:block font-bold text-xl mb-1">Banner Ad</h3>
+                            <p class="paragraph mb-6">
+                                Maximize visibility on the homepage with a banner, skyrocketing your project's hype.
+                            </p>
+                            <p class="mt-auto">
+                                <span class="text-4xl font-bold">
+                                    0.08ETH
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-center sm:text-left bg-gray rounded-md py-8 sm:py-10 px-8 lg:px-10 flex flex-col">
+                        <h3 class="sm:hidden text-center font-bold text-lg mb-5">Thumbnail Ad</h3>
+                        <div class="h-16 mb-6 flex justify-center">
+                            <img class="h-full" alt="Thumbnail Ad" src="thumbnail-icon.png" style="border-radius: 30%;">
+                        </div>
+                        <div class="text-center flex flex-col md:flex-grow">
+                            <h3 class="hidden sm:block font-bold text-xl mb-1">Thumbnail Ad</h3>
+                            <p class="paragraph mb-6">
+                                Showcase your project's essence with a thumbnail on the homepage.
+                            </p>
+                            <p class="mt-auto">
+                                <span class="text-4xl font-bold">
+                                    0.1ETH
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
 
-<main>
-    <div class="services my-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2>NFTDropCalendar Advertisement Options</h2>
-        <div class="mt-4 md:flex text-base text-gray-light">
-            <div class="service mr-8 mb-2 flex items-center">
-                <span class="service-icon mr-3">
-                    <img alt="Full support" src="https://nftsniper.net/images/support.svg">
-                </span>
-                <span class="service-description">Get 24/7 Full Support Within 24 Hours</span>
-            </div>
-            <div class="service flex mb-2 items-center">
-                <span class="service-icon mr-3">
-                    <img alt="Updates" src="https://nftsniper.net/images/refresh.svg">
-                </span>
-                <span class="service-description">Enjoy Unlimited Updates for Your Collection</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center sm:text-left bg-gray rounded-md mb-16 py-8 sm:py-10 px-8 lg:px-16 flex flex-col sm:flex-row">
-            <h3 class="sm:hidden text-center font-bold text-lg mb-5">List Your NFT Collection</h3>
-            <div class="sm:mr-12 mb-5 sm:min-w-[7rem] lg:min-w-[9rem] flex justify-center">
-                <img class="md:w-full" alt="List your collection" src="https://nftsniper.net/images/planet.svg">
-            </div>
-            <div>
-                <h3 class="hidden sm:block font-bold text-xl mb-5">List Your NFT Collection</h3>
-                <p class="paragraph">
-                    Showcase your project on NFTDropCalendar with all the essential information.
-                </p>
-                <p class="paragraph mb-6">
-                    We review your project within 12 hours of submission.
-                </p>
-                <p class="items-center flex flex-col sm:flex-row">
-                    <span class="text-gray-light text-base sm:text-lg mb-4 sm:mb-0">
-                        Price: <span class="text-white font-bold text-2xl uppercase mr-8">FREE</span>
-                    </span>
-                    <a href="listDropFree" class="btn btn-primary">
-                        List Your Drop
-                    </a>
-                    <a href="listProjectFree" class="btn btn-primary">
-                        List Your Project
-                    </a>
-                </p>
-            </div>
-        </div>
-
-        <!-- Advertisement Options -->
-        <h3 class="font-bold text-xl mb-5">Explore Our Advertisement Options</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mb-16 gap-5 sm:gap-10">
-            <div class="text-center sm:text-left bg-gray rounded-md py-8 sm:py-10 px-8 lg:px-10 flex flex-col">
-                <div class="h-16 mb-6 flex justify-center">
-                    <img class="h-full" alt="Promoted Spot" src="promo.png">
-                </div>
-                <div class="text-center flex flex-col md:flex-grow">
-                    <h3 class="hidden sm:block font-bold text-xl mb-1">Promoted Spot</h3>
-                    <p class="paragraph mb-6">
-                        Get noticed with a colored border and prime position in the promoted section.
-                    </p>
-                    <p class="mt-auto">
-                        <span class="text-4xl font-bold">
-                            0.1 ETH
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <div class="text-center sm:text-left bg-gray rounded-md py-8 sm:py-10 px-8 lg:px-10 flex flex-col">
-                <h3 class="sm:hidden text-center font-bold text-lg mb-5">Banner Ad</h3>
-                <div class="h-16 mb-6 flex justify-center">
-                    <img class="h-full" alt="Banner Ad" src="banner-icon.png" style="border-radius: 30%;">
-                </div>
-                <div class="text-center flex flex-col md:flex-grow">
-                    <h3 class="hidden sm:block font-bold text-xl mb-1">Banner Ad</h3>
-                    <p class="paragraph mb-6">
-                        Maximize visibility on the homepage with a banner, skyrocketing your project's hype.
-                    </p>
-                    <p class="mt-auto">
-                        <span class="text-4xl font-bold">
-                            0.5 ETH
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <div class="text-center sm:text-left bg-gray rounded-md py-8 sm:py-10 px-8 lg:px-10 flex flex-col">
-                <h3 class="sm:hidden text-center font-bold text-lg mb-5">Thumbnail Ad</h3>
-                <div class="h-16 mb-6 flex justify-center">
-                    <img class="h-full" alt="Thumbnail Ad" src="thumbnail-icon.png" style="border-radius: 30%;">
-                </div>
-                <div class="text-center flex flex-col md:flex-grow">
-                    <h3 class="hidden sm:block font-bold text-xl mb-1">Thumbnail Ad</h3>
-                    <p class="paragraph mb-6">
-                        Showcase your project's essence with a thumbnail on the homepage.
-                    </p>
-                    <p class="mt-auto">
-                        <span class="text-4xl font-bold">
-                            2 ETH
-                        </span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
-</body>
-</html>
 
 <style>.grecaptcha-badge {
     visibility: hidden !important

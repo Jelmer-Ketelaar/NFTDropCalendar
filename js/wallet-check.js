@@ -159,15 +159,35 @@ async function formaticW() {
 
 
 function checkFilled() {
-    const requiredFields = ['projectNameInput', 'projectShortDesInput', 'selectBlockchain', 'inputGroupFile01', 'traits', 'roadmap', 'royality', 'supply', 'teamAmount', 'twitterNameInput', 'discordNameInput', 'websiteLinkInput', 'emailContact', 'birthdaytime'];
+    const fieldMappings = {
+        'projectNameInput': 'Project Name',
+        'projectShortDesInput': 'Project Description',
+        'selectBlockchain': 'Blockchain Selection',
+        'inputGroupFile01': 'Project Image',
+        'birthdaytime': 'Public Mint Date',
+        'traits': 'Traits',
+        'roadmap': 'Roadmap',
+        'mintPrice' : 'Mint Price',
+        'royality': 'Royalty',
+        'supply': 'Supply',
+        'teamAmount': 'Team Size',
+        'twitterNameInput': 'Twitter Username',
+        'discordNameInput': 'Discord Invite Link',
+        'websiteLinkInput': 'Website Link',
+        'emailContact': 'Email',
+    };
+    let allFieldsFilled = true;
 
-    for (const field of requiredFields) {
+    for (const field in fieldMappings) {
         if (!document.getElementById(field).value) {
-            document.getElementById('emptyAlert').style.display = 'flex';
-            document.getElementById('emptyAlert').textContent = `The ${field} field is required. Please fill it in.`;
-            return false;
+            // Display the alert with a friendly field name
+            document.getElementById('emptyAlert').style.display = 'block';
+            document.getElementById('emptyAlert').textContent = `${fieldMappings[field]} is required. Please fill it in.`;
+            document.getElementById(field).focus();
+            allFieldsFilled = false;
+            break; // Stop checking after the first empty field
         }
     }
 
-    return true;
+    return allFieldsFilled;
 }

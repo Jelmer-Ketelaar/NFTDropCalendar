@@ -46,19 +46,15 @@ $getAllProjects = $conn->prepare("SELECT * FROM projectsExist WHERE verified = '
             </div>
             
             <div class="col-xl-5 col-lg-6 col-12">
-                <!--<a href="prices.php" target="_blank">-->
+                <a href="prices.php" target="_blank">
                     <a href="nft.php?id=<?php echo base64_encode($banner['id']); ?>" target="_blank">
                     <div class="intro-slider">
                         <div class="slider-item">
                             <!--<img alt=""class="image-fluid rounded" id="image-fluid" style="height: 350px;" src="img/items/Nftdropcalendar.png">-->
                             <img alt="<?php echo $banner['name'] ?>" class="image-fluid rounded" id="image-fluid" style="height: 350px;" src="<?php echo ($banner['thumbnail']) ?>">
-                            <!--<video height="350px" loop autoplay muted>-->
-                            <!--  <source src="LetsMakeAChange.mp4" type="video/mp4">-->
-                            <!--  Your browser does not support the video tag.-->
-                            <!--</video>-->
                             <!--<img alt=""class="image-fluid rounded" id="image-fluid" style="height: 350px;"src="<?php echo ($banner['thumbnail']) ?>">-->
-                            <!--</a>-->
-                            <!--<a href="nft.php?id=<?php echo base64_encode($banner['id']); ?>" target="_blank">-->
+                            </a>
+                            <a href="nft.php?id=<?php echo base64_encode($banner['id']); ?>" target="_blank">
                             <div class="slider-item-avatar">
                                 <!--<img alt="" src="img/items/Nftdropcalendar.png">-->
                                 <img alt="<?php echo $banner['name'] ?>" src="<?php echo ($banner['thumbnail']) ?>">
