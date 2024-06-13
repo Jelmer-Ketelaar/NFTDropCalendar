@@ -1,12 +1,14 @@
 <?php
-$seoTitle = 'NFTDropCalendar: List your own NFT Drop!';
-$seoDescription = 'List your own NFT Drop on our NFTDropCalendar! ✓ Free ✓ Best tool 2022 ✓ 235% Hype';
-$page = 'create';
-$paginanaam = 'List Project';
-require 'include/header.php'; ?>
+$seoTitle = "NFTDropCalendar: List your own NFT Drop!";
+$seoDescription =
+    "List your own NFT Drop on our NFTDropCalendar! ✓ Free ✓ Best tool 2022 ✓ 235% Hype";
+$page = "create";
+$paginanaam = "List Project";
+require "include/header.php";
+?>
 
 <style>
-    .img-fluid { 
+    .img-fluid {
         height: auto;
         width: 100%;
     }
@@ -42,6 +44,7 @@ require 'include/header.php'; ?>
                                     <label class="form-label" for="projectNameInput">Project Name</label>
                                     <input class="form-control"
                                            name="projectName"
+                                           placeholder="Project Name"
                                            type="text" required="required" maxlength="25" id="projectNameInput">
                                 </div>
                                 <div class="col-12">
@@ -227,84 +230,36 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                     </div>
                                 </div>
                                 <input type="hidden" id="signature" name="signature" value="">
-                                <div class="col-12">
-                                    <hr>
-                                    <div class="form-group mt-3">
-                                        <label for="emailContact" class="form-label">Email</label><input type="email"
-                                                                                                         class="form-control"
-                                                                                                         id="emailContact"
-                                                                                                         name="emailContact"
-                                                                                                         placeholder="Email (only for contact, nobody can see)"
-                                                                                                         required="required"
-                                                                                                         maxlength="70">
-                                        <!--<strike id="normalPromoPrice">0.0ETH</strike>-->
-                                        <!--<div class="form-group mt-3" style="border:thin solid #4528DC;padding:10px;">-->
-                                        <!--    <h5 style="margin:4px !important; text-align:center;">Boost Your Project-->
-                                        <!--        +70.000 views!</h5>-->
-                                        <!--    <p style="margin-bottom:4px;margin-top:4px; text-align:center; margin-left: 50px">-->
-                                        <!--        Only-->
-                                        <!--        <strong><span-->
-                                        <!--                    style="color:#4528DC; ">4</span></strong>/8 Promotion Place-->
-                                        <!--        open! <strong><strike id="normalPromoPrice">0.5ETH</strike><span-->
-                                        <!--                    id="promotePrice"-->
-                                        <!--                    style="margin-left: 10px">0.03</span></strong>-->
-                                        <!--        <span id="countdownDiscount" style="color:#4528DC; float:right;"> 2:25:20</span>-->
-                                        <!--    </p>-->
-                                        <!--    <div class="form-check form-check-inline"-->
-                                        <!--         style="margin-bottom:4px !important; margin-left: 5vw;">-->
-
-                                        <!--        <input class="form-check-input" type="radio" name="promotionBox"-->
-                                        <!--               id="promotionBox1" value="promote">-->
-
-                                        <!--        <label class="form-check-label" for="promotionBox1"><p-->
-                                        <!--                    style="text-align:center;">Homepage-->
-                                        <!--                promo, Listpage promo, Twitter Page Pin,<br>1 Week Full Promo,-->
-                                        <!--                <strong>340%</strong> more actions</p></label>-->
-
-                                        <!--    </div>-->
-                                        <!--    <p style="margin:0px;text-align:center;">Easy pay through-->
-                                        <!--        <strong>Web3</strong> wallet: Metamask, Phantom wallet, Formatic</p>-->
-                                        <!--</div>-->
+                                    <div class="col-12">
+                                        <hr>
+                                        <div class="col-12">
+                                        <hr>
+                                        <div class="form-group mt-3">
+                                            <label for="emailContact" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="emailContact" name="emailContact" placeholder="Email (only for contact, nobody can see)" required="required" maxlength="70">
+                                        </div>
+                                        <div class="form-group mt-3" style="border:3px solid #008AFF; border-radius:10px; padding:10px;">
+                                            <h5 style="margin:4px; text-align:center;">Hype up/boost your Project +90.000 views!</h5>
+                                            <p style="margin-bottom:4px; margin-top:4px; text-align:center; margin-left: 50px">
+                                                Only <strong><span style="color:#008AFF;">4</span></strong>/8 Promotion Place open! <strong><strike id="normalPromoPrice">0.6ETH</strike><span id="promotePrice" style="margin-left: 10px">0.04ETH / 1.2 SOL</span></strong>
+                                                <span id="countdownDiscount" style="color:#008AFF; font-size: 17px;"> 3:3:24</span>
+                                            </p>
+                                            <div class="form-check form-check-inline" style="margin-bottom:4px; margin-left: 2vw;">
+                                                <input class="form-check-input" type="radio" name="promotionBox" id="promotionBox1" value="promote">
+                                                <label class="form-check-label" for="promotionBox1">
+                                                    <p style="text-align:center;">Homepage promo, Listpage promo, Twitter Page Pin,<br>1 Week Full Promo, <strong>340%</strong> more hype on your project</p>
+                                                </label>
+                                            </div>
+                                            <p style="text-align:center;">Easy pay through <strong>Web3</strong> wallet: Metamask, Phantom wallet, Formatic</p>
+                                        </div>
                                         <div class="form-group mt-3">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="promotionBox"
-                                                       id="promotionBox2" value="promote2" checked="">
-                                                <label class="form-check-label" for="promotionBox2">Listing on
-                                                    NFTDropCalendar
-                                                    <strong id="listingPrice"> FREE</strong></label>
+                                                <input class="form-check-input" type="radio" name="promotionBox" id="promotionBox2" value="promote2" checked="">
+                                                <label class="form-check-label" for="promotionBox2">Listing on NFTDropCalendar <strong id="listingPrice"> FREE</strong></label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <script>
-
-                                    let count = 9461;
-                                    const counter = setInterval(timer, 1000); //1000 will  run it every 1 second
-
-                                    function timer() {
-                                        count = count - 1;
-                                        if (count === -1) {
-                                            clearInterval(counter);
-                                            return;
-                                        }
-
-                                        const seconds = count % 60;
-                                        let minutes = Math.floor(count / 60);
-                                        let hours = Math.floor(minutes / 60);
-                                        minutes %= 60;
-                                        hours %= 60;
-
-                                        document.getElementById("countdownDiscount").innerHTML = ' ' + hours + ":" + minutes + ":" + seconds; // watch for spelling
-                                    }
-
-                                </script>
-                                <!--<div class="col-12">
-                                    Banner, Section or other promotion? Check our <a href="assets/NFTGenie-pricing.pdf"
-                                                                                     target="_blank">pricing PDF</a>
-                                    (new
-                                    tab)-->
-                                <!--</div>-->
-
                                 <div class="col-12">
                                     <br>
                                     <div class="alert alert-primary" role="alert" id="walletRequiredMessage"
@@ -326,20 +281,15 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    Banner, Section or other promotion? Check our <a href="NFTDropCalendar_pricing.pdf"
-                                                                                     target="_blank">pricing PDF</a>
+                                    Banner, Section or other promotion? Check <a href="prices"
+                                                                                     target="_blank">our prices</a>
                                     (new
                                     tab)
                                 </div>
                                 <hr>
                                 <div class="mt-3">
-                                    <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="submit" id="btn-connect">
-                                        List project
-                                    </button>
+                                    <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="submit" id="btn-connect">List project</button>
                                 </div>
-
-
-                                <!--<button type="submit" class="btn btn-primary mr-2 w-100">Submit free</button>-->
                         </form>
                     </div>
                 </div>
@@ -384,7 +334,91 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
         </div>
     </div>
 </div>
+<div id="backgroundFade" onclick="closeModal()" style="visibility:hidden;position:fixed;top:0;z-index:8;width:200vw;height:200vh;background-color:#1f1f1f;opacity:0.5;"></div>
+
+<div id="wallet-container" classs="container"
+     style="visibility:hidden;background-color:rgb(39, 49, 56);width:46vw;height:46vh;position:sticky;z-index:9;left:50%;transform: translate(-50%, 0);border-radius:10px;position: fixed; top:25vh;">
+
+
+    <div class="row" style="width: 90vw;">
+        <div class="col-6"
+             style="text-align: center;border: 1px solid grey; border-radius: 10px 0px 0px 0px;cursor: pointer;"
+             onclick="metamask()">
+            <img style="width:25%;padding-bottom:0px;" src="img/extern_logo/metamask_logo.png">
+            <h3 style="line-height: 0;">MetaMask</h3>
+            <p>Connect to your MetaMask Wallet</p>
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6"
+             style="text-align: center;border: 1px solid grey; border-radius: 0px 0px 0px 10px;cursor: pointer;"
+             onclick="tijdelijkePhantom()">
+            <img style="width:25%;padding-bottom:0px;" src="img/extern_logo/phantom_logo.png">
+            <h3 style="line-height: 0;">PhantomWallet</h3>
+            <p>Connect to your Solana Wallet</p>
+            <br>
+        </div>
+        <div class="col-6"
+             style="text-align: center;border: 1px solid grey; border-radius: 0px 0px 10px 0px;cursor: pointer;"
+             onclick="formaticW()">
+            <img style="width:25%;padding-bottom:0px;" src="img/extern_logo/formatic_logo.png">
+            <h3 style="line-height: 0;">Formatic</h3>
+            <p>Connect to your Formatic Wallet</p>
+            <br>
+        </div>
+    </div>
 </div>
-<!--</div>-->
+
 <?php include "include/footer.php"; ?>
+
+<script>
+document.getElementById('listingForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting traditionally
+
+    var isPromotionSelected = document.querySelector('input[name="promotionBox"]:checked').value === 'promote';
+    var formIsValid = validateForm(); // Check if the form is valid
+
+    if (formIsValid) {
+        if (isPromotionSelected) {
+            // Show the Web3 wallet modal for promotional submissions
+            document.getElementById('wallet-container').style.visibility = 'visible';
+            document.getElementById('backgroundFade').style.visibility = 'visible';
+        } else {
+            // Submit the form normally if no promotion is selected
+            this.submit();
+        }
+    } else {
+        alert('Please fill all required fields before submitting.');
+    }
+});
+
+function validateForm() {
+    var isValid = true;
+    var inputs = document.querySelectorAll('#listingForm input[required], #listingForm textarea[required], #listingForm select[required]');
+
+    inputs.forEach(function(input) {
+        if (!input.value.trim()) {
+            isValid = false;
+            input.classList.add('is-invalid'); // Add an 'is-invalid' class to highlight the field
+        } else {
+            input.classList.remove('is-invalid');
+        }
+    });
+
+    return isValid;
+}
+
+document.getElementById('backgroundFade').addEventListener('click', function() {
+    document.getElementById('wallet-container').style.visibility = 'hidden';
+    this.style.visibility = 'hidden';
+});
+</script>
+
 <script src="js/data.js"></script>
+<script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+<script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
+<script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
+<script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+<script src="js/wallet-check.js"></script>
