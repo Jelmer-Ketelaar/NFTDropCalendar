@@ -52,9 +52,9 @@ require "include/header.php";
                                         <label class="form-label" for="projectShortDesInput">Project
                                             Description</label>
                                         <textarea
-                                                class="form-control" id="projectShortDesInput" name="projectDescription"
-                                                placeholder="Description about the project" maxlength="750" cols="30"
-                                                required="required" rows="3"></textarea>
+                                            class="form-control" id="projectShortDesInput" name="projectDescription"
+                                            placeholder="Description about the project" maxlength="750" cols="30"
+                                            required="required" rows="3"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -122,10 +122,10 @@ require "include/header.php";
                                     <hr>
                                     <div class="form-group mt-3">
                                         <label class="form-label" for="floorPrice">Floor Price</label><input
-                                                type="number" class="form-control"
-                                                id="floorPrice" name="floorPrice"
-                                                placeholder="Current Floor-price"
-                                                step="0.00001">
+                                            type="number" class="form-control"
+                                            id="floorPrice" name="floorPrice"
+                                            placeholder="Current Floor-price"
+                                            step="0.00001">
                                         <sub>Don't have a Floor price? <a style="color:blue;"
                                                                           onclick="alert('If your NFT project is not live, please submit it as a NFT Drop. You can click in the header on &quot;List Drop&quot;');">here</a></sub>
                                     </div>
@@ -213,11 +213,11 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                     <hr>
                                     <div class="form-group">
                                         <label for="websiteLinkInput" class="form-label">Website Link</label><input
-                                                type="text" class="form-control"
-                                                id="websiteLinkInput"
-                                                name="websiteLink"
-                                                placeholder="Website link"
-                                                required="required">
+                                            type="text" class="form-control"
+                                            id="websiteLinkInput"
+                                            name="websiteLink"
+                                            placeholder="Website link"
+                                            required="required">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
@@ -230,32 +230,47 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                     </div>
                                 </div>
                                 <input type="hidden" id="signature" name="signature" value="">
+                                <div class="col-12">
+                                    <hr>
                                     <div class="col-12">
-                                        <hr>
-                                        <div class="col-12">
                                         <hr>
                                         <div class="form-group mt-3">
                                             <label for="emailContact" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="emailContact" name="emailContact" placeholder="Email (only for contact, nobody can see)" required="required" maxlength="70">
+                                            <input type="email" class="form-control" id="emailContact"
+                                                   name="emailContact"
+                                                   placeholder="Email (only for contact, nobody can see)"
+                                                   required="required" maxlength="70">
                                         </div>
-                                        <div class="form-group mt-3" style="border:3px solid #008AFF; border-radius:10px; padding:10px;">
-                                            <h5 style="margin:4px; text-align:center;">Hype up/boost your Project +90.000 views!</h5>
+                                        <div class="form-group mt-3"
+                                             style="border:3px solid #008AFF; border-radius:10px; padding:10px;">
+                                            <h5 style="margin:4px; text-align:center;">Hype up/boost your Project
+                                                +90.000 views!</h5>
                                             <p style="margin-bottom:4px; margin-top:4px; text-align:center; margin-left: 50px">
-                                                Only <strong><span style="color:#008AFF;">4</span></strong>/8 Promotion Place open! <strong><strike id="normalPromoPrice">0.6ETH</strike><span id="promotePrice" style="margin-left: 10px">0.04ETH / 1.2 SOL</span></strong>
+                                                Only <strong><span style="color:#008AFF;">4</span></strong>/8 Promotion
+                                                Place open! <strong><strike id="normalPromoPrice">0.6ETH</strike><span
+                                                        id="promotePrice"
+                                                        style="margin-left: 10px">0.04ETH / 1.2 SOL</span></strong>
                                                 <span id="countdownDiscount" style="color:#008AFF; font-size: 17px;"> 3:3:24</span>
                                             </p>
-                                            <div class="form-check form-check-inline" style="margin-bottom:4px; margin-left: 2vw;">
-                                                <input class="form-check-input" type="radio" name="promotionBox" id="promotionBox1" value="promote">
+                                            <div class="form-check form-check-inline"
+                                                 style="margin-bottom:4px; margin-left: 2vw;">
+                                                <input class="form-check-input" type="radio" name="promotionBox"
+                                                       id="promotionBox1" value="promote">
                                                 <label class="form-check-label" for="promotionBox1">
-                                                    <p style="text-align:center;">Homepage promo, Listpage promo, Twitter Page Pin,<br>1 Week Full Promo, <strong>340%</strong> more hype on your project</p>
+                                                    <p style="text-align:center;">Homepage promo, Listpage promo,
+                                                        Twitter Page Pin,<br>1 Week Full Promo, <strong>340%</strong>
+                                                        more hype on your project</p>
                                                 </label>
                                             </div>
-                                            <p style="text-align:center;">Easy pay through <strong>Web3</strong> wallet: Metamask, Phantom wallet, Formatic</p>
+                                            <p style="text-align:center;">Easy pay through <strong>Web3</strong> wallet:
+                                                Metamask, Phantom wallet, Formatic</p>
                                         </div>
                                         <div class="form-group mt-3">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="promotionBox" id="promotionBox2" value="promote2" checked="">
-                                                <label class="form-check-label" for="promotionBox2">Listing on NFTDropCalendar <strong id="listingPrice"> FREE</strong></label>
+                                                <input class="form-check-input" type="radio" name="promotionBox"
+                                                       id="promotionBox2" value="promote2" checked="">
+                                                <label class="form-check-label" for="promotionBox2">Listing on
+                                                    NFTDropCalendar <strong id="listingPrice"> FREE</strong></label>
                                             </div>
                                         </div>
                                     </div>
@@ -282,13 +297,15 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                 </div>
                                 <div class="col-12">
                                     Banner, Section or other promotion? Check <a href="prices"
-                                                                                     target="_blank">our prices</a>
+                                                                                 target="_blank">our prices</a>
                                     (new
                                     tab)
                                 </div>
                                 <hr>
                                 <div class="mt-3">
-                                    <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="submit" id="btn-connect">List project</button>
+                                    <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="submit" id="btn-connect">
+                                        List project
+                                    </button>
                                 </div>
                         </form>
                     </div>
@@ -320,13 +337,13 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                              id="socialBtn">
                             <p><img id="twitterLogo" src="img/extern_logo/twitter_logo_white.png"
                                     style="width: 25px; height: 25px; visibility: visible;"> <span
-                                        id="twitterName"></span></p>
+                                    id="twitterName"></span></p>
                             <p><img id="discordLogo" src="img/extern_logo/discord_logo.jpg"
                                     style="width: 25px; height: 25px; visibility: visible;"> <span
-                                        id="discordName"></span></p>
+                                    id="discordName"></span></p>
                             <p><img id="websiteLogo" src="img/extern_logo/link_icon.jpg"
                                     style="width: 25px; height: 25px; visibility: visible;"> <span
-                                        id="websiteName"></span></p>
+                                    id="websiteName"></span></p>
                         </div>
                     </div>
                 </div>
@@ -334,7 +351,8 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
         </div>
     </div>
 </div>
-<div id="backgroundFade" onclick="closeModal()" style="visibility:hidden;position:fixed;top:0;z-index:8;width:200vw;height:200vh;background-color:#1f1f1f;opacity:0.5;"></div>
+<div id="backgroundFade" onclick="closeModal()"
+     style="visibility:hidden;position:fixed;top:0;z-index:8;width:200vw;height:200vh;background-color:#1f1f1f;opacity:0.5;"></div>
 
 <div id="wallet-container" classs="container"
      style="visibility:hidden;background-color:rgb(39, 49, 56);width:46vw;height:46vh;position:sticky;z-index:9;left:50%;transform: translate(-50%, 0);border-radius:10px;position: fixed; top:25vh;">
@@ -373,46 +391,46 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
 <?php include "include/footer.php"; ?>
 
 <script>
-document.getElementById('listingForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting traditionally
+    document.getElementById('listingForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting traditionally
 
-    var isPromotionSelected = document.querySelector('input[name="promotionBox"]:checked').value === 'promote';
-    var formIsValid = validateForm(); // Check if the form is valid
+        var isPromotionSelected = document.querySelector('input[name="promotionBox"]:checked').value === 'promote';
+        var formIsValid = validateForm(); // Check if the form is valid
 
-    if (formIsValid) {
-        if (isPromotionSelected) {
-            // Show the Web3 wallet modal for promotional submissions
-            document.getElementById('wallet-container').style.visibility = 'visible';
-            document.getElementById('backgroundFade').style.visibility = 'visible';
+        if (formIsValid) {
+            if (isPromotionSelected) {
+                // Show the Web3 wallet modal for promotional submissions
+                document.getElementById('wallet-container').style.visibility = 'visible';
+                document.getElementById('backgroundFade').style.visibility = 'visible';
+            } else {
+                // Submit the form normally if no promotion is selected
+                this.submit();
+            }
         } else {
-            // Submit the form normally if no promotion is selected
-            this.submit();
-        }
-    } else {
-        alert('Please fill all required fields before submitting.');
-    }
-});
-
-function validateForm() {
-    var isValid = true;
-    var inputs = document.querySelectorAll('#listingForm input[required], #listingForm textarea[required], #listingForm select[required]');
-
-    inputs.forEach(function(input) {
-        if (!input.value.trim()) {
-            isValid = false;
-            input.classList.add('is-invalid'); // Add an 'is-invalid' class to highlight the field
-        } else {
-            input.classList.remove('is-invalid');
+            alert('Please fill all required fields before submitting.');
         }
     });
 
-    return isValid;
-}
+    function validateForm() {
+        var isValid = true;
+        var inputs = document.querySelectorAll('#listingForm input[required], #listingForm textarea[required], #listingForm select[required]');
 
-document.getElementById('backgroundFade').addEventListener('click', function() {
-    document.getElementById('wallet-container').style.visibility = 'hidden';
-    this.style.visibility = 'hidden';
-});
+        inputs.forEach(function(input) {
+            if (!input.value.trim()) {
+                isValid = false;
+                input.classList.add('is-invalid'); // Add an 'is-invalid' class to highlight the field
+            } else {
+                input.classList.remove('is-invalid');
+            }
+        });
+
+        return isValid;
+    }
+
+    document.getElementById('backgroundFade').addEventListener('click', function() {
+        document.getElementById('wallet-container').style.visibility = 'hidden';
+        this.style.visibility = 'hidden';
+    });
 </script>
 
 <script src="js/data.js"></script>

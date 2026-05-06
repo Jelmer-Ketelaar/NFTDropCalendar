@@ -13,7 +13,7 @@ try {
 } catch (PDOException $exception) {
     error_log('Database connection failed: ' . $exception->getMessage());
 
-    if ((bool) config('app.debug')) {
+    if (config('app.debug')) {
         respond_with_error('Database connection failed: ' . $exception->getMessage(), 500);
     }
 

@@ -4,11 +4,11 @@ declare(strict_types=1);
 require 'connection.php';
 
 
-    $getProjects = $conn->query("SELECT * FROM projects WHERE verified = 'true'");
-    $projects = $getProjects->fetchAll(\PDO::FETCH_ASSOC);
+$getProjects = $conn->query("SELECT * FROM projects WHERE verified = 'true'");
+$projects = $getProjects->fetchAll(PDO::FETCH_ASSOC);
 
-    $getProjectsLis = $conn->query("SELECT * FROM projectsExist WHERE verified = 'true'");
-    $projectsListed = $getProjectsLis->fetchAll(\PDO::FETCH_ASSOC);
+$getProjectsLis = $conn->query("SELECT * FROM projectsExist WHERE verified = 'true'");
+$projectsListed = $getProjectsLis->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <html lang="en">
@@ -119,13 +119,14 @@ require 'connection.php';
                                                         <input type='text' value='<?php echo $project['mintPrice']; ?>'
                                                                name='mintPrice'>
                                                     </div>
-                                                    
+
                                                     <div class='col-sm-2'>
                                                         <button type='submit'
                                                                 style="background-color:green; color:white;">Update &
                                                             Accept
                                                         </button>
-                                                        <a href='delete.php?id=<?php echo base64_encode($project['id']); ?>' style="background-color:red; color:white;">Delete</a>
+                                                        <a href='delete.php?id=<?php echo base64_encode($project['id']); ?>'
+                                                           style="background-color:red; color:white;">Delete</a>
                                                     </div>
                                                 </div>
                                             </form>
@@ -183,12 +184,12 @@ require 'connection.php';
                                         <a href="project.php?id=<?php echo base64_encode($project['id']); ?>"
                                            target="_blank">
                                             <div class='row'><h5 class="mt-0 mb-2"><?php echo $project['name']; ?> <a
-                                                            href='https://twitter.com/<?php echo $project['twitterName']; ?>'
-                                                            style='color:blue;'
-                                                            target='_blank'>Twitter: <?php echo $project['twitterName']; ?></a><a
-                                                            href='<?php echo $project['discordLink']; ?>'
-                                                            style='color:blue;'
-                                                            target='_blank'>Discord: <?php echo $project['name']; ?></a>
+                                                        href='https://twitter.com/<?php echo $project['twitterName']; ?>'
+                                                        style='color:blue;'
+                                                        target='_blank'>Twitter: <?php echo $project['twitterName']; ?></a><a
+                                                        href='<?php echo $project['discordLink']; ?>'
+                                                        style='color:blue;'
+                                                        target='_blank'>Discord: <?php echo $project['name']; ?></a>
                                                 </h5></div>
                                         </a>
                                         <div class="col-12 col-md-12 col-lg-12">
@@ -248,7 +249,8 @@ require 'connection.php';
                                                                 style="background-color:green; color:white;">Update &
                                                             Accept
                                                         </button>
-                                                        <a href='delete.php?id=<?php echo base64_encode($project['id']); ?>' style="background-color:red; color:white;">Delete</a>
+                                                        <a href='delete.php?id=<?php echo base64_encode($project['id']); ?>'
+                                                           style="background-color:red; color:white;">Delete</a>
                                                     </div>
                                                 </div>
                                             </form>

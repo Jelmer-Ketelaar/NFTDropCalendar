@@ -8,22 +8,22 @@ require 'connection.php';
  * @return void
  */
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = base64_decode($_GET['id']);
     $discordMemberNumber = $_GET['discordMemberNumber'];
-	$traits = $_GET['traits'];
-	$floorPrice = $_GET['floorPrice'];
+    $traits = $_GET['traits'];
+    $floorPrice = $_GET['floorPrice'];
     $email = $_GET['email'];
-	$thumbnail = $_GET['thumbnail'];
-	$projectName = $_GET['projectName'];
-	$projectDes = $_GET['projectDes'];
-	$twitterName = $_GET['twitterName'];
-	$discordLink = $_GET['discordLink'];
-	$volume = $_GET['volume'];
+    $thumbnail = $_GET['thumbnail'];
+    $projectName = $_GET['projectName'];
+    $projectDes = $_GET['projectDes'];
+    $twitterName = $_GET['twitterName'];
+    $discordLink = $_GET['discordLink'];
+    $volume = $_GET['volume'];
 
     $sql = "UPDATE projectsExist SET verified='true', floorPrice=?, traits=?, volume=?, discordMemberNumber=? WHERE id=?";
-	$conn->prepare($sql)->execute([$floorPrice, $traits, $volume, $discordMemberNumber, $id]);
-	
+    $conn->prepare($sql)->execute([$floorPrice, $traits, $volume, $discordMemberNumber, $id]);
+
 // 	$getEmails = $conn->prepare("SELECT * FROM notify");
 // 	$getEmails->execute();
 // 	$getEmails = $getEmails->fetchAll(\PDO::FETCH_ASSOC);
@@ -356,9 +356,6 @@ if(isset($_GET['id'])){
 
 // mail($to, $subject, $message, $headers);
 
-	
-
-
 
 // 	// Email to notify people:
 // 	$message2 = '<!DOCTYPE html>
@@ -378,39 +375,39 @@ if(isset($_GET['id'])){
 // 			* {
 // 				box-sizing: border-box;
 // 			}
-	
+
 // 			body {
 // 				margin: 0;
 // 				padding: 0;
 // 			}
-	
+
 // 			a[x-apple-data-detectors] {
 // 				color: inherit !important;
 // 				text-decoration: inherit !important;
 // 			}
-	
+
 // 			#MessageViewBody a {
 // 				color: inherit;
 // 				text-decoration: none;
 // 			}
-	
+
 // 			p {
 // 				line-height: inherit
 // 			}
-	
+
 // 			@media (max-width:700px) {
 // 				.icons-inner {
 // 					text-align: center;
 // 				}
-	
+
 // 				.icons-inner td {
 // 					margin: 0 auto;
 // 				}
-	
+
 // 				.row-content {
 // 					width: 100% !important;
 // 				}
-	
+
 // 				.stack .column {
 // 					width: 100%;
 // 					display: block;

@@ -6,8 +6,9 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Neftify - NFT Marketplace Bootstrap 5 HTML Template</title>
-    <meta content="Neftify is the complete UX & UI dashboard for NFT. Here included bids, collection, wallet, and all user setting pages including profile, application, activity, payment method, api, sign in & sign up etc."
-          name="description">
+    <meta
+        content="Neftify is the complete UX & UI dashboard for NFT. Here included bids, collection, wallet, and all user setting pages including profile, application, activity, payment method, api, sign in & sign up etc."
+        name="description">
 
 
     <!-- Favicon icon -->
@@ -32,7 +33,7 @@
                 </div>
                 <div class="col-auto">
                     <div class="breadcrumbs"><a href="#">Home </a><span><i
-                                    class="ri-arrow-right-s-line"></i></span><a href="#">Payments</a></div>
+                                class="ri-arrow-right-s-line"></i></span><a href="#">Payments</a></div>
                 </div>
             </div>
         </div>
@@ -50,9 +51,9 @@
                                 <div class="card-body">
                                     <div class="items-img position-relative">
                                         <img alt="" class="img-fluid rounded mb-3"
-                                                src="img/items/1.jpg"><img
-                                                alt=""
-                                                class="creator" src="img/avatar/1.jpg" width="50"></div>
+                                             src="img/items/1.jpg"><img
+                                            alt=""
+                                            class="creator" src="img/avatar/1.jpg" width="50"></div>
                                     <a href="./item.html">
                                         <h4 class="card-title">Liguid Wave</h4>
                                     </a>
@@ -65,8 +66,8 @@
                                     <div class="items-img position-relative"><img alt=""
                                                                                   class="img-fluid rounded mb-3"
                                                                                   src="img/items/2.jpg"><img
-                                                alt=""
-                                                class="creator" src="img/avatar/2.jpg" width="50"></div>
+                                            alt=""
+                                            class="creator" src="img/avatar/2.jpg" width="50"></div>
                                     <a href="./item.html">
                                         <h4 class="card-title">Liguid Wave</h4>
                                     </a>
@@ -79,8 +80,8 @@
                                     <div class="items-img position-relative"><img alt=""
                                                                                   class="img-fluid rounded mb-3"
                                                                                   src="img/items/3.jpg"><img
-                                                alt=""
-                                                class="creator" src="img/avatar/3.jpg" width="50"></div>
+                                            alt=""
+                                            class="creator" src="img/avatar/3.jpg" width="50"></div>
                                     <a href="./item.html">
                                         <h4 class="card-title">Liguid Wave</h4>
                                     </a>
@@ -93,8 +94,8 @@
                                     <div class="items-img position-relative"><img alt=""
                                                                                   class="img-fluid rounded mb-3"
                                                                                   src="img/items/4.jpg"><img
-                                                alt=""
-                                                class="creator" src="img/avatar/4.jpg" width="50"></div>
+                                            alt=""
+                                            class="creator" src="img/avatar/4.jpg" width="50"></div>
                                     <a href="./item.html">
                                         <h4 class="card-title">Liguid Wave</h4>
                                     </a>

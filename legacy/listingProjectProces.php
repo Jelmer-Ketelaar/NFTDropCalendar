@@ -131,4 +131,4 @@ $statement->execute([
     ':marketplaceLink' => $marketplaceLink,
 ]);
 
-redirect_to('project.php?id=' . base64_encode((string) $conn->lastInsertId()));
+redirect_to('project.php?id=' . base64_encode((string)$conn->lastInsertId()));

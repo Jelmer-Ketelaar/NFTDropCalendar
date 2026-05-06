@@ -1,7 +1,7 @@
 <?php
 require 'connection.php';
 
-if(isset($_POST['email'])){
+if (isset($_POST['email'])) {
     $email = $_POST['email'];
 
     $sql = 'INSERT INTO notify(email) VALUES(:email)';

@@ -127,4 +127,4 @@ $statement->execute([
     ':promoted' => $promoted,
 ]);
 
-redirect_to('nft.php?id=' . base64_encode((string) $conn->lastInsertId()));
+redirect_to('nft.php?id=' . base64_encode((string)$conn->lastInsertId()));

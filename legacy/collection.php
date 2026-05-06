@@ -29,15 +29,15 @@ if ($blockchain !== '') {
 
 $projectsStatement = $conn->prepare('SELECT * FROM projects WHERE ' . $promotedCondition);
 $projectsStatement->execute($params);
-$projects = $projectsStatement->fetchAll(\PDO::FETCH_ASSOC);
+$projects = $projectsStatement->fetchAll(PDO::FETCH_ASSOC);
 
 $listedProjectsStatement = $conn->prepare('SELECT * FROM projectsExist WHERE ' . $promotedCondition);
 $listedProjectsStatement->execute($params);
-$projectsListed = $listedProjectsStatement->fetchAll(\PDO::FETCH_ASSOC);
+$projectsListed = $listedProjectsStatement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
 <div class="collections section-padding">
     <div class="container">
@@ -49,7 +49,8 @@ $projectsListed = $listedProjectsStatement->fetchAll(\PDO::FETCH_ASSOC);
                             <select name="blockchain" onchange="this.form.submit()">
                                 <option value="">All Blockchains</option>
                                 <?php foreach ($blockchains as $value => $label): ?>
-                                    <option value="<?php echo e($value); ?>" <?php if ($value === $blockchain) echo 'selected'; ?>><?php echo e($label); ?></option>
+                                    <option
+                                        value="<?php echo e($value); ?>" <?php if ($value === $blockchain) echo 'selected'; ?>><?php echo e($label); ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </form>
@@ -60,11 +61,14 @@ $projectsListed = $listedProjectsStatement->fetchAll(\PDO::FETCH_ASSOC);
                                 <div class="card items">
                                     <div class="card-body">
                                         <div class="items-img position-relative">
-                                            <a href="nft.php?id=<?php echo base64_encode($project['id']); ?>" target="_blank">
-                                                <img class="avatar-lg" src="<?php echo $project["thumbnail"] ?>" style="min-width:90px;height:90px;" alt="">
+                                            <a href="nft.php?id=<?php echo base64_encode($project['id']); ?>"
+                                               target="_blank">
+                                                <img class="avatar-lg" src="<?php echo $project["thumbnail"] ?>"
+                                                     style="min-width:90px;height:90px;" alt="">
                                             </a>
                                         </div>
-                                        <a href="nft.php?id=<?php echo base64_encode($project['id']); ?>" target="_blank">
+                                        <a href="nft.php?id=<?php echo base64_encode($project['id']); ?>"
+                                           target="_blank">
                                             <h4 class="mt-0 mb-2"><?php echo $project['name']; ?></h4>
                                         </a>
 

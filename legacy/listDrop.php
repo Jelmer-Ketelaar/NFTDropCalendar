@@ -1,14 +1,14 @@
 <?php
 $seoTitle = 'NFTDropCalendar is an event calendar for the growing NFT industry!';
 $seoDescription = 'List here your own NFT drop on our NFT Calendar!';
-$page = 'create'; 
+$page = 'create';
 $paginanaam = 'List Drop';
-require 'include/header.php'; 
+require 'include/header.php';
 ?>
 
 
 <style>
-    .img-fluid { 
+    .img-fluid {
         height: auto;
         width: 100%;
     }
@@ -51,14 +51,14 @@ require 'include/header.php';
                                         <label class="form-label" for="projectShortDesInput">Project
                                             Description</label>
                                         <textarea
-                                                class="form-control" id="projectShortDesInput" name="projectDescription"
-                                                placeholder="Description about the project" maxlength="750" cols="30"
-                                                required="required" rows="3"></textarea>
+                                            class="form-control" id="projectShortDesInput" name="projectDescription"
+                                            placeholder="Description about the project" maxlength="750" cols="30"
+                                            required="required" rows="3"></textarea>
                                     </div>
                                 </div>
-                            <div class="col-12">
-                                <div class="form-group mt-3">
-                                    <label class="form-label" for="selectBlockchain">Select Blockchain</label>
+                                <div class="col-12">
+                                    <div class="form-group mt-3">
+                                        <label class="form-label" for="selectBlockchain">Select Blockchain</label>
                                         <select name="blockchain" id="selectBlockchain"
                                                 style="margin-left: 0.5vw;">
                                             <option value="ethereum">Ethereum</option>
@@ -70,8 +70,8 @@ require 'include/header.php';
                                             <option value="elrond">Elrond</option>
                                             <option value="arbitrum">Arbitrum</option>
                                         </select>
+                                    </div>
                                 </div>
-                            </div>
                                 <div class="col-12">
                                     <div class="form-group mt-3">
                                         <div class="form-check form-check-inline">
@@ -97,7 +97,8 @@ require 'include/header.php';
                                     <hr>
                                     <div class="input-group form-group">
                                         <div class="custom-file">
-                                            <label class="custom-file-label" id="bannerLabel" for="inputGroupFile01">Project image (NOT A BANNER)</label>
+                                            <label class="custom-file-label" id="bannerLabel" for="inputGroupFile01">Project
+                                                image (NOT A BANNER)</label>
                                             <input type="file" name="thumbnail"
                                                    id="inputGroupFile01" accept="image/*" onchange="loadFile(event)">
                                         </div>
@@ -185,7 +186,7 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                 <div class="col-12 col-md-6">
                                     <hr>
                                     <div class="form-group">
-                                        
+
                                         <label for="twitterNameInput">Twitter Username</label><input type="text"
                                                                                                      class="form-control"
                                                                                                      id="twitterNameInput"
@@ -209,11 +210,11 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                     <hr>
                                     <div class="form-group">
                                         <label for="websiteLinkInput" class="form-label">Website Link</label><input
-                                                type="text" class="form-control"
-                                                id="websiteLinkInput"
-                                                name="websiteLink"
-                                                placeholder="Website link"
-                                                required="required">
+                                            type="text" class="form-control"
+                                            id="websiteLinkInput"
+                                            name="websiteLink"
+                                            placeholder="Website link"
+                                            required="required">
                                     </div>
                                 </div>
                                 <input type="hidden" id="signature" name="signature" value="">
@@ -229,20 +230,26 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                                                                                          maxlength="70">
                                     </div>
                                     <!-- --> begin countdown -->
-                                  <div class="form-group mt-3" style="border:3px solid #008AFF; border-radius:10px ;padding:10px;">
+                                    <div class="form-group mt-3"
+                                         style="border:3px solid #008AFF; border-radius:10px ;padding:10px;">
                                         <h5 style="margin:4px !important; text-align:center;">Hype up/boost your Project
                                             +90.000 views!</h5>
                                         <p style="margin-bottom:4px;margin-top:4px; text-align:center; margin-left: 50px">
                                             Only
                                             <strong><span style="color:#008AFF; ">4</span></strong>/8 Promotion Place
-                                            open! <strong><strike id="normalPromoPrice">0.6ETH</strike><span id="promotePrice" style="margin-left: 10px">0.04ETH / 1.2 SOL</span></strong>
-                                            <span id="countdownDiscount" style="color:#008AFF; font-size: 17px;"> 3:3:24</span>
+                                            open! <strong><strike id="normalPromoPrice">0.6ETH</strike><span
+                                                    id="promotePrice" style="margin-left: 10px">0.04ETH / 1.2 SOL</span></strong>
+                                            <span id="countdownDiscount"
+                                                  style="color:#008AFF; font-size: 17px;"> 3:3:24</span>
                                         </p>
-                                            <label></label>
-                                        <div class="form-check form-check-inline" style="margin-bottom:4px !important; margin-left: 2vw;">
-                                            <input class="form-check-input" type="radio" name="promotionBox" id="promotionBox1" value="promote" style="">
+                                        <label></label>
+                                        <div class="form-check form-check-inline"
+                                             style="margin-bottom:4px !important; margin-left: 2vw;">
+                                            <input class="form-check-input" type="radio" name="promotionBox"
+                                                   id="promotionBox1" value="promote" style="">
 
-                                            <label class="form-check-label" for="promotionBox1"><p style="text-align:center;">Homepage
+                                            <label class="form-check-label" for="promotionBox1"><p
+                                                    style="text-align:center;">Homepage
                                                     promo, Listpage promo, Twitter Page Pin,<br>1 Week Full Promo,
                                                     <strong>340%</strong> more hype on your project</p></label>
 
@@ -252,74 +259,76 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                     </div>
                                     <div class="form-group mt-3">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="promotionBox" id="promotionBox2" value="promote2" checked="">
+                                            <input class="form-check-input" type="radio" name="promotionBox"
+                                                   id="promotionBox2" value="promote2" checked="">
                                             <label class="form-check-label" for="promotionBox2">Listing on
                                                 NFTDropCalendar
                                                 <strong id="listingPrice">0.002ETH</strong></label>
                                         </div>
                                     </div>
 
-                                 </div>
                                 </div>
                             </div>
-                            <script>
+                    </div>
+                    <script>
 
-                                let count = 11801;
-                                const counter = setInterval(timer, 1000); //1000 will  run it every 1 second
+                        let count = 11801;
+                        const counter = setInterval(timer, 1000); //1000 will  run it every 1 second
 
-                                function timer() {
-                                    count = count - 1;
-                                    if (count === -1) {
-                                        clearInterval(counter);
-                                        return;
-                                    }
+                        function timer() {
+                            count = count - 1;
+                            if (count === -1) {
+                                clearInterval(counter);
+                                return;
+                            }
 
-                                    const seconds = count % 60;
-                                    let minutes = Math.floor(count / 60);
-                                    let hours = Math.floor(minutes / 60);
-                                    minutes %= 60;
-                                    hours %= 60;
+                            const seconds = count % 60;
+                            let minutes = Math.floor(count / 60);
+                            let hours = Math.floor(minutes / 60);
+                            minutes %= 60;
+                            hours %= 60;
 
-                                    document.getElementById("countdownDiscount").innerHTML = ' ' + hours + ":" + minutes + ":" + seconds; // watch for spelling
-                                }
+                            document.getElementById("countdownDiscount").innerHTML = ' ' + hours + ":" + minutes + ":" + seconds; // watch for spelling
+                        }
 
-                            </script>
-                            <!--<div class="col-12">
-                                Banner, Section or other promotion? Check our <a href="assets/NFTGenie-pricing.pdf"
-                                                                                 target="_blank">pricing PDF</a>
-                                (new
-                                tab)-->
-                            <!--</div>-->
+                    </script>
+                    <!--<div class="col-12">
+                        Banner, Section or other promotion? Check our <a href="assets/NFTGenie-pricing.pdf"
+                                                                         target="_blank">pricing PDF</a>
+                        (new
+                        tab)-->
+                    <!--</div>-->
 
-                            <div class="col-12">
-                                <br>
-                                <div class="alert alert-primary" role="alert" id="walletRequiredMessage"
-                                     style="display:none;">
-                                    DM us on twitter and we will give you a SOL address to send the crypto's to :)
-                                    click
-                                    <a href="https://twitter.com/DropCalendarNFT" target="_blank">@DropCalendarNFT </a>for our
-                                    twitter
-                                </div>
-                                <div class="alert alert-danger" role="alert" id="declinedAlert"
-                                     style="display:none;">
-                                    You rejected the transaction, why? You want to explode, right? We are here for
-                                    you!
-                                </div>
-                                <div class="alert alert-danger" role="alert" id="emptyAlert" style="display:none;">
-                                    You rejected the transaction, why? You want to explode, right? We are here for
-                                    you!
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                    Banner, Thumnail or other promotion? Check our <a href="prices"
-                                                                                     target="_blank">Our Prices</a>
-                                    (new
-                                    tab)
-                                </div>
-                            
-                            <div class="mt-3">
-                                <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="button" id="btn-connect">List drop</button>
-                            </div>
+                    <div class="col-12">
+                        <br>
+                        <div class="alert alert-primary" role="alert" id="walletRequiredMessage"
+                             style="display:none;">
+                            DM us on twitter and we will give you a SOL address to send the crypto's to :)
+                            click
+                            <a href="https://twitter.com/DropCalendarNFT" target="_blank">@DropCalendarNFT </a>for our
+                            twitter
+                        </div>
+                        <div class="alert alert-danger" role="alert" id="declinedAlert"
+                             style="display:none;">
+                            You rejected the transaction, why? You want to explode, right? We are here for
+                            you!
+                        </div>
+                        <div class="alert alert-danger" role="alert" id="emptyAlert" style="display:none;">
+                            You rejected the transaction, why? You want to explode, right? We are here for
+                            you!
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        Banner, Thumnail or other promotion? Check our <a href="prices"
+                                                                          target="_blank">Our Prices</a>
+                        (new
+                        tab)
+                    </div>
+
+                    <div class="mt-3">
+                        <button class="btn btn-primary w-100 mt-3 mt-sm-4" type="button" id="btn-connect">List drop
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="col-xxl-4 col-xl-4 col-lg-6">
@@ -347,13 +356,13 @@ Q4: laboris nisi ut aliquip ex ea commodo consequat
                                  id="socialBtn">
                                 <p><img id="twitterLogo" src="img/extern_logo/twitter_logo_white.png"
                                         style="width: 25px; height: 25px; visibility: visible;"> <span
-                                            id="twitterName"></span></p>
+                                        id="twitterName"></span></p>
                                 <p><img id="discordLogo" src="img/extern_logo/discord_logo.jpg"
                                         style="width: 25px; height: 25px; visibility: visible;"> <span
-                                            id="discordName"></span></p>
+                                        id="discordName"></span></p>
                                 <p><img id="websiteLogo" src="img/extern_logo/link_icon.jpg"
                                         style="width: 25px; height: 25px; visibility: visible;"> <span
-                                            id="websiteName"></span></p>
+                                        id="websiteName"></span></p>
                             </div>
                         </div>
                     </div>

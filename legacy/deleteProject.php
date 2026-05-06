@@ -1,4 +1,4 @@
-<?php 
+<?php
 require "connection.php";
 
 if (isset($_GET['id'])) {
@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
     // sql to delete a record using prepared statements
     $sqlProjects = "DELETE FROM projectsExist WHERE id = ?";
     $stmt = $conn->prepare($sqlProjects);
-    
+
     try {
         // Execute the prepared statement with the parameter
         $stmt->execute([$idProject]);

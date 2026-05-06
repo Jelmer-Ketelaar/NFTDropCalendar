@@ -19,4 +19,4 @@ if (!$project) {
 
 $getProjectsOther = $conn->prepare("SELECT * FROM projectsExist WHERE verified = 'true' ORDER BY RAND() LIMIT 9");
 $getProjectsOther->execute();
-$projectsOther = $getProjectsOther->fetchAll(\PDO::FETCH_ASSOC);
+$projectsOther = $getProjectsOther->fetchAll(PDO::FETCH_ASSOC);

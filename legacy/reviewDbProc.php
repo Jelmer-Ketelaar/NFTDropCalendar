@@ -25,20 +25,20 @@ if (isset($_POST['id']) && is_array($_POST['id'])) {
     $stmt = $conn->prepare($sql);
     foreach ($ids as $index => $id) {
         $stmt->execute([
-            $verifieds[$index], 
-            $names[$index], 
-            $blockchains[$index], 
-            $dropDates[$index], 
-            $mintPrices[$index], 
+            $verifieds[$index],
+            $names[$index],
+            $blockchains[$index],
+            $dropDates[$index],
+            $mintPrices[$index],
             $royalties[$index] ?: 0,  // Use default value 0 if null or empty
-            $supplies[$index], 
-            $teamAmounts[$index], 
-            $twitterFollowerAmounts[$index], 
-            $discordMemberNumbers[$index], 
-            $promoteds[$index], 
-            $twitterNames[$index], 
-            $discordLinks[$index], 
-            $websiteLinks[$index], 
+            $supplies[$index],
+            $teamAmounts[$index],
+            $twitterFollowerAmounts[$index],
+            $discordMemberNumbers[$index],
+            $promoteds[$index],
+            $twitterNames[$index],
+            $discordLinks[$index],
+            $websiteLinks[$index],
             $id
         ]);
     }

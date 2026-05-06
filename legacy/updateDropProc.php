@@ -71,7 +71,7 @@ $conn->prepare($sql)->execute([
     $twitterName,
     $discordLink,
     $websiteLink,
-    (int) $id,
+    (int)$id,
 ]);
 
 redirect_to('nft.php?nft=' . urlencode($name) . '&id=' . $idEnc);

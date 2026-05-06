@@ -3,10 +3,15 @@
     "name": "jketelaar/nft-drop-calendar",
     "type": "project",
     "description": "NFTDropCalendar migrated to a Laravel application shell.",
-    "keywords": ["laravel", "nft", "calendar"],
+    "keywords": [
+        "laravel",
+        "nft",
+        "calendar"
+    ],
     "license": "proprietary",
     "require": {
         "php": "^8.3",
+        "ext-pdo": "*",
         "laravel/framework": "^13.7",
         "laravel/tinker": "^3.0"
     },

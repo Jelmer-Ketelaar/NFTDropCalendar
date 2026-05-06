@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
     try {
         $stmt = $conn->prepare($sql);
         $stmt->execute([$twitterFollowerAmount, $discordMemberNumber, $id]);
-        
+
         // Redirect to the review application page with a query parameter.
         header('Location: reviewApp.php?ww=Test');
         exit(); // Ensure no further script execution after redirect

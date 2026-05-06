@@ -83,7 +83,7 @@ function request_string(array $source, string $key, string $default = ''): strin
         return $default;
     }
 
-    return trim((string) $value);
+    return trim((string)$value);
 }
 
 function required_request_string(array $source, string $key): string
@@ -109,13 +109,13 @@ function decoded_id(?string $encoded): ?int
         return null;
     }
 
-    return (int) $decoded;
+    return (int)$decoded;
 }
 
 if (!function_exists('e')) {
     function e(mixed $value): string
     {
-        return htmlspecialchars((string) $value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+        return htmlspecialchars((string)$value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
     }
 }
 
@@ -187,7 +187,7 @@ function fetch_twitter_follower_count(string $username): int
         return 0;
     }
 
-    return max(0, (int) $parsed[0]['followers_count']);
+    return max(0, (int)$parsed[0]['followers_count']);
 }
 
 function uploaded_image_path(string $fieldName, string $targetDirectory = 'images'): ?string
@@ -219,7 +219,7 @@ function uploaded_image_path(string $fieldName, string $targetDirectory = 'image
         return null;
     }
 
-    $originalName = pathinfo((string) ($upload['name'] ?? ''), PATHINFO_FILENAME);
+    $originalName = pathinfo((string)($upload['name'] ?? ''), PATHINFO_FILENAME);
     $safeName = preg_replace('/[^A-Za-z0-9_-]+/', '-', $originalName) ?: 'upload';
     $safeName = trim($safeName, '-');
     $safeName = strtolower($safeName !== '' ? $safeName : 'upload');

@@ -84,7 +84,7 @@ $conn->prepare($sql)->execute([
     $websiteLink,
     $marketplaceLink,
     $emailContact,
-    (int) $id,
+    (int)$id,
 ]);
 
 redirect_to('project.php?nft=' . urlencode($name) . '&id=' . $idEnc);
