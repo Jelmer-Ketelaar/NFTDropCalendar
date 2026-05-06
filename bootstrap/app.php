@@ -11,21 +11,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Legacy pages that bypass CSRF (handled by LegacyPageController)
         $middleware->preventRequestForgery(except: [
-            'contactMail',
-            'contactMail.php',
-            'listingProces',
-            'listingProces.php',
-            'listingProjectProces',
-            'listingProjectProces.php',
-            'notifyMail',
-            'notifyMail.php',
             'reviewDbProc',
             'reviewDbProc.php',
-            'updateDropProc',
-            'updateDropProc.php',
-            'updateProjProc',
-            'updateProjProc.php',
+            'reviewAppProc',
+            'reviewAppProc.php',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

@@ -1,0 +1,270 @@
+@extends('layouts.app')
+
+@push('head')
+<link href="{{ asset('css/banner.css') }}" rel="stylesheet">
+@endpush
+
+@section('content')
+
+<div class="intro1 section-padding">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-xl-5 col-lg-6 col-12">
+                <div class="intro-content my-5">
+                    <h1 class="mb-3">Discover<span> extraordinary NFTs</span></h1>
+                    <div class="intro-btn mt-5">
+                        <a class="btn btn-outline-primary" href="{{ route('drops.explore') }}">Explore Drops</a>
+                        <a class="btn btn-outline-primary" href="{{ route('projects.explore') }}">Explore Projects</a>
+                    </div>
+                </div>
+            </div>
+
+            @if($banner)
+            <div class="col-xl-5 col-lg-6 col-12">
+                <a href="{{ route('drops.show', ['id' => base64_encode($banner->id)]) }}" target="_blank">
+                    <div class="intro-slider">
+                        <div class="slider-item">
+                            <img alt="{{ $banner->name }}" class="image-fluid rounded" id="image-fluid"
+                                 style="height: 350px;" src="{{ asset($banner->thumbnail) }}">
+                        </div>
+                    </div>
+                </a>
+                <a href="{{ route('drops.show', ['id' => base64_encode($banner->id)]) }}" target="_blank">
+                    <div class="slider-item-avatar">
+                        <img alt="{{ $banner->name }}" src="{{ asset($banner->thumbnail) }}">
+                        <div>
+                            <h5>{{ $banner->name }}</h5>
+                            <p>{{ mb_strimwidth($banner->description, 0, 150, '...') }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            @endif
+        </div>
+    </div>
+</div>
+
+<div class="notable-drops section-padding bg-light triangle-top-light triangle-bottom-light" id="NFT-DROPS">
+    <div class="container">
+        <div class="section-padding">
+            <center>
+                <a href="{{ url('prices') }}" target="_blank">
+                    <img alt="banner" class="CoverPhoto" src="{{ asset('banner.png') }}">
+                </a>
+            </center>
+        </div>
+
+        @if($projectsPaid->isNotEmpty())
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="intro d-flex justify-content-between align-items-end m-0">
+                    <div class="intro-content">
+                        <h1 class="mt-3 mb-0">Promotion Drops</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-container">
+                <div class="row">
+                    @foreach($projectsPaid->take(8) as $project)
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <a href="{{ route('drops.show', ['id' => base64_encode($project->id)]) }}" target="_blank">
+                            <div class="card" style="background-color: inherit; max-height: 700px; min-height: 500px; object-fit: cover; box-shadow: 5px 5px rgba(253, 156, 46, 0.7), 10px 10px rgba(253, 156, 46, 0.5), 15px 15px rgba(253, 156, 46, 0.3), 20px 20px rgba(253, 156, 46, 0.2), 25px 25px rgba(253, 156, 46, 0.1);">
+                                <img alt="{{ $project->name }}" class="img-fluid card-img-top" src="{{ asset($project->thumbnail) }}">
+                                <div class="sample">
+                                    <div class="ribbon down" style="--color: #fd9c2e;">
+                                        <div class="content">
+                                            <svg width="24px" height="24px" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"/></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" style="background-color: inherit;">
+                                    <div class="countdown-times mb-3">
+                                        @if(!$project->isLive())
+                                        <div class='countdown d-flex justify-content-center'
+                                             data-date="{{ $project->dropDatePart() }}"
+                                             data-time="{{ $project->dropTimePart() }}"></div>
+                                        @else
+                                        <center>
+                                            <div class="ribbon-wrapper">
+                                                <div class="glow">&nbsp;</div>
+                                                <div class="ribbon-front">LIVE</div>
+                                                <div class="ribbon-edge-topleft"></div>
+                                                <div class="ribbon-edge-topright"></div>
+                                                <div class="ribbon-edge-bottomleft"></div>
+                                                <div class="ribbon-edge-bottomright"></div>
+                                            </div>
+                                        </center>
+                                        @endif
+                                    </div>
+                                    <h4 class="card-title">{{ $project->name }}</h4>
+                                    <p>{{ mb_strimwidth($project->description, 0, 80, '...') }}</p>
+                                    <div class="card-bottom d-flex justify-content-between">
+                                        <span><img src="{{ asset('img/extern_logo/twitter_logo.png') }}" style="width:40px;" alt="twitter"> {{ $project->twitterFollowerNumber }}</span>
+                                        <span><img src="{{ asset('img/extern_logo/crypto/' . $project->blockchain . '.png') }}" style="width:30px;" alt="blockchain"></span>
+                                        <span><img src="{{ asset('img/extern_logo/discord_logo.png') }}" style="width:35px;" alt="discord"> {{ $project->discordMemberNumber }}</span>
+                                    </div>
+                                    <a href="{{ route('drops.show', ['id' => base64_encode($project->id)]) }}">Check this NFT</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        @endif
+
+        @if($projectsExistPaid->isNotEmpty())
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="intro d-flex justify-content-between align-items-end m-0">
+                    <div class="intro-content">
+                        <h1 class="mt-3 mb-0">Promotion Projects</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-container">
+                <div class="row">
+                    @foreach($projectsExistPaid->take(4) as $projectExist)
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <a href="{{ route('projects.show', ['id' => base64_encode($projectExist->id)]) }}" target="_blank">
+                            <div class="card" style="max-height: 700px; min-height: 500px; object-fit: cover; box-shadow: 5px 5px rgba(253, 156, 46, 0.7), 10px 10px rgba(253, 156, 46, 0.5), 15px 15px rgba(253, 156, 46, 0.3), 20px 20px rgba(253, 156, 46, 0.2), 25px 25px rgba(253, 156, 46, 0.1);">
+                                <strong style="position:absolute;color:white;margin:5px;text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;">{{ $projectExist->floorPrice }}</strong>
+                                <img alt="{{ $projectExist->name }}" class="img-fluid card-img-top" src="{{ asset($projectExist->thumbnail) }}">
+                                <div class="sample">
+                                    <div class="ribbon down" style="--color: #fd9c2e;">
+                                        <div class="content">
+                                            <svg width="24px" height="24px" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"/></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ $projectExist->name }}</h4>
+                                    <p>{{ mb_strimwidth($projectExist->description, 0, 80, '...') }}</p>
+                                    <div class="card-bottom d-flex justify-content-between">
+                                        <span><img src="{{ asset('img/extern_logo/twitter_logo.png') }}" style="width:40px;" alt="twitter"> {{ $projectExist->twitterFollowerNumber }}</span>
+                                        <span><img src="{{ asset('img/extern_logo/crypto/' . $projectExist->blockchain . '.png') }}" style="width:30px;" alt="blockchain"></span>
+                                        <span><img src="{{ asset('img/extern_logo/discord_logo.png') }}" style="width:35px;" alt="discord"> {{ $projectExist->discordMemberNumber }}</span>
+                                    </div>
+                                    <a href="{{ route('projects.show', ['id' => base64_encode($projectExist->id)]) }}">Check this NFT</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        @endif
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="intro d-flex justify-content-between align-items-end m-0">
+                        <div class="intro-content">
+                            <span>NFT Drops</span>
+                            <h1 class="mt-3 mb-0">NFT Drops</h1>
+                        </div>
+                        <div class="intro-btn">
+                            <a class="btn content-btn" href="{{ route('drops.explore') }}" style="padding: 0; font-weight: 600; color: var(--primary-t-color); background: transparent; box-shadow: none; padding-right: 15px;">View All</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-container">
+                    <div class="row">
+                        @foreach($projects->take(4) as $project)
+                        <div class="col-xl-3 col-lg-6 col-md-6">
+                            <div class="card" style="{{ $project->isPromoted() ? 'max-height: 700px; min-height: 500px; object-fit: cover; box-shadow: 5px 5px rgba(253,156,46,0.7),10px 10px rgba(253,156,46,0.5),15px 15px rgba(253,156,46,0.3),20px 20px rgba(253,156,46,0.2),25px 25px rgba(253,156,46,0.1);' : 'max-height: 700px; min-height: 500px;' }}">
+                                <img alt="{{ $project->name }}" class="img-fluid card-img-top"
+                                     style="max-height: 256px; max-width: 256px; min-height: 256px; object-fit: cover;"
+                                     src="{{ asset($project->thumbnail) }}">
+                                <div class="card-body">
+                                    <div class="countdown-times mb-3">
+                                        @if(!$project->isLive())
+                                        <div class='countdown d-flex justify-content-center'
+                                             data-date="{{ $project->dropDatePart() }}"
+                                             data-time="{{ $project->dropTimePart() }}"></div>
+                                        @else
+                                        <center>
+                                            <div class="ribbon-wrapper">
+                                                <div class="glow">&nbsp;</div>
+                                                <div class="ribbon-front">LIVE</div>
+                                                <div class="ribbon-edge-topleft"></div>
+                                                <div class="ribbon-edge-topright"></div>
+                                                <div class="ribbon-edge-bottomleft"></div>
+                                                <div class="ribbon-edge-bottomright"></div>
+                                            </div>
+                                        </center>
+                                        @endif
+                                    </div>
+                                    <h4 class="card-title">{{ $project->name }}</h4>
+                                    <p>{{ mb_strimwidth($project->description, 0, 80, '...') }}</p>
+                                    <div class="card-bottom d-flex justify-content-between">
+                                        <span><img src="{{ asset('img/extern_logo/twitter_logo.png') }}" style="width:40px;" alt="twitter"> {{ $project->twitterFollowerNumber }}</span>
+                                        <span><img src="{{ asset('img/extern_logo/crypto/' . $project->blockchain . '.png') }}" style="width:30px;" alt="blockchain"></span>
+                                        <span><img src="{{ asset('img/extern_logo/discord_logo.png') }}" style="width:35px;" alt="discord"> {{ $project->discordMemberNumber }}</span>
+                                    </div>
+                                    <a href="{{ route('drops.show', ['id' => base64_encode($project->id)]) }}">Check this NFT</a>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            <div class="notable-drops section-padding" id="NFT-DROPS">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section-title text-center">
+                                <h2>Why Choose NFTDropCalendar</h2>
+                                <p>Discover the benefits of using NFTDropCalendar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="create-sell-content">
+                                <div class="create-sell-content-icon"><i class="fas fa-shield-check"></i></div>
+                                <div>
+                                    <h4>Verified Projects</h4>
+                                    <p>All projects and drops on NFTDropCalendar are verified and legitimate, ensuring a safe and reliable experience for users.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="create-sell-content">
+                                <div class="create-sell-content-icon"><i class="fas fa-info-circle"></i></div>
+                                <div>
+                                    <h4>Comprehensive Information</h4>
+                                    <p>NFTDropCalendar provides all the necessary information and tools for users to stay informed and make informed decisions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="create-sell-content">
+                                <div class="create-sell-content-icon"><i class="fas fa-bullhorn"></i></div>
+                                <div>
+                                    <h4>Promote Your Project</h4>
+                                    <p>Listing your own NFT project or drop on NFTDropCalendar will give it extra visibility and reach through our newsletter and social media channels.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="create-sell-content">
+                                <div class="create-sell-content-icon"><i class="fas fa-dollar-sign"></i></div>
+                                <div>
+                                    <h4>Free to Use</h4>
+                                    <p>NFTDropCalendar is completely free to use for users, with a small fee for listing projects or drops.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection
