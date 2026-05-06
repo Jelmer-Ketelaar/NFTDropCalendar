@@ -4,4 +4,4 @@ Disallow: /admin
 Disallow: /login
 Disallow: /register
 
-Sitemap: {{ route('sitemap') }}
+Sitemap: {{ url('/sitemap.xml') }}
