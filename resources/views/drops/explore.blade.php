@@ -59,7 +59,7 @@
                 <a href="{{ route('drops.show', ['id' => base64_encode($drop->id)]) }}" class="text-decoration-none">
                     <div class="card h-100">
                         <div style="position: relative;">
-                            <img alt="{{ $drop->name }}" class="card-img-top" src="{{ asset($drop->thumbnail) }}" style="height: 240px; object-fit: cover; width: 100%;">
+                            <img alt="{{ $drop->name }}" class="card-img-top" src="{{ $drop->thumbnailUrl() }}" style="height: 240px; object-fit: cover; width: 100%;">
                             @if($drop->isPromoted())
                             <span class="badge badge-upcoming" style="position: absolute; top: 10px; right: 10px;">Featured</span>
                             @endif

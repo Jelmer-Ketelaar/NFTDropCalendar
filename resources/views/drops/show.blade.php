@@ -26,7 +26,7 @@
         <div class="row mb-5">
             <div class="col-12">
                 <div style="position: relative; border-radius: 12px; overflow: hidden; height: 400px;">
-                    <img alt="{{ $drop->name }}" src="{{ asset($drop->thumbnail) }}" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img alt="{{ $drop->name }}" src="{{ $drop->thumbnailUrl() }}" style="width: 100%; height: 100%; object-fit: cover;">
                     <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, var(--nft-bg) 0%, transparent 100%); padding: 3rem 2rem 2rem;">
                         <h1 style="color: var(--nft-text); margin-bottom: 0.5rem;">{{ $drop->name }}</h1>
                         <p style="color: var(--nft-text-secondary); margin-bottom: 1rem;">{{ mb_strimwidth($drop->description, 0, 150, '...') }}</p>
@@ -303,7 +303,7 @@
             <div class="col-12 col-sm-6 col-lg-3 mb-4">
                 <a href="{{ route('drops.show', ['id' => base64_encode($related->id)]) }}" class="text-decoration-none">
                     <div class="card h-100">
-                        <img alt="{{ $related->name }}" class="card-img-top" src="{{ asset($related->thumbnail) }}" style="height: 200px; object-fit: cover;">
+                        <img alt="{{ $related->name }}" class="card-img-top" src="{{ $related->thumbnailUrl() }}" style="height: 200px; object-fit: cover;">
                         <div class="card-body d-flex flex-column">
                             @if(!$related->isLive())
                             <div class="countdown-times mb-3">

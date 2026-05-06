@@ -22,7 +22,7 @@ class ListedProjectForm
                 Textarea::make('description')->required()->maxLength(750)->columnSpanFull(),
                 Select::make('blockchain')->options(Blockchain::options())->required(),
                 Select::make('category')->options(Category::options())->required(),
-                FileUpload::make('thumbnail')->image()->directory('images')->columnSpanFull(),
+                FileUpload::make('thumbnail')->image()->disk('r2')->directory('images')->visibility('public')->columnSpanFull(),
                 TextInput::make('floorPrice')->numeric()->step(0.00001),
                 TextInput::make('volume')->numeric()->step(0.0001),
                 TextInput::make('traits')->numeric(),

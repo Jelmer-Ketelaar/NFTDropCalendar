@@ -27,7 +27,7 @@
                                 <div class="card-body">
                                     <div class="items-img position-relative">
                                         <a href="{{ route('drops.show', ['id' => base64_encode($drop->id)]) }}">
-                                            <img class="avatar-lg" src="{{ asset($drop->thumbnail) }}" style="min-width:90px;height:90px;" alt="">
+                                            <img class="avatar-lg" src="{{ $drop->thumbnailUrl() }}" style="min-width:90px;height:90px;" alt="">
                                         </a>
                                     </div>
                                     <a href="{{ route('drops.show', ['id' => base64_encode($drop->id)]) }}">
@@ -51,7 +51,7 @@
                                 <div class="card-body">
                                     <div class="items-img position-relative">
                                         <a href="{{ route('projects.show', ['id' => base64_encode($project->id)]) }}">
-                                            <img class="avatar-lg" src="{{ asset($project->thumbnail) }}" style="min-width:90px;height:90px;" alt="">
+                                            <img class="avatar-lg" src="{{ $project->thumbnailUrl() }}" style="min-width:90px;height:90px;" alt="">
                                         </a>
                                     </div>
                                     <a href="{{ route('projects.show', ['id' => base64_encode($project->id)]) }}">

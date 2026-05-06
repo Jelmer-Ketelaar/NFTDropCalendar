@@ -22,7 +22,7 @@ class DropForm
                 Textarea::make('description')->required()->maxLength(750)->columnSpanFull(),
                 Select::make('blockchain')->options(Blockchain::options())->required(),
                 Select::make('category')->options(Category::options())->required(),
-                FileUpload::make('thumbnail')->image()->directory('images')->columnSpanFull(),
+                FileUpload::make('thumbnail')->image()->disk('r2')->directory('images')->visibility('public')->columnSpanFull(),
                 DateTimePicker::make('dropDate'),
                 TextInput::make('mintPrice')->numeric()->step(0.0001),
                 TextInput::make('royality')->numeric()->required(),

@@ -26,7 +26,7 @@
         <div class="row mb-5">
             <div class="col-12">
                 <div style="position: relative; border-radius: 12px; overflow: hidden; height: 400px;">
-                    <img alt="{{ $project->name }}" src="{{ asset($project->thumbnail) }}" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img alt="{{ $project->name }}" src="{{ $project->thumbnailUrl() }}" style="width: 100%; height: 100%; object-fit: cover;">
                     <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, var(--nft-bg) 0%, transparent 100%); padding: 3rem 2rem 2rem;">
                         <h1 style="color: var(--nft-text); margin-bottom: 0.5rem;">{{ $project->name }}</h1>
                         <p style="color: var(--nft-text-secondary); margin-bottom: 1rem;">{{ mb_strimwidth($project->description, 0, 150, '...') }}</p>

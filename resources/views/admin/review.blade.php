@@ -20,7 +20,7 @@
                     @foreach($drops as $drop)
                     <li class="single-tab-list d-flex align-items-center" style="{{ $drop->promoted === 'promote' ? 'background-color:yellow;' : '' }}">
                         <a href="{{ route('drops.show', ['id' => base64_encode($drop->id)]) }}" target="_blank">
-                            <img class="avatar-lg" src="{{ $drop->thumbnail }}" style="min-width:100px;height:100px;" alt="">
+                            <img class="avatar-lg" src="{{ $drop->thumbnailUrl() }}" style="min-width:100px;height:100px;" alt="">
                         </a>
                         <div class="activity-content ml-4">
                             <a href="{{ route('drops.show', ['id' => base64_encode($drop->id)]) }}" target="_blank">
@@ -77,7 +77,7 @@
             @foreach($projects as $project)
             <li class="single-tab-list d-flex align-items-center" style="{{ $project->promoted === 'promote' ? 'background-color:yellow;' : '' }}">
                 <a href="{{ route('projects.show', ['id' => base64_encode($project->id)]) }}" target="_blank">
-                    <img class="avatar-lg" src="{{ $project->thumbnail }}" style="min-width:100px;height:100px;" alt="">
+                    <img class="avatar-lg" src="{{ $project->thumbnailUrl() }}" style="min-width:100px;height:100px;" alt="">
                 </a>
                 <div class="activity-content ml-4">
                     <a href="{{ route('projects.show', ['id' => base64_encode($project->id)]) }}" target="_blank">
@@ -132,7 +132,7 @@
             @foreach($updatedDrops as $drop)
             <li class="single-tab-list d-flex align-items-center">
                 <a href="{{ route('drops.show', ['id' => base64_encode($drop->id)]) }}" target="_blank">
-                    <img class="avatar-lg" src="{{ $drop->thumbnail }}" style="min-width:100px;height:100px;" alt="">
+                    <img class="avatar-lg" src="{{ $drop->thumbnailUrl() }}" style="min-width:100px;height:100px;" alt="">
                 </a>
                 <div class="activity-content ml-4">
                     <h5>{{ $drop->name }}</h5>
@@ -171,7 +171,7 @@
             @foreach($updatedProjects as $project)
             <li class="single-tab-list d-flex align-items-center">
                 <a href="{{ route('projects.show', ['id' => base64_encode($project->id)]) }}" target="_blank">
-                    <img class="avatar-lg" src="{{ $project->thumbnail }}" style="min-width:100px;height:100px;" alt="">
+                    <img class="avatar-lg" src="{{ $project->thumbnailUrl() }}" style="min-width:100px;height:100px;" alt="">
                 </a>
                 <div class="activity-content ml-4">
                     <h5>{{ $project->name }}</h5>

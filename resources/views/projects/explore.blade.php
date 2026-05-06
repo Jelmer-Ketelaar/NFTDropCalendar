@@ -26,7 +26,7 @@
                 <a href="{{ route('projects.show', ['id' => base64_encode($project->id)]) }}" class="text-decoration-none">
                     <div class="card h-100">
                         <div style="position: relative;">
-                            <img alt="{{ $project->name }}" class="card-img-top" src="{{ asset($project->thumbnail) }}" style="height: 240px; object-fit: cover; width: 100%;">
+                            <img alt="{{ $project->name }}" class="card-img-top" src="{{ $project->thumbnailUrl() }}" style="height: 240px; object-fit: cover; width: 100%;">
                             @if($project->isPromoted())
                             <span class="badge badge-upcoming" style="position: absolute; top: 10px; right: 10px;">Featured</span>
                             @endif

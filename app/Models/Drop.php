@@ -30,6 +30,15 @@ final class Drop extends Model
         ];
     }
 
+    public function thumbnailUrl(): string
+    {
+        if (str_starts_with($this->thumbnail ?? '', 'http')) {
+            return $this->thumbnail;
+        }
+
+        return asset($this->thumbnail ?? '');
+    }
+
     public function isPromoted(): bool
     {
         return $this->promoted === 'promote';

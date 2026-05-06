@@ -20,7 +20,7 @@
             <div class="col-xl-5 col-lg-6 col-12">
                 <a href="{{ route('drops.show', ['id' => base64_encode($banner->id)]) }}" class="d-block">
                     <div class="card" style="margin-top: 0;">
-                        <img alt="{{ $banner->name }}" class="card-img-top" src="{{ asset($banner->thumbnail) }}" style="height: 350px; object-fit: cover;">
+                        <img alt="{{ $banner->name }}" class="card-img-top" src="{{ $banner->thumbnailUrl() }}" style="height: 350px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title mb-2">{{ $banner->name }}</h5>
                             <p class="card-text small">{{ mb_strimwidth($banner->description, 0, 120, '...') }}</p>
@@ -52,7 +52,7 @@
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                 <a href="{{ route('drops.show', ['id' => base64_encode($project->id)]) }}" class="text-decoration-none">
                     <div class="card h-100">
-                        <img alt="{{ $project->name }}" class="card-img-top" src="{{ asset($project->thumbnail) }}" style="height: 200px; object-fit: cover;">
+                        <img alt="{{ $project->name }}" class="card-img-top" src="{{ $project->thumbnailUrl() }}" style="height: 200px; object-fit: cover;">
                         @if($project->isPromoted())
                         <div style="position: absolute; top: 10px; right: 10px;">
                             <span class="badge badge-upcoming">Featured</span>
@@ -103,7 +103,7 @@
                 <a href="{{ route('drops.show', ['id' => base64_encode($trending->id)]) }}" class="text-decoration-none">
                     <div class="card h-100">
                         <div style="position: relative;">
-                            <img alt="{{ $trending->name }}" class="card-img-top" src="{{ asset($trending->thumbnail) }}" style="height: 200px; object-fit: cover;">
+                            <img alt="{{ $trending->name }}" class="card-img-top" src="{{ $trending->thumbnailUrl() }}" style="height: 200px; object-fit: cover;">
                             <span class="badge" style="position: absolute; top: 10px; right: 10px; background-color: rgba(34, 211, 238, 0.9); border: 1px solid var(--nft-accent); color: var(--nft-accent);">
                                 <i class="fas fa-fire"></i> Trending
                             </span>
@@ -155,7 +155,7 @@
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                 <a href="{{ route('drops.show', ['id' => base64_encode($project->id)]) }}" class="text-decoration-none">
                     <div class="card h-100">
-                        <img alt="{{ $project->name }}" class="card-img-top" src="{{ asset($project->thumbnail) }}" style="height: 200px; object-fit: cover;">
+                        <img alt="{{ $project->name }}" class="card-img-top" src="{{ $project->thumbnailUrl() }}" style="height: 200px; object-fit: cover;">
                         <div class="card-body d-flex flex-column">
                             @if(!$project->isLive())
                             <div class="countdown-times mb-3">
@@ -303,7 +303,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <a href="{{ route('drops.show', ['id' => base64_encode($project->id)]) }}" target="_blank">
                             <div class="card" style="background-color: inherit; max-height: 700px; min-height: 500px; object-fit: cover; box-shadow: 5px 5px rgba(253, 156, 46, 0.7), 10px 10px rgba(253, 156, 46, 0.5), 15px 15px rgba(253, 156, 46, 0.3), 20px 20px rgba(253, 156, 46, 0.2), 25px 25px rgba(253, 156, 46, 0.1);">
-                                <img alt="{{ $project->name }}" class="img-fluid card-img-top" src="{{ asset($project->thumbnail) }}">
+                                <img alt="{{ $project->name }}" class="img-fluid card-img-top" src="{{ $project->thumbnailUrl() }}">
                                 <div class="sample">
                                     <div class="ribbon down" style="--color: #fd9c2e;">
                                         <div class="content">
@@ -364,7 +364,7 @@
                         <a href="{{ route('projects.show', ['id' => base64_encode($projectExist->id)]) }}" target="_blank">
                             <div class="card" style="max-height: 700px; min-height: 500px; object-fit: cover; box-shadow: 5px 5px rgba(253, 156, 46, 0.7), 10px 10px rgba(253, 156, 46, 0.5), 15px 15px rgba(253, 156, 46, 0.3), 20px 20px rgba(253, 156, 46, 0.2), 25px 25px rgba(253, 156, 46, 0.1);">
                                 <strong style="position:absolute;color:white;margin:5px;text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;">{{ $projectExist->floorPrice }}</strong>
-                                <img alt="{{ $projectExist->name }}" class="img-fluid card-img-top" src="{{ asset($projectExist->thumbnail) }}">
+                                <img alt="{{ $projectExist->name }}" class="img-fluid card-img-top" src="{{ $projectExist->thumbnailUrl() }}">
                                 <div class="sample">
                                     <div class="ribbon down" style="--color: #fd9c2e;">
                                         <div class="content">
@@ -411,7 +411,7 @@
                             <div class="card" style="{{ $project->isPromoted() ? 'max-height: 700px; min-height: 500px; object-fit: cover; box-shadow: 5px 5px rgba(253,156,46,0.7),10px 10px rgba(253,156,46,0.5),15px 15px rgba(253,156,46,0.3),20px 20px rgba(253,156,46,0.2),25px 25px rgba(253,156,46,0.1);' : 'max-height: 700px; min-height: 500px;' }}">
                                 <img alt="{{ $project->name }}" class="img-fluid card-img-top"
                                      style="max-height: 256px; max-width: 256px; min-height: 256px; object-fit: cover;"
-                                     src="{{ asset($project->thumbnail) }}">
+                                     src="{{ $project->thumbnailUrl() }}">
                                 <div class="card-body">
                                     <div class="countdown-times mb-3">
                                         @if(!$project->isLive())

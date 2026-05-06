@@ -12,7 +12,7 @@
             <div class="col-12 col-md-4">
                 <div class="card no-hover text-center" style="position: sticky; top:15vh;">
                     <div class="image-over">
-                        <img class="card-img-top" id="projectImage" src="{{ $nft ? asset($nft->thumbnail) : asset('img/content/auction_2.jpg') }}" alt="">
+                        <img class="card-img-top" id="projectImage" src="{{ $nft ? $nft->thumbnailUrl() : asset('img/content/auction_2.jpg') }}" alt="">
                         <div class="author">
                             <div class="author-thumb avatar-lg">
                                 <img class="rounded-circle" id="blockchainLogo"

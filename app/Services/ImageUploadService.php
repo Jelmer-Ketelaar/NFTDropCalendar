@@ -2,6 +2,7 @@
 namespace App\Services;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 final class ImageUploadService
 {
@@ -16,9 +17,10 @@ final class ImageUploadService
         $safeName = strtolower(trim(preg_replace('/[^A-Za-z0-9_-]+/', '-', $originalName) ?: 'upload', '-'));
         $safeName = $safeName !== '' ? $safeName : 'upload';
         $filename = date('Y-m-d-H-i-s') . '-' . bin2hex(random_bytes(4)) . '-' . $safeName . '.' . $file->getClientOriginalExtension();
+        $path = $directory . '/' . $filename;
 
-        $file->move(public_path($directory), $filename);
+        Storage::disk('r2')->put($path, file_get_contents($file->getRealPath()), 'public');
 
-        return $directory . '/' . $filename;
+        return Storage::disk('r2')->url($path);
     }
 }

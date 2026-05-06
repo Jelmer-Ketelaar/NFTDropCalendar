@@ -50,7 +50,7 @@
                                 </select>
                             </td>
                             <td>{{ $drop->category }}</td>
-                            <td><img style="width:50px;" src="{{ $drop->thumbnail }}" alt=""></td>
+                            <td><img style="width:50px;" src="{{ $drop->thumbnailUrl() }}" alt=""></td>
                             <td><input type="datetime-local" name="dropDate[]" value="{{ $drop->dropDate }}"></td>
                             <td><input type="text" name="mintPrice[]" value="{{ $drop->mintPrice }}"></td>
                             <td><input type="number" step="0.5" name="royality[]" value="{{ $drop->royality }}"></td>
