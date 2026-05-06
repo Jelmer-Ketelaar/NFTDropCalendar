@@ -23,30 +23,18 @@
         var hours = Math.floor(remainingTime / 3600);
         remainingTime = remainingTime % 3600;
         var minutes = Math.floor(remainingTime / 60);
-        remainingTime = Math.floor(remainingTime % 60);
+        var seconds = Math.floor(remainingTime % 60);
 
-        var output = "";
+        var output = '<div class="countdown-container">';
+
         if (days !== 0) {
-            output += "<div class='countdown-container days'>";
-            output += "<span class='countdown-heading days-top'></span>";
-            output += "<span class='countdown-value days-bottom'>" + formatNumber(days) + "</span>";
-            output += "</div>";
+            output += '<div class="countdown-block"><div class="countdown-number">' + formatNumber(days) + '</div><div class="countdown-label">Days</div></div>';
         }
 
-        output += "<div class='countdown-container hours'>";
-        output += "<span class='countdown-heading hours-top'> - </span>";
-        output += "<span class='countdown-value hours-bottom'>" + formatNumber(hours) + "</span>";
-        output += "</div>";
-
-        output += "<div class='countdown-container minutes'>";
-        output += "<span class='countdown-heading minutes-top'><p> - </span>";
-        output += "<span class='countdown-value minutes-bottom'>" + formatNumber(minutes) + "</span>";
-        output += "</div>";
-
-        output += "<div class='countdown-container seconds'>";
-        output += "<span class='countdown-heading seconds-top'> - </span>";
-        output += "<span class='countdown-value seconds-bottom'>" + formatNumber(remainingTime) + "</span>";
-        output += "</div>";
+        output += '<div class="countdown-block"><div class="countdown-number">' + formatNumber(hours) + '</div><div class="countdown-label">Hours</div></div>';
+        output += '<div class="countdown-block"><div class="countdown-number">' + formatNumber(minutes) + '</div><div class="countdown-label">Minutes</div></div>';
+        output += '<div class="countdown-block"><div class="countdown-number">' + formatNumber(seconds) + '</div><div class="countdown-label">Seconds</div></div>';
+        output += '</div>';
 
         $(this).html(output);
     }

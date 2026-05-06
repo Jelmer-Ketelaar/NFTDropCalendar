@@ -1,134 +1,167 @@
 @extends('layouts.app')
 
-@push('head')
-<style>
-    .img-fluid { min-height: 350px; max-height: 400px; width: auto; }
-    .alert { padding: 20px; background-color: #f44336; color: white; opacity: 1; transition: opacity 0.6s; margin-bottom: 15px; }
-    .alert.warning { background-color: #ff9800; width: 50%; }
-</style>
-@endpush
-
 @section('content')
 
-<div class="item-single section-padding">
-    @if(!$project->isVerified())
-    <center>
-        <div class="alert warning">
-            <strong>Alert!</strong><br> Your project is private for now. We still need to investigate everything and manually fill in some data before your project is public. We will do the investigation as soon as possible!
-        </div>
-    </center>
-    @endif
+<!-- Back Link -->
+<div style="background: var(--nft-surface); border-bottom: 1px solid var(--nft-border); padding: 1rem 0;">
     <div class="container">
-        <div class="row">
-            <div class="col-xxl-12">
-                <div class="top-bid">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img alt="..." class="img-fluid rounded" src="{{ asset($project->thumbnail) }}">
-                            </div>
-                            <div class="col-md-6">
-                                <h3 class="mb-3">{{ $project->name }}</h3>
-                                <hr>
-                                <ul class="list-unstyled">
-                                    <li class="price d-flex justify-content-between">
-                                        <h4 style="color: #adacad;">Total Trading Volume: <strong class="text-primary">
-                                            {{ $project->volume }}
-                                            @if($project->ethChoice === 'eth') ETH
-                                            @elseif($project->ethChoice === 'matic') MATIC
-                                            @elseif($project->ethChoice === 'solana') SOL
-                                            @endif
-                                        </strong></h4>
-                                        <span></span>
-                                    </li>
-                                    <li class="price d-flex justify-content-between">
-                                        <h4 style="color: #adacad;">Collection Supply: <strong class="text-primary">{{ $project->supply }}</strong></h4>
-                                    </li>
-                                    <li class="price d-flex justify-content-between">
-                                        <h4 style="color: #adacad;">Marketplace Link:
-                                            <strong class="text-primary">
-                                                <a href="{{ $project->marketplaceLink }}">Visit Marketplace</a>
-                                            </strong>
-                                        </h4>
-                                    </li>
-                                    <li class="price d-flex justify-content-between">
-                                        <h4 style="color: #adacad;">Total Traits: <strong class="text-primary">{{ $project->traits }}</strong></h4>
-                                    </li>
-                                    <li class="price d-flex justify-content-between">
-                                        <h4 style="color: #adacad;">Floor Price: <strong class="text-primary">
-                                            {{ $project->floorPrice }}
-                                            @if($project->ethChoice === 'eth') ETH
-                                            @elseif($project->ethChoice === 'matic') MATIC
-                                            @elseif($project->ethChoice === 'solana') SOL
-                                            @endif
-                                        </strong></h4>
-                                    </li>
-                                </ul>
-                                <hr>
-                                <div class="row items">
-                                    <div class="col-12 item px-lg-2">
-                                        <h4 class="mt-0 mb-2" style="color: #adacad;">Description:</h4>
-                                        <div class="price d-flex justify-content-between align-items-center">
-                                            {!! nl2br(e($project->description)) !!}
-                                        </div>
-                                    </div>
+        <a href="{{ route('projects.explore') }}" style="color: var(--nft-accent); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+    </div>
+</div>
 
-                                    <div class="row items">
-                                        <hr>
-                                        <div class="col-12 item px-lg-2">
-                                            <div class="card no-hover">
-                                                <h4 class="mt-0 mb-2">Roadmap</h4>
-                                                <div class="price d-flex justify-content-between align-items-center">
-                                                    <pre>{{ $project->roadmap }}</pre>
-                                                </div>
-                                            </div>
-                                        </div>
+<!-- Verification Alert -->
+@if(!$project->isVerified())
+<div class="container mt-4">
+    <div class="alert alert-warning" style="margin-bottom: 2rem;">
+        <i class="fas fa-info-circle"></i> <strong>Under Review</strong><br>This project is currently under verification. We're checking the details and will make it public shortly.
+    </div>
+</div>
+@endif
 
-                                        <div class="row items">
-                                            <div class="col-4 item px-lg-2">
-                                                <div class="card no-hover">
-                                                    <h4 class="mt-0 mb-2">Royalty:</h4>
-                                                    <div class="price d-flex justify-content-between align-items-center">
-                                                        {{ $project->royality }}%
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-4 item px-lg-2">
-                                                <div class="card no-hover">
-                                                    <h4 class="mt-0 mb-2">Team:</h4>
-                                                    <div class="price d-flex justify-content-between align-items-center">
-                                                        {{ $project->teamAmount }} people
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-4 item px-lg-2">
-                                                <div class="card no-hover">
-                                                    <h4 class="mt-0 mb-2">Category:</h4>
-                                                    <div class="price d-flex justify-content-between align-items-center">
-                                                        {{ $project->category }}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <a class="d-block btn btn-bordered-white mt-4" target="_blank"
-                                           href="https://twitter.com/{{ $project->twitterName }}" style="color: gray">
-                                            <img src="{{ asset('img/extern_logo/twitter_logo.png') }}" style="width:25px;" alt="twitter">
-                                            Follow {{ $project->twitterName }}
-                                        </a>
-                                        <a class="d-block btn btn-bordered mt-4" target="_blank"
-                                           href="{{ $project->discordLink }}" style="color: gray">
-                                            <img src="{{ asset('img/extern_logo/discord_logo.png') }}" style="width:25px;" alt="discord"> Discord server
-                                        </a>
-                                        <a class="d-block btn btn-bordered mt-4" target="_blank"
-                                           href="{{ $project->websiteLink }}" style="color: gray">
-                                            <img src="{{ asset('img/extern_logo/link_icon.jpg') }}" style="width:25px;" alt="website"> Website Link
-                                        </a>
-                                        <div class="section-padding"></div>
-                                    </div>
-                                </div>
+<div class="item-single section-padding">
+    <div class="container">
+        <!-- Hero Section with Image -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div style="position: relative; border-radius: 12px; overflow: hidden; height: 400px;">
+                    <img alt="{{ $project->name }}" src="{{ asset($project->thumbnail) }}" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, var(--nft-bg) 0%, transparent 100%); padding: 3rem 2rem 2rem;">
+                        <h1 style="color: var(--nft-text); margin-bottom: 0.5rem;">{{ $project->name }}</h1>
+                        <p style="color: var(--nft-text-secondary); margin-bottom: 1rem;">{{ mb_strimwidth($project->description, 0, 150, '...') }}</p>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <span class="badge badge-upcoming">{{ ucfirst($project->category) }}</span>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <img src="{{ asset('img/extern_logo/crypto/' . $project->blockchain . '.png') }}" alt="{{ $project->blockchain }}" style="width: 24px; height: 24px;">
+                                <span style="color: var(--nft-text-secondary); font-weight: 500;">{{ ucfirst($project->blockchain) }}</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Stats -->
+        <div class="row mb-5">
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <p style="color: var(--nft-text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Trading Volume</p>
+                        <h4 style="color: var(--nft-accent); margin-bottom: 0;">
+                            {{ $project->volume }}
+                            @if($project->ethChoice === 'eth') ETH
+                            @elseif($project->ethChoice === 'matic') MATIC
+                            @elseif($project->ethChoice === 'solana') SOL
+                            @endif
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <p style="color: var(--nft-text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Floor Price</p>
+                        <h4 style="color: var(--nft-accent); margin-bottom: 0;">
+                            {{ $project->floorPrice }}
+                            @if($project->ethChoice === 'eth') ETH
+                            @elseif($project->ethChoice === 'matic') MATIC
+                            @elseif($project->ethChoice === 'solana') SOL
+                            @endif
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <p style="color: var(--nft-text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Collection Supply</p>
+                        <h4 style="color: var(--nft-accent); margin-bottom: 0;">{{ $project->supply }}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <p style="color: var(--nft-text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Total Traits</p>
+                        <h4 style="color: var(--nft-accent); margin-bottom: 0;">{{ $project->traits }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description & Details -->
+        <div class="row mb-5">
+            <div class="col-lg-8 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">About This Project</h3>
+                        <div style="color: var(--nft-text-secondary); line-height: 1.8; white-space: pre-wrap;">
+                            {!! nl2br(e($project->description)) !!}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Project Roadmap</h3>
+                        <div style="color: var(--nft-text-secondary); line-height: 1.8; white-space: pre-wrap;">
+                            {{ $project->roadmap }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3">Team Size</h5>
+                                <p style="color: var(--nft-accent); font-size: 1.75rem; font-weight: 700; margin-bottom: 0;">{{ $project->teamAmount }}</p>
+                                <p style="color: var(--nft-text-muted); margin-bottom: 0; font-size: 0.875rem;">Team members</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3">Royalty</h5>
+                                <p style="color: var(--nft-accent); font-size: 1.75rem; font-weight: 700; margin-bottom: 0;">{{ $project->royality }}%</p>
+                                <p style="color: var(--nft-text-muted); margin-bottom: 0; font-size: 0.875rem;">Creator royalty</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar: Social Links -->
+            <div class="col-lg-4 col-md-12">
+                <div class="card sticky-top" style="top: 100px;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Connect with the Team</h5>
+
+                        @if($project->twitterName)
+                        <a href="https://twitter.com/{{ $project->twitterName }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100 mb-3">
+                            <i class="fab fa-twitter"></i> Follow on Twitter
+                        </a>
+                        @endif
+
+                        @if($project->discordLink)
+                        <a href="{{ $project->discordLink }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100 mb-3">
+                            <i class="fab fa-discord"></i> Join Discord
+                        </a>
+                        @endif
+
+                        @if($project->websiteLink)
+                        <a href="{{ $project->websiteLink }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100 mb-3">
+                            <i class="fas fa-globe"></i> Visit Website
+                        </a>
+                        @endif
+
+                        @if($project->marketplaceLink)
+                        <a href="{{ $project->marketplaceLink }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-100">
+                            <i class="fas fa-shopping-cart"></i> View on Marketplace
+                        </a>
+                        @endif
                     </div>
                 </div>
             </div>

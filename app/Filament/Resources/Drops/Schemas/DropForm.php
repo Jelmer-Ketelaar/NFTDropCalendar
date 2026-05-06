@@ -1,7 +1,9 @@
 <?php
-
 namespace App\Filament\Resources\Drops\Schemas;
 
+use App\Enums\Blockchain;
+use App\Enums\Category;
+use App\Enums\PromotionLevel;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
@@ -18,12 +20,8 @@ class DropForm
             ->components([
                 TextInput::make('name')->required()->maxLength(25),
                 Textarea::make('description')->required()->maxLength(750)->columnSpanFull(),
-                Select::make('blockchain')
-                    ->options(['ethereum' => 'Ethereum', 'solana' => 'Solana', 'polygon' => 'Polygon', 'cardano' => 'Cardano', 'avalanche' => 'Avalanche'])
-                    ->required(),
-                Select::make('category')
-                    ->options(['Fun' => 'Fun', 'Metaverse' => 'Metaverse', 'Artwork' => 'Artwork'])
-                    ->required(),
+                Select::make('blockchain')->options(Blockchain::options())->required(),
+                Select::make('category')->options(Category::options())->required(),
                 FileUpload::make('thumbnail')->image()->directory('images')->columnSpanFull(),
                 DateTimePicker::make('dropDate'),
                 TextInput::make('mintPrice')->numeric()->step(0.0001),
@@ -37,15 +35,9 @@ class DropForm
                 Textarea::make('roadmap')->maxLength(2000)->columnSpanFull(),
                 TextInput::make('twitterFollowerNumber')->numeric()->default(0),
                 TextInput::make('discordMemberNumber')->numeric()->default(0),
-                Select::make('promoted')
-                    ->options(['promote' => 'Promote (paid)', 'promote1' => 'Promote1', 'promote2' => 'Promote2', 'promote3' => 'Promote3'])
-                    ->default('promote2')
-                    ->required(),
-                Select::make('verified')
-                    ->options(['true' => 'Verified', 'false' => 'Pending'])
-                    ->default('false')
-                    ->required(),
-                TextInput::make('updateStatus'),
+                Select::make('promoted')->options(PromotionLevel::options())->default(PromotionLevel::Promote2->value)->required(),
+                Toggle::make('verified')->default(false),
+                TextInput::make('updateStatus')->hidden(),
             ]);
     }
 }

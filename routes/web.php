@@ -8,6 +8,9 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NotifyController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\UpdateController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +21,7 @@ Route::get('/index', [HomeController::class, 'index']);
 // Drops
 Route::get('/exploreDrops', [DropController::class, 'explore'])->name('drops.explore');
 Route::get('/nft', [DropController::class, 'show'])->name('drops.show');
+Route::post('/nft/{encodedId}/review', [ReviewController::class, 'store'])->name('drops.review');
 Route::get('/listDropFree', [DropController::class, 'create'])->name('drops.create');
 Route::get('/listDrop', [DropController::class, 'create']);
 Route::post('/listingProces', [DropController::class, 'store'])->name('drops.store');
@@ -52,6 +56,7 @@ Route::get('/promo-pricing', fn () => view('promo.pricing'))->name('promo.pricin
 
 // Notify (newsletter signup)
 Route::post('/notifyMail', [NotifyController::class, 'store'])->name('notify.store');
+Route::post('/subscribe', [SubscribeController::class, 'store'])->name('subscribe');
 
 // Admin
 Route::get('/reviewApp', [AdminController::class, 'review'])->name('admin.review');
@@ -64,3 +69,7 @@ Route::post('/reviewDbProc', [AdminController::class, 'updateDatabase'])->name('
 Route::get('/delete', [AdminController::class, 'deleteDrop'])->name('admin.delete-drop');
 Route::get('/deleteProject', [AdminController::class, 'deleteProject'])->name('admin.delete-project');
 Route::get('/edit', [AdminController::class, 'edit'])->name('admin.edit');
+
+// SEO
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/robots.txt', [SitemapController::class, 'robots'])->name('robots');

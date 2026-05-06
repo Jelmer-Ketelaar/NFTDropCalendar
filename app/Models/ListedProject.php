@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -18,14 +17,16 @@ final class ListedProject extends Model
         'marketplaceLink', 'verified', 'updateStatus', 'ethChoice',
     ];
 
-    public function isPromoted(): bool
+    protected function casts(): array
     {
-        return $this->promoted === 'promote';
-    }
-
-    public function isVerified(): bool
-    {
-        return $this->verified === 'true';
+        return [
+            'verified'             => 'boolean',
+            'updateStatus'         => 'boolean',
+            'discordMemberNumber'  => 'integer',
+            'twitterFollowerNumber'=> 'integer',
+            'supply'               => 'integer',
+            'teamAmount'           => 'integer',
+            'dateUploadDropUser'   => 'datetime',
+        ];
     }
 }
-

@@ -11,11 +11,16 @@
     <title>NFTDropCalendar | {{ $pageTitle ?? 'Home' }}</title>
 
     <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="16x16" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/banner.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nft-premium.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <meta name="theme-color" content="#050816">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJPCNBEZWN"></script>
     <script>
@@ -40,7 +45,7 @@
 
     <div class="front" id="main-wrapper">
 
-        <div class="header landing" style="z-index: 1000;">
+        <div class="header landing">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -48,26 +53,22 @@
                             @php $currentPage = $currentPage ?? ''; @endphp
                             <nav class="navbar navbar-expand-lg navbar-dark">
                                 <div class="brand-logo">
-                                    <a href="{{ route('home') }}">
-                                        <img src="{{ asset('logo.png') }}" alt="NFTDropCalendar Logo" class="logo" style="height:40px">
+                                    <a href="{{ route('home') }}" class="d-flex align-items-center">
+                                        <img src="{{ asset('logo.png') }}" alt="NFTDropCalendar" class="logo" style="height: 40px; margin-right: 0.75rem;">
+                                        <span style="color: var(--nft-text); font-weight: 700; font-size: 1.125rem;">NFTDropCalendar</span>
                                     </a>
                                 </div>
-                                <div>
-                                    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" style="position: relative; right: 0;">
-                                        <span class="navbar-toggler-icon"></span>
-                                    </button>
-                                </div>
+                                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                    <ul class="navbar-nav me-auto">
+                                    <ul class="navbar-nav ms-auto align-items-center">
                                         <li class="nav-item"><a class="nav-link {{ $currentPage === 'index' ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
-                                        <li class="nav-item"><a class="nav-link {{ $currentPage === 'exploreDrops' ? 'active' : '' }}" href="{{ route('drops.explore') }}">Drops</a></li>
+                                        <li class="nav-item"><a class="nav-link {{ $currentPage === 'exploreDrops' ? 'active' : '' }}" href="{{ route('drops.explore') }}">Explore Drops</a></li>
                                         <li class="nav-item"><a class="nav-link {{ $currentPage === 'exploreProject' ? 'active' : '' }}" href="{{ route('projects.explore') }}">Projects</a></li>
-                                        <li class="nav-item"><a class="nav-link {{ $currentPage === 'prices' ? 'active' : '' }}" href="{{ url('prices') }}">Our Prices</a></li>
-                                        <li class="nav-item"><a class="nav-link {{ $currentPage === 'update' ? 'active' : '' }}" href="{{ route('update') }}">Update your project</a></li>
                                         <li class="nav-item"><a class="nav-link {{ $currentPage === 'faq' ? 'active' : '' }}" href="{{ route('faq') }}">FAQ</a></li>
                                         <li class="nav-item"><a class="nav-link {{ $currentPage === 'contact' ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
-                                        <li><a class="btn btn-primary {{ $currentPage === 'listDropFree' ? 'active' : '' }}" id="drop" href="{{ route('drops.create') }}">List Drop</a></li>
-                                        <li><a class="btn btn-primary {{ $currentPage === 'listProjectFree' ? 'active' : '' }}" id="project" href="{{ route('projects.create') }}">List Project</a></li>
+                                        <li class="nav-item ms-2"><a class="btn btn-primary" href="{{ route('drops.create') }}">List Drop</a></li>
                                     </ul>
                                 </div>
                             </nav>
@@ -77,60 +78,52 @@
             </div>
         </div>
 
-        @yield('content')
+        <main>
+            @yield('content')
+        </main>
 
-        <div class="notable-drops bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-7 col-sm-8">
-                        <div class="bottom-logo">
-                            <p>The best NFT Calendar tool of all time! Get all information about a Project/Drop in one view.</p>
-                        </div>
-                        <a href="{{ route('home') }}">
-                            <img src="{{ asset('logo.png') }}" alt="logo" class="logo" style="height:40px">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="footer">
             <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                <div class="row mb-4">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="{{ asset('logo.png') }}" alt="NFTDropCalendar" style="height: 32px; margin-right: 0.75rem;">
+                            <h5 style="color: var(--nft-text); margin: 0; font-weight: 700;">NFTDropCalendar</h5>
+                        </div>
+                        <p style="font-size: 0.95rem;">Discover upcoming NFT drops before they launch. The essential calendar for NFT collectors and creators.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
                         <div class="footer-widget">
                             <h4 class="widget-title">Explore</h4>
-                            <ul>
-                                <li><a href="{{ route('drops.explore') }}">Drops</a></li>
-                                <li><a href="{{ route('projects.explore') }}">Projects</a></li>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="{{ route('drops.explore') }}">Browse Drops</a></li>
+                                <li class="mb-2"><a href="{{ route('projects.explore') }}">View Projects</a></li>
+                                <li><a href="{{ route('drops.create') }}">Submit Your Drop</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                    <div class="col-lg-3 col-md-6 mb-4">
                         <div class="footer-widget">
-                            <h4 class="widget-title">Help & Support</h4>
-                            <ul>
-                                <li><a href="{{ route('faq') }}">FAQ</a></li>
-                                <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                            <h4 class="widget-title">Support</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="{{ route('faq') }}">FAQ</a></li>
+                                <li class="mb-2"><a href="{{ route('contact') }}">Contact Us</a></li>
+                                <li><a href="{{ url('prices') }}">Pricing</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                    <div class="col-lg-3 col-md-6 mb-4">
                         <div class="footer-widget">
-                            <h4 class="widget-title">Stay Connected</h4>
-                            <ul class="social-icons">
-                                <li><a href="https://twitter.com/DropCalendarNFT" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <h4 class="widget-title">Connect</h4>
+                            <ul class="social-icons list-unstyled">
+                                <li style="display: inline-block;"><a href="https://twitter.com/DropCalendarNFT" target="_blank" rel="noopener noreferrer" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="copyright">
-                            <p>&copy; Copyright 2024 NFTDropCalendar. All Rights Reserved.</p>
-                        </div>
-                    </div>
+                <div class="copyright">
+                    <p>&copy; 2024 NFTDropCalendar. Discover NFT drops before they launch.</p>
                 </div>
-                <br>
             </div>
         </div>
 

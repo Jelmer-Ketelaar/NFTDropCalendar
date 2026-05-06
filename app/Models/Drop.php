@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -15,8 +14,21 @@ final class Drop extends Model
         'mintPrice', 'dropDate', 'roadmap', 'royality', 'supply', 'teamAmount',
         'twitterName', 'discordLink', 'websiteLink', 'emailContact',
         'discordMemberNumber', 'twitterFollowerNumber', 'signature', 'traits',
-        'promoted', 'verified', 'banner', 'bannerPicture', 'updateStatus',
+        'promoted', 'verified', 'banner', 'bannerPicture', 'updateStatus', 'views',
     ];
+
+    protected function casts(): array
+    {
+        return [
+            'verified'             => 'boolean',
+            'updateStatus'         => 'boolean',
+            'discordMemberNumber'  => 'integer',
+            'twitterFollowerNumber'=> 'integer',
+            'supply'               => 'integer',
+            'teamAmount'           => 'integer',
+            'views'                => 'integer',
+        ];
+    }
 
     public function isPromoted(): bool
     {
@@ -25,7 +37,7 @@ final class Drop extends Model
 
     public function isVerified(): bool
     {
-        return $this->verified === 'true';
+        return $this->verified === true;
     }
 
     public function isLive(): bool
@@ -49,5 +61,14 @@ final class Drop extends Model
     {
         return explode('T', (string) $this->dropDate)[1] ?? '';
     }
-}
 
+    public function incrementViews(): void
+    {
+        $this->increment('views');
+    }
+
+    public function scopeTrending($query, $limit = 10)
+    {
+        return $query->where('verified', true)->orderByDesc('views')->limit($limit);
+    }
+}
