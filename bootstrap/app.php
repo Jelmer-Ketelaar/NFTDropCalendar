@@ -11,13 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        // Legacy pages that bypass CSRF (handled by LegacyPageController)
-        $middleware->preventRequestForgery(except: [
-            'reviewDbProc',
-            'reviewDbProc.php',
-            'reviewAppProc',
-            'reviewAppProc.php',
-        ]);
+        //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

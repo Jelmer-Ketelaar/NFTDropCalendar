@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DropController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LegacyPageController;
+use App\Http\Controllers\NotifyController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UpdateController;
 use Illuminate\Support\Facades\Route;
@@ -39,5 +41,26 @@ Route::get('/update', [UpdateController::class, 'index'])->name('update');
 Route::post('/updateDropProc', [UpdateController::class, 'updateDrop'])->name('update.drop');
 Route::post('/updateProjProc', [UpdateController::class, 'updateProject'])->name('update.project');
 
-// Legacy fallback for pages not yet converted (prices, admin pages, etc.)
-Route::any('/{path}', LegacyPageController::class)->where('path', '.*');
+// Collection
+Route::get('/collection', [CollectionController::class, 'index'])->name('collection');
+
+// Prices
+Route::get('/prices', fn () => view('prices.index'))->name('prices');
+
+// Promo pricing
+Route::get('/promo-pricing', fn () => view('promo.pricing'))->name('promo.pricing');
+
+// Notify (newsletter signup)
+Route::post('/notifyMail', [NotifyController::class, 'store'])->name('notify.store');
+
+// Admin
+Route::get('/reviewApp', [AdminController::class, 'review'])->name('admin.review');
+Route::get('/reviewAppProc', [AdminController::class, 'approveDrop'])->name('admin.approve-drop');
+Route::get('/reviewAppProjectProc', [AdminController::class, 'approveProject'])->name('admin.approve-project');
+Route::get('/reviewAppUpdateDrop', [AdminController::class, 'updateDropStatus'])->name('admin.update-drop-status');
+Route::get('/reviewAppUpdateProject', [AdminController::class, 'updateProjectStatus'])->name('admin.update-project-status');
+Route::get('/reviewDb', [AdminController::class, 'database'])->name('admin.db');
+Route::post('/reviewDbProc', [AdminController::class, 'updateDatabase'])->name('admin.update-db');
+Route::get('/delete', [AdminController::class, 'deleteDrop'])->name('admin.delete-drop');
+Route::get('/deleteProject', [AdminController::class, 'deleteProject'])->name('admin.delete-project');
+Route::get('/edit', [AdminController::class, 'edit'])->name('admin.edit');
