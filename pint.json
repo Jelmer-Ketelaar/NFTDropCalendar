@@ -1,0 +1,8 @@
+{
+  "preset": "laravel",
+  "exclude": [
+    "legacy",
+    "public",
+    "vendor"
+  ]
+}

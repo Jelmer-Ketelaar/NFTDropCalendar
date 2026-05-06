@@ -1,49 +1,63 @@
 # NFT Drop Calendar
 
-## Overview
+NFT Drop Calendar is a Laravel 13 application shell around the original
+NFTDropCalendar PHP website. The legacy pages are kept in `legacy/` and routed
+through Laravel so existing URLs continue to work while the application can be
+migrated to controllers, form requests, Blade views, and Eloquent models in
+smaller follow-up changes.
 
-Welcome to the NFT Drop Calendar! This repository contains the source code and information for the [https://nftdropcalendar.info](https://nftdropcalendar.info) website.
+## Requirements
 
-NFT Drop Calendar is a platform that provides a calendar of upcoming NFT (Non-Fungible Token) drops in the world of blockchain and cryptocurrency. Stay up-to-date with the latest NFT releases and never miss an opportunity to collect your favorite digital assets.
+- PHP 8.5
+- Composer
+- MySQL-compatible database
+- Node.js and npm, only when changing Vite-managed assets
 
-## Features
+## Setup
 
-- **Upcoming NFT Drops:** Browse a curated list of upcoming NFT drops from various projects and artists.
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+```
 
-- **Detailed Information:** Get detailed information about each NFT drop, including date, time, project details, and links to official sources.
+Update the database settings in `.env`:
 
-- **Search Functionality:** Easily search for specific NFT drops or filter by project, category, or date.
+```dotenv
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nftdropcalendar_comnftdropcalendar
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-- **User-Friendly Interface:** Enjoy a clean and intuitive user interface for a seamless browsing experience.
+Run the app locally:
 
-## Getting Started
+```bash
+php artisan serve
+```
 
-To run this project locally, follow these steps:
+The site will be available at `http://127.0.0.1:8000`.
 
-1. Clone the repository:
+## Project Structure
 
-   ```bash
-   git clone https://github.com/jelmer-ketelaar/NFTDropCalendar
-   
-## Contributing
+- `app/Http/Controllers/LegacyPageController.php` routes existing page URLs to
+  the legacy PHP files.
+- `legacy/` contains the original PHP page and processor files.
+- `public/` contains static assets and uploaded images.
+- `routes/web.php` keeps the existing extensionless and `.php` URLs working.
 
-We welcome contributions from the community to make NFT Drop Calendar even better! If you'd like to contribute, please follow these guidelines:
+## Quality Checks
 
-- Fork the repository and create a new branch for your feature or bug fix.
-- Make your changes and ensure that the code passes all tests.
-- Create a pull request with a clear description of your changes and why they are needed.
-- Our team will review your pull request and provide feedback as needed.
+```bash
+composer lint
+composer pint:test
+composer test
+```
 
-## Contact
+## Migration Notes
 
-If you have any questions, or suggestions, or need assistance, feel free to contact us:
-
-- **Email:** [info@nftdropcalendar.info](mailto:contact@nftdropcalendar.info)
-- **Website:** [https://nftdropcalendar.info/contact](https://nftdropcalendar.info/contact)
-
-## Acknowledgments
-
-We thank all the contributors, supporters, and the NFT community for making this project possible.
-
-Feel free to modify this template to include more details, customize the formatting, or add any other relevant information for your project.
-
+This is a compatibility-first Laravel conversion. The next production step is
+to replace legacy pages gradually with Laravel controllers, Blade templates,
+form requests, and Eloquent models while preserving the public URLs.
