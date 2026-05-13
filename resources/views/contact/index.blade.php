@@ -9,7 +9,8 @@
             <div class="container">
                 <div class="page-title-content">
                     <h1>Get in Touch</h1>
-                    <p style="color: var(--nft-text-secondary); margin-top: 0.5rem;">Have a question or want to list your drop? We'd love to hear from you.</p>
+                    <p style="color: var(--nft-text-secondary); margin-top: 0.5rem;">Have a question or want to list
+                        your drop? We'd love to hear from you.</p>
                 </div>
             </div>
         </div>
@@ -39,7 +40,8 @@
                                 </div>
                                 <div>
                                     <h6>Twitter / X</h6>
-                                    <p><a href="https://twitter.com/DropCalendarNFT" target="_blank" rel="noopener noreferrer">@DropCalendarNFT</a></p>
+                                    <p><a href="https://twitter.com/DropCalendarNFT" target="_blank"
+                                          rel="noopener noreferrer">@DropCalendarNFT</a></p>
                                 </div>
                             </div>
 
@@ -59,7 +61,8 @@
                                 </div>
                                 <div>
                                     <h6>Want to list a drop?</h6>
-                                    <p><a href="{{ route('drops.create') }}">Submit it here</a> — it's quick and easy.</p>
+                                    <p><a href="{{ route('drops.create') }}">Submit it here</a> — it's quick and easy.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -88,14 +91,16 @@
 
                         <div class="contact-form-card">
                             <h3 style="margin-bottom: 0.5rem;">Send a Message</h3>
-                            <p style="color: var(--nft-text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">Fill out the form below and we'll get back to you as soon as possible.</p>
+                            <p style="color: var(--nft-text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">Fill
+                                out the form below and we'll get back to you as soon as possible.</p>
 
                             <form method="POST" action="{{ route('contact.send') }}" novalidate>
                                 @csrf
 
                                 <div class="row g-3">
                                     <div class="col-md-6">
-                                        <label for="name" class="form-label">Your Name <span aria-hidden="true" style="color: var(--nft-red);">*</span></label>
+                                        <label for="name" class="form-label">Your Name <span aria-hidden="true"
+                                                                                             style="color: var(--nft-red);">*</span></label>
                                         <input
                                             type="text"
                                             name="name"
@@ -112,7 +117,8 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="email" class="form-label">Email Address <span aria-hidden="true" style="color: var(--nft-red);">*</span></label>
+                                        <label for="email" class="form-label">Email Address <span aria-hidden="true"
+                                                                                                  style="color: var(--nft-red);">*</span></label>
                                         <input
                                             type="email"
                                             name="email"
@@ -129,7 +135,8 @@
                                     </div>
 
                                     <div class="col-12">
-                                        <label for="subject" class="form-label">Subject <span aria-hidden="true" style="color: var(--nft-red);">*</span></label>
+                                        <label for="subject" class="form-label">Subject <span aria-hidden="true"
+                                                                                              style="color: var(--nft-red);">*</span></label>
                                         <input
                                             type="text"
                                             name="subject"
@@ -145,7 +152,8 @@
                                     </div>
 
                                     <div class="col-12">
-                                        <label for="message" class="form-label">Message <span aria-hidden="true" style="color: var(--nft-red);">*</span></label>
+                                        <label for="message" class="form-label">Message <span aria-hidden="true"
+                                                                                              style="color: var(--nft-red);">*</span></label>
                                         <textarea
                                             name="message"
                                             id="message"
@@ -160,6 +168,14 @@
                                     </div>
 
                                     <div class="col-12">
+                                        <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+
+                                        @error('captcha')
+                                        <div class="alert alert-danger mt-3">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+
                                         <button type="submit" class="btn btn-primary" style="min-width: 160px;">
                                             <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>
                                             Send Message
@@ -235,6 +251,25 @@
                 }
             }
         </style>
+        <script
+            src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
+
+        <script>
+            window.addEventListener('load', function () {
+                if (typeof window.grecaptcha !== 'undefined') {
+                    window.grecaptcha.ready(function () {
+                        window.grecaptcha.execute(
+                            '{{ config('services.recaptcha.site_key') }}',
+                            {
+                                action: 'contact'
+                            }
+                        ).then(function (token) {
+                            document.getElementById('g-recaptcha-response').value = token;
+                        });
+                    });
+                }
+            });
+        </script>
     @endpush
 
 @endsection
