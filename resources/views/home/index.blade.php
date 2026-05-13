@@ -18,15 +18,15 @@
             </div>
             @if($banner)
             <div class="col-xl-5 col-lg-6 col-12">
-                <a href="{{ route('drops.show', ['id' => base64_encode($banner->id)]) }}" class="d-block">
-                    <div class="card" style="margin-top: 0;">
-                        <img alt="{{ $banner->name }}" class="card-img-top" src="{{ $banner->thumbnailUrl() }}" style="height: 350px; object-fit: cover;">
+                <a href="{{ route('drops.show', ['id' => base64_encode($banner->id)]) }}" class="d-block" aria-label="Featured drop: {{ $banner->name }}">
+                    <article class="card" style="margin-top: 0;">
+                        <img alt="{{ $banner->name }} thumbnail" class="card-img-top" src="{{ $banner->thumbnailUrl() }}" style="height: 350px; object-fit: cover;" loading="eager" fetchpriority="high" width="600" height="350">
                         <div class="card-body">
-                            <h5 class="card-title mb-2">{{ $banner->name }}</h5>
+                            <h2 class="card-title mb-2" style="font-size: 1.25rem;">{{ $banner->name }}</h2>
                             <p class="card-text small">{{ mb_strimwidth($banner->description, 0, 120, '...') }}</p>
                             <span class="badge badge-upcoming" style="margin-top: 1rem;">Featured Drop</span>
                         </div>
-                    </div>
+                    </article>
                 </a>
             </div>
             @endif
@@ -50,9 +50,9 @@
         <div class="row g-4">
             @foreach($projectsPaid->take(4) as $project)
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                <a href="{{ route('drops.show', ['id' => base64_encode($project->id)]) }}" class="text-decoration-none">
+                <a href="{{ route('drops.show', ['id' => base64_encode($project->id)]) }}" class="text-decoration-none" aria-label="View {{ $project->name }} drop details">
                     <div class="card h-100">
-                        <img alt="{{ $project->name }}" class="card-img-top" src="{{ $project->thumbnailUrl() }}" style="height: 200px; object-fit: cover;">
+                        <img alt="{{ $project->name }} thumbnail" class="card-img-top" src="{{ $project->thumbnailUrl() }}" style="height: 200px; object-fit: cover;" loading="lazy" width="400" height="200">
                         @if($project->isPromoted())
                         <div style="position: absolute; top: 10px; right: 10px;">
                             <span class="badge badge-upcoming">Featured</span>
@@ -400,7 +400,7 @@
                             <h1 class="mt-3 mb-0">NFT Drops</h1>
                         </div>
                         <div class="intro-btn">
-                            <a class="btn content-btn" href="{{ route('drops.explore') }}" style="padding: 0; font-weight: 600; color: var(--primary-t-color); background: transparent; box-shadow: none; padding-right: 15px;">View All</a>
+                            <a class="btn content-btn" href="{{ route('drops.explore') }}" style="font-weight: 600; color: var(--primary-t-color); background: transparent; box-shadow: none; padding: 0 15px 0 0;">View All</a>
                         </div>
                     </div>
                 </div>
